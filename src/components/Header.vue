@@ -16,7 +16,10 @@ export default {
 
 <style scoped>
     .flex {
-        background-color: #000;
-
+        background-color: #191919;
+        padding: 0 1.2rem;
+        justify-content: space-between;
+        height: 5rem;
+        border-bottom: 1px solid #979797;
     }
 </style>
