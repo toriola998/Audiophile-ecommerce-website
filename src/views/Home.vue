@@ -9,14 +9,21 @@
             <a href="" class="cta">SEE PRODUCT</a>
         </div> 
     </div>
+    <Products />
+    <Products />
+    <Products />
 </template>
 
 <script>
 import Header from './../components/Header.vue'
+import Products from './../components/Products.vue'
 
 export default {
     name: 'Home',
-    components: { Header,
+    components: { 
+        Header,
+        Products
+
     }
 }
 </script>
