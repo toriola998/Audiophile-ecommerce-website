@@ -1,5 +1,6 @@
 <template>
     <Header/>
+
     <div class="head flex">
         <div>
             <p class="new">NEW PRODUCT</p>
@@ -9,9 +10,18 @@
             <a href="" class="cta">SEE PRODUCT</a>
         </div> 
     </div>
+
     <Products product="HEADPHONES" productImage="./../assets/Products/product1.svg"/>
     <Products product="SPEAKERS" productImage="./../assets/Products/product2.svg"/>
     <Products product="EARPHONES" productImage="./../assets/Products/product3.svg"/>
+
+    <div class="speaker1">
+        <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="speaker" class="speaker1"/>
+        <h2>ZX9 SPEAKER</h2>
+        <p>Upgrade to premium speakers that are phenomenally built 
+        to deliver truly remarkable sound.</p>
+        <a class="speaker1-cta">SEE PRODUCT</a>
+    </div>
 </template>
 
 <script>
@@ -33,10 +43,14 @@ export default {
         background-image: url("./../assets/home/mobile/image-header.jpg"); /* The image used */
         background-color: #191919; /* Used if the image is unavailable */
         height: 90vh;
+        justify-content: center;
+    }
+
+    .head,
+    .speaker1 {
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; 
-        justify-content: center;
     }
 
     .head > div {
@@ -78,5 +92,14 @@ export default {
         font-size: 1rem;
         height: 3rem;
         padding-top: .8rem;
+    }
+
+    .speaker1 {
+        background-image: url("./../assets/home/desktop/pattern-circles.svg");
+        background-color: #D87D4A;
+        height: auto;
+        width: 90vw;
+        margin: auto;
+        border-radius: 5px;
     }
 </style>
