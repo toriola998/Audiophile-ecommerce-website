@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="box">
-            <img src="./../assets/Products/product1.svg" class="product" alt=""/>
-            <p>HEADPHONES</p>
+            <img :src="productImage" class="product" alt=""/>
+            <p>{{product}}</p>
             <div class="flex shop">
                 <a href="">SHOP</a>
                 <img src="./../assets/shared/desktop/icon-arrow-right.svg" alt=""/>
@@ -13,7 +13,8 @@
 
 <script>
 export default {
-
+    name: 'Products',
+    props: ['product', 'productImage']
 }
 </script>
 

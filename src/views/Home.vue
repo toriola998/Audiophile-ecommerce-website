@@ -9,9 +9,9 @@
             <a href="" class="cta">SEE PRODUCT</a>
         </div> 
     </div>
-    <Products />
-    <Products />
-    <Products />
+    <Products product="HEADPHONES" productImage="./../assets/Products/product1.svg"/>
+    <Products product="SPEAKERS" productImage="./../assets/Products/product2.svg"/>
+    <Products product="EARPHONES" productImage="./../assets/Products/product3.svg"/>
 </template>
 
 <script>
