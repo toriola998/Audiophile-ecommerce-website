@@ -39,12 +39,14 @@
             <a class="plain-link">SEE PRODUCT</a>
         </div>
     </div>
+    <About />
     <Footer />
 </template>
 
 <script>
 import Header from './../components/Header.vue'
 import Products from './../components/Products.vue'
+import About from './../components/About.vue'
 import Footer from './../components/Footer.vue'
 
 export default {
@@ -52,6 +54,7 @@ export default {
     components: { 
         Header,
         Products,
+        About,
         Footer
     }
 }
