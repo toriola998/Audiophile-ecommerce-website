@@ -23,6 +23,13 @@
         to deliver truly remarkable sound.</p>
         <a class="speaker1-cta link">SEE PRODUCT</a>
     </div>
+
+    <div class="speaker2-wrap flex">
+        <div>
+            <h2>ZX7 SPEAKER</h2>
+            <a class="plain-link">SEE PRODUCT</a>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -47,7 +54,8 @@ export default {
     }
 
     .head,
-    .speaker1 {
+    .speaker1-wrap,
+    .speaker2-wrap {
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; 
@@ -74,7 +82,8 @@ export default {
         color: white;
     }
 
-    h1 {
+    h1, 
+    h2 {
         font-weight: 700;
     }
 
@@ -96,6 +105,7 @@ export default {
         font-size: 1rem;
         height: 3rem;
         width: 10rem;
+        font-size: .9rem;
         cursor: pointer;
     }
 
@@ -104,7 +114,7 @@ export default {
         background-color: #D87D4A;
         height: auto;
         width: 90vw;
-        margin: 6rem auto 4rem;
+        margin: 6rem auto 2rem;
         border-radius: 5px;
         padding: 4rem 1.5rem;
     }
@@ -117,7 +127,6 @@ export default {
 
     .speaker1-wrap h2 {
         color: #fff;
-        font-weight: 700;
         font-size: 2rem;
         text-align: center;
         line-height: 1.1;
@@ -133,5 +142,34 @@ export default {
         background-color: #000;
         color: #fff;
         margin-top: 1.2rem;
+    }
+
+    .speaker2-wrap {
+        background-image: url("./../assets/home/mobile/image-speaker-zx7.jpg");
+        height: 250px;
+        width: 90vw;
+        border-radius: 7px;
+        margin: auto;
+    } 
+    
+    .speaker2-wrap > div{
+        padding-left: 2rem;
+    }
+
+    .speaker2-wrap h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .plain-link {
+        font-weight: 700;
+        height: 3rem;
+        width: 10rem;
+        font-size: .9rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        border: 2px solid #000;
     }
 </style>
