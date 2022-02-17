@@ -30,6 +30,15 @@
             <a class="plain-link">SEE PRODUCT</a>
         </div>
     </div>
+
+    <img src="./../assets/home/mobile/image-earphones-yx1.jpg" class="earphone" alt="earphones"/>
+
+    <div class="earphones-wrap flex">
+        <div>
+            <h2>YX1 EARPHONES</h2>
+            <a class="plain-link">SEE PRODUCT</a>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -156,9 +165,8 @@ export default {
         padding-left: 2rem;
     }
 
-    .speaker2-wrap h2 {
+    h2 {
         font-size: 1.8rem;
-        margin-bottom: 2rem;
     }
     
     .plain-link {
@@ -171,5 +179,22 @@ export default {
         justify-content: center;
         align-items: center ;
         border: 2px solid #000;
+        margin-top: 2rem;
+    }
+
+    .earphones-wrap {
+        background-color: #F1F1F1;
+        width: 90vw;
+        border-radius: 7px;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    .earphone {
+        width: 90vw;
+        border-radius: 7px;
+        display: block;
+        height: auto; 
+        margin: 1.8rem auto;   
     }
 </style>
