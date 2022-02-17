@@ -7,7 +7,7 @@
             <h1>XX99 MARK II HEADPHONES</h1>
             <p class="note">Experience natural, lifelike audio and exceptional build 
             quality made for the passionate music enthusiast.</p>
-            <a href="" class="cta">SEE PRODUCT</a>
+            <a href="" class="cta link">SEE PRODUCT</a>
         </div> 
     </div>
 
@@ -15,12 +15,13 @@
     <Products product="SPEAKERS" productImage="./../assets/Products/product2.svg"/>
     <Products product="EARPHONES" productImage="./../assets/Products/product3.svg"/>
 
-    <div class="speaker1">
+    <div class="speaker1-wrap">
         <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="speaker" class="speaker1"/>
-        <h2>ZX9 SPEAKER</h2>
-        <p>Upgrade to premium speakers that are phenomenally built 
+        <h2>ZX9 <br>
+            SPEAKER</h2>
+        <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
         to deliver truly remarkable sound.</p>
-        <a class="speaker1-cta">SEE PRODUCT</a>
+        <a class="speaker1-cta link">SEE PRODUCT</a>
     </div>
 </template>
 
@@ -33,7 +34,6 @@ export default {
     components: { 
         Header,
         Products
-
     }
 }
 </script>
@@ -85,21 +85,53 @@ export default {
     }
 
     .cta {
-        display: block;
-        margin: 0 auto;
         background-color: #D87D4A;
-        width: 10rem;
-        font-size: 1rem;
-        height: 3rem;
-        padding-top: .8rem;
     }
 
-    .speaker1 {
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: 1rem;
+        height: 3rem;
+        width: 10rem;
+        cursor: pointer;
+    }
+
+    .speaker1-wrap {
         background-image: url("./../assets/home/desktop/pattern-circles.svg");
         background-color: #D87D4A;
         height: auto;
         width: 90vw;
-        margin: auto;
+        margin: 6rem auto 4rem;
         border-radius: 5px;
+        padding: 4rem 1.5rem;
+    }
+
+    .speaker1 {
+        width: 60%;
+        display: block;
+        margin: auto;
+    }
+
+    .speaker1-wrap h2 {
+        color: #fff;
+        font-weight: 700;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 1.1;
+        margin: 1.5rem 0;
+    }
+    
+    .upgrade {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    .speaker1-cta {
+        background-color: #000;
+        color: #fff;
+        margin-top: 1.2rem;
     }
 </style>
