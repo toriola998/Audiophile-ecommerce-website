@@ -7,7 +7,7 @@
             <h1>XX99 MARK II HEADPHONES</h1>
             <p class="note">Experience natural, lifelike audio and exceptional build 
             quality made for the passionate music enthusiast.</p>
-            <a href="" class="cta link">SEE PRODUCT</a>
+            <OrangeButton link="" btnAction="SEE PRODUCT"/>
         </div> 
     </div>
 
@@ -45,6 +45,7 @@
 
 <script>
 import Header from './../components/Header.vue'
+import OrangeButton from './../components/OrangeButton.vue'
 import Products from './../components/Products.vue'
 import About from './../components/About.vue'
 import Footer from './../components/Footer.vue'
@@ -53,6 +54,7 @@ export default {
     name: 'Home',
     components: { 
         Header,
+        OrangeButton,
         Products,
         About,
         Footer
@@ -92,7 +94,7 @@ export default {
         opacity: .7;
     }
 
-    p, h1, .cta{
+    p, h1{
         text-align: center;
         color: white;
     }
@@ -108,22 +110,7 @@ export default {
         font-size: .9rem;
     }
 
-    .cta {
-        background-color: #D87D4A;
-    }
-
-    .link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        font-size: 1rem;
-        height: 3rem;
-        width: 10rem;
-        font-size: .9rem;
-        cursor: pointer;
-    }
-
+    
     .speaker1-wrap {
         background-image: url("./../assets/home/desktop/pattern-circles.svg");
         background-color: #D87D4A;
