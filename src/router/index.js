@@ -4,6 +4,7 @@ import Home from './../views/Home.vue'
 import Headphones from './../views/Headphones.vue'
 import Speakers from './../views/Speakers.vue'
 import Earphones from './../views/Earphones.vue'
+import ProductDetail from './../views/ProductDetail.vue'
 
 const router = createRouter({
     history:  createWebHistory(),
@@ -15,21 +16,27 @@ const router = createRouter({
     },
 
     {
-        path: '/Headphones',
+        path: '/headphones',
         name: 'Headphones',
         component: Headphones
      },
 
      {
-        path: '/Speakers',
+        path: '/speakers',
         name: 'Speakers',
         component: Speakers
      },
 
      {
-        path: '/Earphones',
+        path: '/earphones',
         name: 'Earphones',
         component: Earphones
+     },
+
+     {
+        path: '/product-detail',
+        name: 'ProductDetail',
+        component: ProductDetail
      }
     ]
 })
