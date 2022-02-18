@@ -16,6 +16,12 @@ const router = createRouter({
         path: '/Headphones',
         name: 'Headphones',
         component: Headphones
+     },
+
+     {
+        path: '/Speakers',
+        name: 'Speak',
+        component: Headphones
      }
     ]
 })
