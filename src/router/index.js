@@ -26,7 +26,6 @@ const router = createRouter({
         component: Speakers
      },
 
-     
      {
         path: '/Earphones',
         name: 'Earphones',

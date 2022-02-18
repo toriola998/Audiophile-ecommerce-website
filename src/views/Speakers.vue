@@ -28,7 +28,7 @@ import About from '../components/About.vue'
 import Footer from '../components/Footer.vue'
 
 export default {
-     name: 'Speakers',
+    name: 'Speakers',
     components:  {
         Header,
         ProductHeader,
