@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 
 import Home from './../views/Home.vue'
 import Headphones from './../views/Headphones.vue'
+import Speakers from './../views/Speakers.vue'
 
 const router = createRouter({
     history:  createWebHistory(),
@@ -20,8 +21,8 @@ const router = createRouter({
 
      {
         path: '/Speakers',
-        name: 'Speak',
-        component: Headphones
+        name: 'Speakers',
+        component: Speakers
      }
     ]
 })
