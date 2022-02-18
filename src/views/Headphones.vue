@@ -1,8 +1,8 @@
 <template>
     <Header />
-    <h2 class="flex">HEADPHONES</h2>
+    
 
-    <div class="wrapper">
+    <div class="wrap1">
     <img src="" alt="headphone"/>
     <p class="new">NEW PRODUCT</p>
     <h3>XX99 MARK II <br>
@@ -36,17 +36,10 @@ export default {
 </script>
 
 <style scoped >
-    h2 {
-        background-color: #191919;
-        justify-content: center;
-        height: 5rem;
-        color: #fff;
-        letter-spacing: 3px;
-        font-size: 1.4rem;
-    }
 
-    .wrapper {
-        padding: 6rem 1.5rem;
+
+    .wrap1 {
+        padding: 0 1.5rem 6rem;
     }
 
     p, h3 {
