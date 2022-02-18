@@ -22,6 +22,7 @@ export default {
 
     body {
         font-family: 'Manrope', sans-serif;
+        font-style: normal;
     }
 
     .flex{
@@ -37,4 +38,8 @@ export default {
         outline: none;
         border: none;
     }
+
+    h1, h2, h3, h4 {
+        font-weight: 700;
+    } 
 </style>

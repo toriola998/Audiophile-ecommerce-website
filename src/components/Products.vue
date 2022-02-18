@@ -1,8 +1,26 @@
 <template>
-    <div>
+    <div class="wrap">
         <div class="box">
-            <img :src="productImage" class="product" alt=""/>
-            <p>{{product}}</p>
+            <img src="./../assets/Products/product1.svg" class="product" alt=""/>
+            <p>HEADPHONES</p>
+            <div class="flex shop">
+                <a href="">SHOP</a>
+                <img src="./../assets/shared/desktop/icon-arrow-right.svg" alt=""/>
+            </div> 
+        </div>
+
+         <div class="box">
+            <img src="./../assets/Products/product2.svg" class="product" alt=""/>
+            <p>SPEAKERS</p>
+            <div class="flex shop">
+                <a href="">SHOP</a>
+                <img src="./../assets/shared/desktop/icon-arrow-right.svg" alt=""/>
+            </div> 
+        </div>
+
+         <div class="box">
+            <img src="./../assets/Products/product3.svg" class="product" alt=""/>
+            <p>EARPHONES</p>
             <div class="flex shop">
                 <a href="">SHOP</a>
                 <img src="./../assets/shared/desktop/icon-arrow-right.svg" alt=""/>
@@ -14,7 +32,6 @@
 <script>
 export default {
     name: 'Products',
-    props: ['product', 'productImage']
 }
 </script>
 

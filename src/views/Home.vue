@@ -11,9 +11,7 @@
         </div> 
     </div>
 
-    <Products product="HEADPHONES" productImage="./../assets/Products/product1.svg"/>
-    <Products product="SPEAKERS" productImage="./../assets/Products/product2.svg"/>
-    <Products product="EARPHONES" productImage="./../assets/Products/product3.svg"/>
+    <Products />
 
     <div class="speaker1-wrap">
         <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="speaker" class="speaker1"/>
@@ -101,18 +99,12 @@ export default {
         color: white;
     }
 
-    h1, 
-    h2 {
-        font-weight: 700;
-    }
-
     .note {
         line-height: 1.7;
         margin: 1rem 0;
         font-size: .9rem;
     }
 
-    
     .speaker1-wrap {
         background-image: url("./../assets/home/desktop/pattern-circles.svg");
         background-color: #D87D4A;
