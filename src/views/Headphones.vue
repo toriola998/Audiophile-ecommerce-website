@@ -1,11 +1,23 @@
 <template>
     <Header />
     <ProductHeader product="HEADPHONES" />
-    <ProductLayout  productImage="./../assets/headphones/headphone1.svg"
+    <ProductLayout  productImage="./../assets/headphones/headphone1.svg" 
                     productName="XX99 MARK II HEADPHONES"
                     aboutProduct="The new XX99 Mark II headphones is the pinnacle of pristine audio.
                     It redefines your premium headphone experience by reproducing the balanced depth 
                     and precision of studio-quality sound." />
+
+    <ProductLayout  productImage="./../assets/headphones/headphone1.svg" 
+                    productName="XX99 MARK I HEADPHONES"
+                    aboutProduct="As the gold standard for headphones, the classic XX99 Mark I offers 
+                    detailed and accurate audio reproduction for audiophiles,
+                    mixing engineers, and music aficionados alike in studios and on the go." />
+                    
+    <ProductLayout  productImage="./../assets/headphones/headphone1.svg" 
+                    productName="XX59 HEADPHONES"
+                    aboutProduct="Enjoy your audio almost anywhere and customize it to your specific 
+                    tastes with the XX59 headphones. The stylish yet durable versatile wireless headset
+                    is a brilliant companion at home or on the move." />              
     <Products />
     <About />
     <Footer />
