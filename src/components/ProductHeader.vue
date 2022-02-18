@@ -1,13 +1,13 @@
 <template>
     <div>
-        <h2 class="flex">{{ productName}}</h2>
+        <h2 class="flex">{{ product}}</h2>
     </div>
 </template>
 
 <script>
 export default {
     name: 'ProductHeader',
-    props: ['productName']
+    props: ['product']
 }
 </script>
 

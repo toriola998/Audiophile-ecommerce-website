@@ -1,15 +1,12 @@
 <template>
      <div class="wrap1">
         <div class="img-wrap flex">
-            <img src="./../assets/headphones/headphone2.svg" alt="headphone" class="headphone"/>
+            <img :src="productImage" alt="headphone" class="headphone"/>
         </div>      
         
         <p class="new">NEW PRODUCT</p>
-        <h3>XX99 MARK II <br>
-            HEADPHONES</h3>
-        <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines
-        your premium headphone experience by reproducing the balanced depth and precision of 
-        studio-quality sound.</p>
+        <h3>{{ productName}}</h3>
+        <p>{{aboutProduct}}</p>
         <OrangeButton btnAction="SEE PRODUCT"/>
     </div>
 </template>
@@ -21,7 +18,7 @@ export default {
     components: {
         OrangeButton
     },
-    props: []
+    props: ['productImage', 'productName', 'aboutProduct']
 }
 </script>
 
@@ -45,7 +42,7 @@ export default {
         width: 75%;
         height: auto;
     }
-
+ 
     p, h3 {
         text-align: center;
     }
@@ -58,7 +55,8 @@ export default {
 
     h3 {
         font-size: 1.7rem;
-        margin: 1.5rem 0;
+        margin: 1.5rem auto;
+        width: 320px
     }
 
     p {
