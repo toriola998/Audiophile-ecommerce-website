@@ -26,5 +26,4 @@ export default {
         font-size: .9rem;
         cursor: pointer;
     }
-
 </style>

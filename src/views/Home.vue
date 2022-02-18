@@ -27,7 +27,7 @@
     <div class="speaker2-wrap flex">
         <div>
             <h2>ZX7 SPEAKER</h2>
-            <a class="plain-link">SEE PRODUCT</a>
+            <PlainButton link="" action="SEE PRODUCT"/>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
     <div class="earphones-wrap flex">
         <div>
             <h2>YX1 EARPHONES</h2>
-            <a class="plain-link">SEE PRODUCT</a>
+            <PlainButton link="" action="SEE PRODUCT"/>
         </div>
     </div>
     <About />
@@ -47,6 +47,7 @@
 import Header from './../components/Header.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import Products from './../components/Products.vue'
+import PlainButton from './../components/PlainButton.vue'
 import About from './../components/About.vue'
 import Footer from './../components/Footer.vue'
 
@@ -56,6 +57,7 @@ export default {
         Header,
         OrangeButton,
         Products,
+        PlainButton,
         About,
         Footer
     }
@@ -162,19 +164,6 @@ export default {
         font-size: 1.8rem;
     }
     
-    .plain-link {
-        font-weight: 700;
-        height: 3rem;
-        width: 10rem;
-        font-size: .9rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center ;
-        border: 2px solid #000;
-        margin-top: 2rem;
-    }
-
     .earphones-wrap {
         background-color: #F1F1F1;
         width: 90vw;
