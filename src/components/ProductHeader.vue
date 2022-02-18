@@ -19,6 +19,6 @@ export default {
         color: #fff;
         letter-spacing: 3px;
         font-size: 1.4rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
     }
 </style>
