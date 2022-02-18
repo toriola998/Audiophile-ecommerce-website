@@ -3,14 +3,14 @@
     <ProductHeader productName="HEADPHONES"/>
 
     <div class="wrap1">
-    <img src="" alt="headphone"/>
-    <p class="new">NEW PRODUCT</p>
-    <h3>XX99 MARK II <br>
-        HEADPHONES</h3>
-    <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines
-    your premium headphone experience by reproducing the balanced depth and precision of 
-    studio-quality sound.</p>
-    <OrangeButton btnAction="SEE PRODUCT"/>
+        <img src="./../assets/" alt="headphone"/>
+        <p class="new">NEW PRODUCT</p>
+        <h3>XX99 MARK II <br>
+            HEADPHONES</h3>
+        <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines
+        your premium headphone experience by reproducing the balanced depth and precision of 
+        studio-quality sound.</p>
+        <OrangeButton btnAction="SEE PRODUCT"/>
     </div>
     <Products />
     <About />
