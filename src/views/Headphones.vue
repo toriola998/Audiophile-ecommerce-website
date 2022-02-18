@@ -3,7 +3,10 @@
     <ProductHeader productName="HEADPHONES"/>
 
     <div class="wrap1">
-        <img src="./../assets/" alt="headphone"/>
+        <div class="img-wrap flex">
+            <img src="./../assets/headphones/headphone2.svg" alt="headphone" class="headphone"/>
+        </div>      
+        
         <p class="new">NEW PRODUCT</p>
         <h3>XX99 MARK II <br>
             HEADPHONES</h3>
@@ -41,6 +44,22 @@ export default {
 <style scoped >
     .wrap1 {
         padding: 0 1.5rem 6rem;
+    }
+
+    .img-wrap {
+        background-color: #f1f1f1; 
+        justify-content: center;
+        width: 95%;
+        margin: 0 auto 1.5rem;
+        padding: 3rem 0;
+        border-radius: 7px;
+    }
+
+    .headphone {
+        display: block;
+        margin: auto;
+        width: 75%;
+        height: auto;
     }
 
     p, h3 {
