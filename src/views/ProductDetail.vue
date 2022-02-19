@@ -44,18 +44,21 @@
             <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
         </div>
     </div>
+    <YouMayAlsoLike />
 </template>
 
 <script>
 import Header from './../components/Header.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
+import YouMayAlsoLike from './../components/YouMayAlsoLike.vue'
 export default {
     name: 'ProductDetail',
     components: {
         Header,
         OrangeButton,
-        AddToCartButton
+        AddToCartButton,
+        YouMayAlsoLike
     }
 }
 </script>
@@ -137,7 +140,7 @@ export default {
     }
 
     .product-images {
-        padding: 3rem 0;
+        padding: 4rem 0;
     }
 
     .product-images img {
