@@ -38,10 +38,10 @@
                 <span class="details">Travel Bag</span></li>
         </ul>
 
-        <div>
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
+        <div class="product-images">
+            <img src="./../assets/product2-headphones/mobile/image-gallery-1.jpg" alt="" />
+            <img src="./../assets/product2-headphones/mobile/image-gallery-2.jpg" alt="" />
+            <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
         </div>
     </div>
 </template>
@@ -135,4 +135,16 @@ export default {
     .box-details li {
         margin-bottom: .8rem;
     }
+
+    .product-images {
+        padding: 3rem 0;
+    }
+
+    .product-images img {
+        border-radius: 7px;
+        height: auto;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
 </style>
