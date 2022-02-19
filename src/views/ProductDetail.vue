@@ -6,14 +6,14 @@
              <img src="" alt="product" class="hero-product"/>
         </div>
        
-        <p>NEW PRODUCT</p>
-        <h3>XX99 Mark II Headphones</h3>
-        <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
+        <p class="new">NEW PRODUCT</p>
+        <h3>XX99 MARK II HEADPHONES</h3>
+        <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
         redefines your premium headphone experience by reproducing the balanced depth and
         precision of studio-quality sound.</p>
-        <p>$ 2,999</p>
+        <p class="price">$ 2,999</p>
         <div class="flex">
-            <AddToCartButton />
+            <AddToCartButton/>
             <OrangeButton btnAction="ADD TO CART"/>
         </div> 
         <h3>FEATURES</h3>
@@ -51,7 +51,8 @@ export default {
         color: #000;
         font-size: 1rem;
         opacity: 0.5;
-        margin: 2rem 0 1rem;
+        display: block;
+        margin: 1rem 0;
     }
 
     .hero-wrap {
@@ -68,5 +69,37 @@ export default {
         margin: auto;
         height: auto;
         width: 80%;
+    }
+
+    .new {
+        color: #D87D4A;
+        letter-spacing: 5px;
+        font-size: .9rem;
+    }
+
+    h3 { font-size: 1.7rem;
+        margin: 1.5rem 0;
+        width: 320px;
+    }
+
+    .price {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .about-product {
+        color: #000;
+        opacity: 0.5;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .grey-bg {
+        margin-right: 1.5rem;
+    }
+
+    .link {
+        margin: unset;
     }
 </style>
