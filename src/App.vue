@@ -42,4 +42,8 @@ export default {
     h1, h2, h3, h4 {
         font-weight: 700;
     } 
+
+    ul {
+        list-style-type: none;
+    }
 </style>
