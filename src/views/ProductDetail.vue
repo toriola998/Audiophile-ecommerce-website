@@ -45,6 +45,9 @@
         </div>
     </div>
     <YouMayAlsoLike />
+    <SimilarProducts />
+    <About />
+    <Footer />
 </template>
 
 <script>
@@ -52,13 +55,19 @@ import Header from './../components/Header.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import YouMayAlsoLike from './../components/YouMayAlsoLike.vue'
+import SimilarProducts from './../components/SimilarProducts.vue'
+import About from './../components/About.vue'
+import Footer from './../components/Footer.vue'
 export default {
     name: 'ProductDetail',
     components: {
         Header,
         OrangeButton,
         AddToCartButton,
-        YouMayAlsoLike
+        YouMayAlsoLike,
+        SimilarProducts,
+        About,
+        Footer
     }
 }
 </script>
