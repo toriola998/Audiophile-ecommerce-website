@@ -5,7 +5,7 @@
         <div>
             <p class="new">NEW PRODUCT</p>
             <h1>XX99 MARK II HEADPHONES</h1>
-            <p class="note">Experience natural, lifelike audio and exceptional build 
+            <p class="note">Experience natural, life like audio and exceptional build 
             quality made for the passionate music enthusiast.</p>
             <OrangeButton link="" btnAction="SEE PRODUCT"/>
         </div> 
@@ -140,6 +140,17 @@ export default {
         margin-top: 1.2rem;
     }
 
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.1rem auto 0;
+        height: 3rem;
+        width: 10rem;
+        font-size: .9rem;
+        cursor: pointer;
+    }
+
     .speaker2-wrap {
         background-image: url("./../assets/home/mobile/image-speaker-zx7.jpg");
         height: 250px;
@@ -171,4 +182,27 @@ export default {
         height: auto; 
         margin: 1.8rem auto;   
     }
+
+@media screen and (min-width: 520px) {
+     .head {
+        background-image: url("./../assets/home/tablet/image-header.jpg");
+     }
+
+     h1 {
+         font-size: 3rem;
+     }
+
+    .note,
+    .upgrade {
+        font-size: 1.07rem;
+    } 
+
+    .speaker1 {
+        width: 45%;
+    }
+
+    .speaker1-wrap h2{
+        font-size: 2.2rem ;
+    }
+}
 </style>
