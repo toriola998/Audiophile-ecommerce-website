@@ -1,6 +1,5 @@
 <template>
     <Header/>
-
     <div class="head flex">
         <div>
             <p class="new">NEW PRODUCT</p>
@@ -10,9 +9,7 @@
             <OrangeButton link="" btnAction="SEE PRODUCT"/>
         </div> 
     </div>
-
     <Products />
-
     <div class="speaker1-wrap">
         <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="speaker" class="speaker1"/>
         <h2>ZX9 <br>
@@ -21,20 +18,20 @@
         to deliver truly remarkable sound.</p>
         <a class="speaker1-cta link">SEE PRODUCT</a>
     </div>
-
+    
     <div class="speaker2-wrap flex">
         <div>
             <h2>ZX7 SPEAKER</h2>
             <PlainButton link="" action="SEE PRODUCT"/>
         </div>
     </div>
-
-    <img src="./../assets/home/mobile/image-earphones-yx1.jpg" class="earphone" alt="earphones"/>
-
-    <div class="earphones-wrap flex">
-        <div>
-            <h2>YX1 EARPHONES</h2>
-            <PlainButton link="" action="SEE PRODUCT"/>
+    <div class="image-flex">
+         <img src="./../assets/home/mobile/image-earphones-yx1.jpg" class="earphone" alt="earphones"/>
+        <div class="earphones-wrap flex">
+            <div>
+                <h2>YX1 EARPHONES</h2>
+                <PlainButton link="" action="SEE PRODUCT"/>
+            </div>
         </div>
     </div>
     <About />
@@ -203,6 +200,12 @@ export default {
 
     .speaker1-wrap h2{
         font-size: 2.2rem ;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .image-flex {
+        display: flex;
     }
 }
 </style>

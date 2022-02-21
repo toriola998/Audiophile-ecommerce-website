@@ -3,7 +3,7 @@
         <div class="line"></div>
         <img src="./../assets/icons/logo.svg" alt="logo" class="logo"/>
 
-        <ul>
+        <ul class="footer-links">
             <li>
                 <a>HOME</a></li>
             <li>
@@ -17,14 +17,14 @@
         small team of music lovers and sound specialists who are devoted to helping 
         you get the most out of personal audio. Come and visit our demo facility 
         - we're open 7 days a week.</p>
-        <p class="right">Copyright 2021. All Rights Reserved</p>
-
-        <div class="flex social-media">
-            <img src="./../assets/shared/desktop/icon-facebook.svg" alt="facebook"/>
-            <img src="./../assets/shared/desktop/icon-twitter.svg" alt="twitter"/>
-            <img src="./../assets/shared/desktop/icon-instagram.svg" alt="instagram"/>
-        </div>
-       
+        <div class="flex footer-flex">
+            <p class="right">Copyright 2021. All Rights Reserved</p>
+            <div class="flex social-media">
+                <img src="./../assets/shared/desktop/icon-facebook.svg" alt="facebook"/>
+                <img src="./../assets/shared/desktop/icon-twitter.svg" alt="twitter"/>
+                <img src="./../assets/shared/desktop/icon-instagram.svg" alt="instagram"/>
+            </div>
+        </div>  
     </div>
 </template>
 
@@ -46,13 +46,13 @@ export default {
         width: 6rem;
     }
 
-    .logo,
+    .footer .logo,
     .line {
         display: block;
         margin: auto;
     }
 
-    .logo {
+    .footer .logo {
         margin: 3rem auto;
     }
 
@@ -92,5 +92,32 @@ export default {
         justify-content: space-between;
         width: 6rem;
         margin: 3rem auto 0;
+    }
+
+    @media screen and (min-width: 520px) {
+        .footer-links {
+            display: flex;
+        }
+
+        li a {
+            padding-right: 2rem ;
+        }
+
+        p {
+            text-align: unset;
+        }
+
+        .social-media{
+            margin: unset;
+        }
+
+        .footer-flex {
+            justify-content: space-between;
+        }
+        
+        .footer .logo {
+            margin: 3rem auto 2rem;
+            display: unset;
+        }
     }
 </style>

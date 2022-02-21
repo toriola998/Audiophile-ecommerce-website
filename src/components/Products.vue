@@ -67,4 +67,19 @@ export default {
         justify-content: center;
         cursor: pointer;
     }
+
+    @media screen and (min-width: 610px) {
+        .box {
+            width: 28vw;
+        }
+
+        .wrap {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 0 1.5rem;
+            gap: 15px;
+            
+            
+        }
+    }
 </style>
