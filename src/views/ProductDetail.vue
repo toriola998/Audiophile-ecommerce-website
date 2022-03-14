@@ -89,6 +89,9 @@ export default {
         SimilarProducts,
         About,
         Footer
+    },
+    created: {
+        
     }
 }
 </script>
