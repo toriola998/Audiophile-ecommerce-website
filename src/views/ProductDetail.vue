@@ -21,13 +21,13 @@
             </div>  
         </div>
         
-        <div class="features-wrap"> 
+        <div class="features-wrap">  
             <div class="product-features">
                 <h3>FEATURES</h3>
                 <p class="about-product">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
                 <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>  
             </div>
-            <div class="flex-tab-details"> 
+            <div class="details-wrap"> 
                 <h3>IN THE BOX</h3>
                 <ul class="box-details">
                     <li>
@@ -172,13 +172,13 @@ export default {
     }
 
 @media screen and (min-width: 520px) {
-   .flex-tab-details {
+   .details-wrap {
        display: grid;
        grid-template-columns: 35% 60%;
        justify-content: space-between;
    }
 
-   .flex-tab-details h3 {
+   .details-wrap h3 {
        margin: initial;
    }
 
@@ -205,7 +205,7 @@ export default {
    .features-wrap {
        display: grid;
        grid-template-columns: 60% 40%;
-       gap: 110px;
+       gap: 130px;
        padding: 4rem 0;
    }
 
@@ -217,12 +217,13 @@ export default {
        padding: initial;
    }
 
-   .flex-tab-details {
+   .details-wrap {
        display: initial;
    }
 
-   h3 {
-       margin: 0 1rem 0 0;
+   .details-wrap h3,
+   .features-wrap h3 {
+       margin: 0 0 2rem 0;
    }
 }
 </style>
