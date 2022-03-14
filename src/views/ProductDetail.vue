@@ -1,49 +1,60 @@
 <template>
     <Header />
-    <div class="product-details">
+    <section class="product-details">
         <a href="" class="back">Go back</a>
-        <div class="hero-wrap flex">
-             <img src="" alt="product" class="hero-product"/>
+        <div class="flex-tab">
+            <div class="hero-wrap flex">
+                <img src="" alt="product" class="hero-product"/>
+            </div>
+            <div> 
+                 <p class="new">NEW PRODUCT</p>
+                <h3>XX99 MARK II HEADPHONES</h3>
+                <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
+                redefines your premium headphone experience by reproducing the balanced depth and
+                precision of studio-quality sound.</p>
+                <p class="price">$ 2,999</p>
+
+                <div class="flex">
+                    <AddToCartButton/>
+                    <OrangeButton btnAction="ADD TO CART"/>
+                </div> 
+            </div>  
+        </div>
+        
+        <div class="features-wrap"> 
+            <div class="product-features">
+                <h3>FEATURES</h3>
+                <p class="about-product">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
+                <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>  
+            </div>
+            <div class="flex-tab-details"> 
+                <h3>IN THE BOX</h3>
+                <ul class="box-details">
+                    <li>
+                        <span class="num">1x</span>
+                        <span class="details">Headphone Unit</span></li>
+                    <li>
+                        <span class="num">2x</span>
+                        <span class="details">Replacement Earcups</span></li>
+                    <li>
+                        <span class="num">1x</span>
+                        <span class="details">User Manual</span></li>
+                    <li>
+                        <span class="num">1x</span>
+                        <span class="details">3.5mm 5m Audio Cable</span></li>
+                    <li>
+                        <span class="num">1x</span>
+                        <span class="details">Travel Bag</span></li>
+                </ul>
+            </div>
         </div>
        
-        <p class="new">NEW PRODUCT</p>
-        <h3>XX99 MARK II HEADPHONES</h3>
-        <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
-        redefines your premium headphone experience by reproducing the balanced depth and
-        precision of studio-quality sound.</p>
-        <p class="price">$ 2,999</p>
-        <div class="flex">
-            <AddToCartButton/>
-            <OrangeButton btnAction="ADD TO CART"/>
-        </div> 
-        <h3>FEATURES</h3>
-        <p class="about-product">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
-        <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>
-        <h3>IN THE BOX</h3>
-        <ul class="box-details">
-            <li>
-                <span class="num">1x</span>
-                <span class="details">Headphone Unit</span></li>
-            <li>
-                <span class="num">2x</span>
-                <span class="details">Replacement Earcups</span></li>
-            <li>
-                <span class="num">1x</span>
-                <span class="details">User Manual</span></li>
-            <li>
-                <span class="num">1x</span>
-                <span class="details">3.5mm 5m Audio Cable</span></li>
-               <li>
-                <span class="num">1x</span>
-                <span class="details">Travel Bag</span></li>
-        </ul>
-
         <div class="product-images">
             <img src="./../assets/product2-headphones/mobile/image-gallery-1.jpg" alt="" />
             <img src="./../assets/product2-headphones/mobile/image-gallery-2.jpg" alt="" />
             <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
         </div>
-    </div>
+    </section>
     <YouMayAlsoLike />
     <SimilarProducts />
     <About />
@@ -107,7 +118,8 @@ export default {
         font-size: .9rem;
     }
 
-    h3 { font-size: 1.7rem;
+    h3 { 
+        font-size: 1.7rem;
         margin: 1.5rem 0;
         width: 320px;
     }
@@ -159,4 +171,58 @@ export default {
         margin-bottom: 1rem;
     }
 
+@media screen and (min-width: 520px) {
+   .flex-tab-details {
+       display: grid;
+       grid-template-columns: 35% 60%;
+       justify-content: space-between;
+   }
+
+   .flex-tab-details h3 {
+       margin: initial;
+   }
+
+   .product-features {
+       padding: 4rem 0;
+   }
+}
+
+@media screen and (min-width: 630px) {
+   .flex-tab {
+       display: grid;
+       grid-template-columns: 35% 60%;
+       justify-content: space-between;
+   }
+}
+
+@media screen and (min-width: 700px) {
+    .product-details {
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+   .features-wrap {
+       display: grid;
+       grid-template-columns: 60% 40%;
+       gap: 110px;
+       padding: 4rem 0;
+   }
+
+   .product-details {
+       padding: 0 10rem;
+   }
+
+   .product-features {
+       padding: initial;
+   }
+
+   .flex-tab-details {
+       display: initial;
+   }
+
+   h3 {
+       margin: 0 1rem 0 0;
+   }
+}
 </style>
