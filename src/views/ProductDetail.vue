@@ -3,9 +3,9 @@
     <section class="product-details">
         <a href="" class="back">Go back</a>
         <div class="flex-tab">
-            <div class="hero-wrap flex">
-                <img src="" alt="product" class="hero-product"/>
-            </div>
+            <!--<div class="hero-wrap flex">-->
+            <img src="" alt="product" class="hero-product"/>
+            <!--</div>-->
             <div> 
                  <p class="new">NEW PRODUCT</p>
                 <h3>XX99 MARK II HEADPHONES</h3>
@@ -24,8 +24,16 @@
         <div class="features-wrap">  
             <div class="product-features">
                 <h3>FEATURES</h3>
-                <p class="about-product">Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you’re taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
-                <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.</p>  
+                <p class="about-product">Featuring a genuine leather head strap and premium earcups, these 
+                headphones deliver superior comfort for those who like to enjoy endless listening. It 
+                includes intuitive controls designed for any situation. Whether you're taking a business call 
+                or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
+                
+                <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow 
+                you to experience your audio world on your terms. It lets you enjoy your audio in peace, but 
+                quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant 
+                connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, 
+                cutting-edge technology, and a modern design aesthetic.</p>  
             </div>
             <div class="details-wrap"> 
                 <h3>IN THE BOX</h3>
@@ -50,8 +58,10 @@
         </div>
        
         <div class="product-images">
-            <img src="./../assets/product2-headphones/mobile/image-gallery-1.jpg" alt="" />
-            <img src="./../assets/product2-headphones/mobile/image-gallery-2.jpg" alt="" />
+            <div>
+                <img src="./../assets/product2-headphones/mobile/image-gallery-1.jpg" alt="" />
+                <img src="./../assets/product2-headphones/mobile/image-gallery-2.jpg" alt="" />
+            </div>
             <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
         </div>
     </section>
@@ -96,14 +106,14 @@ export default {
         margin: 1rem 0;
     }
 
-    .hero-wrap {
+    /*.hero-wrap {
         background-color: #f1f1f1; 
         justify-content: center;
         width: 100%;
         margin: 0 auto 1.5rem;
         padding: 3rem 0;
         border-radius: 7px;
-    }
+    }*/
 
     .hero-product {
         display: block;
@@ -198,6 +208,10 @@ export default {
 @media screen and (min-width: 700px) {
     .product-details {
         padding: 0 2rem;
+    }
+
+    .product-images {
+        display: flex;
     }
 }
 
