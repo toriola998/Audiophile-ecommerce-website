@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import data from './../../data.json'
 import Header from './../components/Header.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
@@ -90,8 +91,19 @@ export default {
         About,
         Footer
     },
-    created: {
-        
+    data() {
+        return {
+            products: []
+        }
+    },
+    methods: {
+         getProducts() {
+             this.products = data
+             console.log(this.products)
+         }     
+    },
+    created() {
+        this.getProducts()
     }
 }
 </script>
