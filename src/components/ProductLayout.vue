@@ -1,8 +1,12 @@
 <template>
-     <div class="wrap1">
-        <div class="img-wrap flex">
-            <img :src="productImage" alt="headphone" class="headphone"/>
-        </div>      
+    <div class="wrap1">
+        <img :src="require(`@/assets/${imageName}/mobile/image-category-page-preview.jpg`)"
+            alt="headphone" 
+            class="headphone mobile"/>
+         <img :src="require(`@/assets/${imageName}/tablet/image-category-page-preview.jpg`)"
+            alt="headphone" 
+            class="headphone tablet"/>
+             
         
         <p class="new">NEW PRODUCT</p>
         <h3>{{ productName}}</h3>
@@ -18,29 +22,21 @@ export default {
     components: {
         OrangeButton
     },
-    props: ['productImage', 'productName', 'aboutProduct']
+    props: ['imageName', 'productName', 'aboutProduct',]
 }
 </script>
 
 <style scoped>
-     .wrap1 {
+    .wrap1 {
         padding: 0 1.5rem 6rem;
-    }
-
-    .img-wrap {
-        background-color: #f1f1f1; 
-        justify-content: center;
-        width: 95%;
-        margin: 0 auto 1.5rem;
-        padding: 3rem 0;
-        border-radius: 7px;
     }
 
     .headphone {
         display: block;
         margin: auto;
-        width: 75%;
+        width: 100%;
         height: auto;
+        border-radius: 7px;
     }
  
     p, h3 {
@@ -65,4 +61,21 @@ export default {
         line-height: 1.6;
         margin-bottom: 2rem;
     }
+
+    .tablet,
+    .desktop {
+        display: none;
+    }
+
+@media screen and (min-width: 700px) {
+    .tablet {
+        display: block;
+    }
+
+    .mobile,
+    .desktop {
+        display: none;
+    }
+
+}
 </style>

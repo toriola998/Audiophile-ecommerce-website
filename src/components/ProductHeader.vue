@@ -21,4 +21,10 @@ export default {
         font-size: 1.4rem;
         margin-bottom: 3rem;
     }
+
+    @media screen and (min-width: 520px) {
+       h2 {
+           height: 10rem;
+       }
+    }
 </style>
