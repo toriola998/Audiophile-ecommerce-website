@@ -1,17 +1,24 @@
 <template>
     <div class="wrap1">
+        <!--SHOW IMAGE ONLY ON MOBILE DEVICES-->
         <img :src="require(`@/assets/${imageName}/mobile/image-category-page-preview.jpg`)"
             alt="headphone" 
             class="headphone mobile"/>
-         <img :src="require(`@/assets/${imageName}/tablet/image-category-page-preview.jpg`)"
+        <!--SHOW IMAGE ONLY ON TABLET DEVICES-->
+        <img :src="require(`@/assets/${imageName}/tablet/image-category-page-preview.jpg`)"
             alt="headphone" 
             class="headphone tablet"/>
-             
-        
-        <p class="new">NEW PRODUCT</p>
-        <h3>{{ productName}}</h3>
-        <p>{{aboutProduct}}</p>
-        <OrangeButton btnAction="SEE PRODUCT"/>
+        <!--SHOW IMAGE ONLY ON DESKTOP DEVICES-->
+        <img :src="require(`@/assets/${imageName}/desktop/image-category-page-preview.jpg`)"
+            alt="headphone" 
+            class="headphone desktop"/>
+
+        <div class="about-products">
+            <p class="new">NEW PRODUCT</p>
+            <h3>{{ productName}}</h3>
+            <p>{{aboutProduct}}</p>
+            <OrangeButton btnAction="SEE PRODUCT" class="button"/>
+        </div>
     </div>
 </template>
 
@@ -66,6 +73,11 @@ export default {
     .desktop {
         display: none;
     }
+@media screen and (min-width: 520px) {
+    .headphone {
+        width: 70%;
+    }
+}
 
 @media screen and (min-width: 700px) {
     .tablet {
@@ -77,5 +89,50 @@ export default {
         display: none;
     }
 
+    .headphone {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .desktop {
+        display: block;
+    }
+
+    .mobile,
+    .tablet {
+        display: none;
+    }
+
+    .wrap1 {
+        display: flex;
+        align-items: center;
+        padding: 0 6rem 6rem;
+    }
+
+    .headphone {
+        width: 45%;
+        margin: 0 4rem 0 0;
+    }
+
+    p, h3 {
+        text-align: initial;
+    }
+
+    h3, .button {
+        margin: initial;
+    }
+
+    .about-products {
+        width: 45%;
+    }
+
+    .new {
+        margin-bottom: .5rem;
+    }
+
+    h3 {
+      margin-bottom: 1rem;  
+    }
 }
 </style>
