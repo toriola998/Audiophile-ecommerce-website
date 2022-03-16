@@ -11,7 +11,8 @@
                     productName="XX99 MARK I HEADPHONES"
                     aboutProduct="As the gold standard for headphones, the classic XX99 Mark I offers 
                     detailed and accurate audio reproduction for audiophiles,
-                    mixing engineers, and music aficionados alike in studios and on the go." />
+                    mixing engineers, and music aficionados alike in studios and on the go."
+                    class="reverse-flex" />
                     
     <ProductLayout imageName="product-headphones"
                     productName="XX59 HEADPHONES"
@@ -47,5 +48,7 @@ export default {
 </script>
 
 <style scoped >
-   
+   .reverse-flex {
+       flex-direction: row-reverse;
+   }
 </style>

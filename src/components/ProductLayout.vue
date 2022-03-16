@@ -132,7 +132,13 @@ export default {
     }
 
     h3 {
-      margin-bottom: 1rem;  
+        margin-bottom: 1rem;  
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .wrap1 {
+        padding: 0 10rem 6rem;
     }
 }
 </style>
