@@ -36,6 +36,10 @@ export default {
 </script>
 
 <style scoped>
+    .wrap {
+        padding: 0 1.5rem;
+    }
+    
     .product {
         display: block;
         margin: 0 auto;
@@ -45,7 +49,7 @@ export default {
 
     .box {
         background-color: #F1F1F1;
-        width: 90vw;
+        width: 100%;
         margin: 5rem auto 0;
         border-radius: 5px;
         padding-bottom: 1rem;
@@ -68,18 +72,27 @@ export default {
         cursor: pointer;
     }
 
-    @media screen and (min-width: 610px) {
+    @media screen and (min-width: 700px) {
         .box {
-            width: 28vw;
+            width: 30%;
         }
 
         .wrap {
-            display: grid;
-            grid-template-columns: auto auto auto;
+            display: flex;
             padding: 0 1.5rem;
-            gap: 15px;
-            
-            
+            gap: 15px; 
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        .wrap {
+            padding: 0 6rem;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .wrap {
+            padding: 0 10rem;
         }
     }
 </style>
