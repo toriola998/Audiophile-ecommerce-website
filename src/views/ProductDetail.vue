@@ -6,9 +6,9 @@
             <!--<div class="hero-wrap flex">-->
             <img src="" alt="product" class="hero-product"/>
             <!--</div>-->
-            <div> 
+            <div v-for="item in products" :key="item.id"> 
                  <p class="new">NEW PRODUCT</p>
-                <h3>XX99 MARK II HEADPHONES</h3>
+                <h3>{{ item.name }}</h3>
                 <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
                 redefines your premium headphone experience by reproducing the balanced depth and
                 precision of studio-quality sound.</p>
@@ -93,7 +93,8 @@ export default {
     },
     data() {
         return {
-            products: []
+            products: [],
+            productId: this.$route.params.productId
         }
     },
     methods: {
@@ -101,6 +102,13 @@ export default {
              this.products = data
              console.log(this.products)
          }     
+    },
+    computed: {
+        productDetails() {
+            return this.products.find( (item) => {
+                item.id === this.productId
+            })
+        }
     },
     created() {
         this.getProducts()
