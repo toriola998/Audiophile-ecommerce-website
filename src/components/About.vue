@@ -1,7 +1,8 @@
 <template>
-    <div class="wrapper">
-        <img src="./../assets/shared/mobile/image-best-gear.jpg" class="mobile-about" alt=""/>
-        <img src="./../assets/shared/tablet/image-best-gear.jpg" class="tablet-about" alt=""/>
+    <div class="best-audio-gear">
+        <img src="./../assets/shared/mobile/image-best-gear.jpg" class="about-img mobile" alt=""/>
+        <img src="./../assets/shared/tablet/image-best-gear.jpg" class="about-img tablet" alt=""/>
+        <img src="./../assets/shared/desktop/image-best-gear.jpg" class="about-img desktop" alt=""/>
         <div class="about-content">
             <h2>BRINGING YOU THE <span>BEST</span> AUDIO GEAR</h2>
             <p>Located at the heart of New York City, Audiophile is the premier store for high end headphones,
@@ -20,20 +21,16 @@ export default {
 </script>
 
 <style scoped>
-    .wrapper {
+    .best-audio-gear {
         padding: 6rem 1.5rem;
     }
 
-    img {
-        width: 90vw;
+    .about-img {
+        width: 100%;
         height: auto;
-        display: block;
+        /*display: block;*/
         margin: auto;
         border-radius: 7px ;
-    }
-
-    .tablet-about {
-        display: none;
     }
 
     h2, p {
@@ -58,15 +55,36 @@ export default {
     }
 
     @media screen and (min-width: 520px) {
-        .tablet-about {
-            display: block;
-        }
-
-        .mobile-about {
-            display: none;
-        }
         .about-content {
             padding: 0 3rem;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        .best-audio-gear {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            padding: 6rem;
+        }
+
+        h2, p {
+            text-align: initial;
+        }
+
+        .about-img {
+            width: 45%;
+            margin-left: 4rem;
+        }
+
+        .about-content {
+            padding: initial;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .best-audio-gear {
+            padding: 6rem 10rem;
         }
     }
 </style>

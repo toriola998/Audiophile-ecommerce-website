@@ -49,4 +49,31 @@ export default {
     ul {
         list-style-type: none;
     }
+
+    .tablet,
+    .desktop {
+        display: none;
+    }
+
+    @media screen and (min-width: 700px) {
+        .mobile,
+        .desktop {
+            display: none;
+        }
+
+        .tablet {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        .mobile,
+        .tablet {
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+        }
+    }
 </style>
