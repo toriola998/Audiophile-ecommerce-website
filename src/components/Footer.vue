@@ -1,30 +1,35 @@
 <template>
     <div class="footer">
-        <div class="line"></div>
-        <img src="./../assets/icons/logo.svg" alt="logo" class="logo"/>
+        <div>
+            <div class="line"></div>
+            <img src="./../assets/icons/logo.svg" alt="logo" class="logo"/>
 
-        <ul class="footer-links">
-            <li>
-                <a>HOME</a></li>
-            <li>
-                <a>HEADPHONES</a></li>
-            <li>
-                <a>SPEAKERS</a></li>
-            <li>
-                <a>EARPHONES</a></li>
-        </ul>
-        <p class="note">Audiophile is an all in one stop to fulfill your audio needs. We're a
-        small team of music lovers and sound specialists who are devoted to helping 
-        you get the most out of personal audio. Come and visit our demo facility 
-        - we're open 7 days a week.</p>
-        <div class="flex footer-flex">
-            <p class="right">Copyright 2021. All Rights Reserved</p>
-            <div class="flex social-media">
-                <img src="./../assets/shared/desktop/icon-facebook.svg" alt="facebook"/>
-                <img src="./../assets/shared/desktop/icon-twitter.svg" alt="twitter"/>
-                <img src="./../assets/shared/desktop/icon-instagram.svg" alt="instagram"/>
-            </div>
-        </div>  
+            <nav>
+                <ul class="footer-links">
+                    <li>
+                        <a>HOME</a></li>
+                    <li>
+                        <a>HEADPHONES</a></li>
+                    <li>
+                        <a>SPEAKERS</a></li>
+                    <li>
+                        <a>EARPHONES</a></li>
+                </ul>
+            </nav>
+           
+            <p class="note">Audiophile is an all in one stop to fulfill your audio needs. We're a
+            small team of music lovers and sound specialists who are devoted to helping 
+            you get the most out of personal audio. Come and visit our demo facility 
+            - we're open 7 days a week.</p>
+            <div class="flex footer-flex">
+                <p class="right">Copyright 2021. All Rights Reserved</p>
+                <div class="flex social-media">
+                    <img src="./../assets/shared/desktop/icon-facebook.svg" alt="facebook"/>
+                    <img src="./../assets/shared/desktop/icon-twitter.svg" alt="twitter"/>
+                    <img src="./../assets/shared/desktop/icon-instagram.svg" alt="instagram"/>
+                </div>
+            </div>  
+        </div>
     </div>
 </template>
 
@@ -118,6 +123,18 @@ export default {
         .footer .logo {
             margin: 3rem auto 2rem;
             display: unset;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        .footer {
+            padding: 0 6rem 2rem;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .footer {
+            padding: 0 10rem 2rem;
         }
     }
 </style>
