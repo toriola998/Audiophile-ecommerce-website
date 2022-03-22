@@ -13,13 +13,13 @@
     </header>
     <main>
         <Products />
-        <section>
+        <section aria-labelledby="zx9-speaker">
             <div class="speaker1-wrap">
                 <img src="./../assets/home/mobile/image-speaker-zx9.png" 
                     alt="Image of the ZX9 speaker" 
                     class="speaker1"/>
                 <div>
-                    <h2>ZX9 <br>
+                    <h2 id="zx9-speaker">ZX9 <br>
                         SPEAKER</h2>
                     <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
                     to deliver truly remarkable sound.</p>
@@ -28,15 +28,16 @@
             </div>
         </section>
 
-        <section> 
+        <section aria-labelledby="zx7-speaker"> 
             <div class="speaker2-wrap flex">
                 <div>
-                    <h2>ZX7 SPEAKER</h2>
+                    <h2 id="zx7-speaker">ZX7 SPEAKER</h2>
                     <PlainButton link="" action="SEE PRODUCT"/>
                 </div>
             </div>
         </section>
-        <section>
+
+        <section aria-labelledby="yx1-earphones">
             <div class="image-flex">
                 <img src="./../assets/home/mobile/image-earphones-yx1.jpg"
                     srcset="./../assets/home/mobile/image-earphones-yx1.jpg 500w,
@@ -46,7 +47,7 @@
                     alt="Picture of the YX1 earphone"/>
                 <div class="earphones-wrap flex">
                     <div>
-                        <h2>YX1 EARPHONES</h2>
+                        <h2 id="yx1-earphones">YX1 EARPHONES</h2>
                         <PlainButton link="" action="SEE PRODUCT"/>
                     </div>
                 </div> 
