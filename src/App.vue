@@ -75,5 +75,9 @@ export default {
         .desktop {
             display: block;
         }
+
+        .reverse-flex {
+            flex-direction: row-reverse;
+        }
     }
 </style>

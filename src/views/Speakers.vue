@@ -4,17 +4,18 @@
         <ProductHeader product="SPEAKERS" />
     </header>
     <main>
-        <ProductLayout  productImage="./../assets/headphones/headphone1.svg" 
-                    productName="ZX9 SPEAKERS"
-                    aboutProduct="Upgrade your sound system with the all new ZX9 active speaker. It’s a 
-                    bookshelf speaker system that offers truly wireless 
-                    -- creating new possibilities for more pleasing and practical audio setups." />
+        <ProductLayout imageFileName="product-speaker" 
+                        productName="ZX9 SPEAKERS"
+                        aboutProduct="Upgrade your sound system with the all new ZX9 active speaker. It’s a 
+                        bookshelf speaker system that offers truly wireless 
+                        -- creating new possibilities for more pleasing and practical audio setups." />
 
-        <ProductLayout  productImage="./../assets/headphones/headphone1.svg" 
+        <ProductLayout  imageFileName="product-zx9-speaker" 
                         productName="ZX7 SPEAKERS"
                         aboutProduct="Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf
                         speaker uses high-end audiophile components that represents the top of the line powered 
-                        speakers for home or studio use." />
+                        speakers for home or studio use."
+                        class="reverse-flex" />
                                  
         <Products />
         <About />

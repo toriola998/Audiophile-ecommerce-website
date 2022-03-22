@@ -4,7 +4,7 @@
         <ProductHeader product="EARPHONES" />
     </header>
     <main>
-        <ProductLayout  productImage="./../assets/headphones/headphone1.svg" 
+        <ProductLayout  imageFileName="product-earphones" 
                     productName="YX1 WIRELESS EARPHONES"
                     aboutProduct="Tailor your listening experience with bespoke dynamic drivers 
                     from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound

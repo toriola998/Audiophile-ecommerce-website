@@ -1,15 +1,15 @@
 <template>
     <div class="wrap1">
         <!--SHOW IMAGE ONLY ON MOBILE DEVICES-->
-        <img :src="require(`@/assets/${imageName}/mobile/image-category-page-preview.jpg`)"
+        <img :src="require(`@/assets/${imageFileName}/mobile/image-category-page-preview.jpg`)"
             alt="headphone" 
             class="headphone mobile"/>
         <!--SHOW IMAGE ONLY ON TABLET DEVICES-->
-        <img :src="require(`@/assets/${imageName}/tablet/image-category-page-preview.jpg`)"
+        <img :src="require(`@/assets/${imageFileName}/tablet/image-category-page-preview.jpg`)"
             alt="headphone" 
             class="headphone tablet"/>
         <!--SHOW IMAGE ONLY ON DESKTOP DEVICES-->
-        <img :src="require(`@/assets/${imageName}/desktop/image-category-page-preview.jpg`)"
+        <img :src="require(`@/assets/${imageFileName}/desktop/image-category-page-preview.jpg`)"
             alt="headphone" 
             class="headphone desktop"/>
 
@@ -29,7 +29,7 @@ export default {
     components: {
         OrangeButton
     },
-    props: ['imageName', 'productName', 'aboutProduct',]
+    props: ['imageFileName', 'productName', 'aboutProduct',]
 }
 </script>
 
