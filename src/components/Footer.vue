@@ -3,7 +3,7 @@
         <div class="footer">
             <div>
                 <div class="line"></div>
-                <img src="./../assets/icons/logo.svg" alt="logo" class="logo"/>
+                <img src="./../assets/icons/logo.svg" alt="logo" class="logo" />
 
                 <nav>
                     <ul class="footer-links">
@@ -128,13 +128,24 @@ export default {
         }
     }
 
+    @media screen and (min-width: 700px) {
+        .line {
+            margin: unset;
+        }
+    }
+
     @media screen and (min-width: 1000px) {
         .footer {
             padding: 0 6rem 2rem;
         }
 
         .note {
-            width: 6  00px;
+            width: 600px;
+        }
+
+        .social-media {
+            position: relative;
+            bottom: 4rem;
         }
     }
 
