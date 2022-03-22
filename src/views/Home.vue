@@ -1,40 +1,44 @@
 <template>
-    <Header/>
-    <div class="head flex">
-        <div>
-            <p class="new">NEW PRODUCT</p>
-            <h1>XX99 MARK II HEADPHONES</h1>
-            <p class="note">Experience natural, life like audio and exceptional build 
-            quality made for the passionate music enthusiast.</p>
-            <OrangeButton link="" btnAction="SEE PRODUCT"/>
-        </div> 
-    </div>
-    <Products />
-    <div class="speaker1-wrap">
-        <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="speaker" class="speaker1"/>
-        <h2>ZX9 <br>
-            SPEAKER</h2>
-        <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
-        to deliver truly remarkable sound.</p>
-        <a class="speaker1-cta link">SEE PRODUCT</a>
-    </div>
-    
-    <div class="speaker2-wrap flex">
-        <div>
-            <h2>ZX7 SPEAKER</h2>
-            <PlainButton link="" action="SEE PRODUCT"/>
-        </div>
-    </div>
-    <div class="image-flex">
-         <img src="./../assets/home/mobile/image-earphones-yx1.jpg" class="earphone" alt="earphones"/>
-        <div class="earphones-wrap flex">
+    <header>
+        <Header/>
+        <div class="head flex">
             <div>
-                <h2>YX1 EARPHONES</h2>
+                <p class="new">NEW PRODUCT</p>
+                <h1>XX99 MARK II HEADPHONES</h1>
+                <p class="note">Experience natural, life like audio and exceptional build 
+                quality made for the passionate music enthusiast.</p>
+                <OrangeButton link="" btnAction="SEE PRODUCT"/>
+            </div> 
+        </div>
+    </header>
+    <main>
+         <Products />
+        <div class="speaker1-wrap">
+            <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="speaker" class="speaker1"/>
+            <h2>ZX9 <br>
+                SPEAKER</h2>
+            <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
+            to deliver truly remarkable sound.</p>
+            <a class="speaker1-cta link">SEE PRODUCT</a>
+        </div>
+    
+        <div class="speaker2-wrap flex">
+            <div>
+                <h2>ZX7 SPEAKER</h2>
                 <PlainButton link="" action="SEE PRODUCT"/>
             </div>
         </div>
-    </div>
-    <About />
+        <div class="image-flex">
+            <img src="./../assets/home/mobile/image-earphones-yx1.jpg" class="earphone" alt="earphones"/>
+            <div class="earphones-wrap flex">
+                <div>
+                    <h2>YX1 EARPHONES</h2>
+                    <PlainButton link="" action="SEE PRODUCT"/>
+                </div>
+            </div>
+        </div>
+        <About />
+    </main>
     <Footer />
 </template>
 

@@ -1,73 +1,77 @@
 <template>
-    <Header />
-    <section class="product-details">
-        <a href="" class="back">Go back</a>
-        <div class="flex-tab">
-            <!--<div class="hero-wrap flex">-->
-            <img src="" alt="product" class="hero-product"/>
-            <!--</div>-->
-            <div v-for="item in products" :key="item.id"> 
-                 <p class="new">NEW PRODUCT</p>
-                <h3>{{ item.name }}</h3>
-                <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
-                redefines your premium headphone experience by reproducing the balanced depth and
-                precision of studio-quality sound.</p>
-                <p class="price">$ 2,999</p>
+    <header>
+        <Header />
+        <section class="product-details">
+            <a href="" class="back">Go back</a>
+            <div class="flex-tab">
+                <!--<div class="hero-wrap flex">-->
+                <img src="" alt="product" class="hero-product"/>
+                <!--</div>-->
+                <div v-for="item in products" :key="item.id"> 
+                    <p class="new">NEW PRODUCT</p>
+                    <h3>{{ item.name }}</h3>
+                    <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
+                    redefines your premium headphone experience by reproducing the balanced depth and
+                    precision of studio-quality sound.</p>
+                    <p class="price">$ 2,999</p>
 
-                <div class="flex">
-                    <AddToCartButton/>
-                    <OrangeButton btnAction="ADD TO CART"/>
-                </div> 
-            </div>  
-        </div>
+                    <div class="flex">
+                        <AddToCartButton/>
+                        <OrangeButton btnAction="ADD TO CART"/>
+                    </div> 
+                </div>  
+            </div>
+            
+            <div class="features-wrap">  
+                <div class="product-features">
+                    <h3>FEATURES</h3>
+                    <p class="about-product">Featuring a genuine leather head strap and premium earcups, these 
+                    headphones deliver superior comfort for those who like to enjoy endless listening. It 
+                    includes intuitive controls designed for any situation. Whether you're taking a business call 
+                    or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
+                    
+                    <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow 
+                    you to experience your audio world on your terms. It lets you enjoy your audio in peace, but 
+                    quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant 
+                    connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, 
+                    cutting-edge technology, and a modern design aesthetic.</p>  
+                </div>
+                <div class="details-wrap"> 
+                    <h3>IN THE BOX</h3>
+                    <ul class="box-details">
+                        <li>
+                            <span class="num">1x</span>
+                            <span class="details">Headphone Unit</span></li>
+                        <li>
+                            <span class="num">2x</span>
+                            <span class="details">Replacement Earcups</span></li>
+                        <li>
+                            <span class="num">1x</span>
+                            <span class="details">User Manual</span></li>
+                        <li>
+                            <span class="num">1x</span>
+                            <span class="details">3.5mm 5m Audio Cable</span></li>
+                        <li>
+                            <span class="num">1x</span>
+                            <span class="details">Travel Bag</span></li>
+                    </ul>
+                </div>
+            </div>
         
-        <div class="features-wrap">  
-            <div class="product-features">
-                <h3>FEATURES</h3>
-                <p class="about-product">Featuring a genuine leather head strap and premium earcups, these 
-                headphones deliver superior comfort for those who like to enjoy endless listening. It 
-                includes intuitive controls designed for any situation. Whether you're taking a business call 
-                or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
-                
-                <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow 
-                you to experience your audio world on your terms. It lets you enjoy your audio in peace, but 
-                quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant 
-                connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, 
-                cutting-edge technology, and a modern design aesthetic.</p>  
+            <div class="product-images">
+                <div>
+                    <img src="./../assets/product2-headphones/mobile/image-gallery-1.jpg" alt="" />
+                    <img src="./../assets/product2-headphones/mobile/image-gallery-2.jpg" alt="" />
+                </div>
+                <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
             </div>
-            <div class="details-wrap"> 
-                <h3>IN THE BOX</h3>
-                <ul class="box-details">
-                    <li>
-                        <span class="num">1x</span>
-                        <span class="details">Headphone Unit</span></li>
-                    <li>
-                        <span class="num">2x</span>
-                        <span class="details">Replacement Earcups</span></li>
-                    <li>
-                        <span class="num">1x</span>
-                        <span class="details">User Manual</span></li>
-                    <li>
-                        <span class="num">1x</span>
-                        <span class="details">3.5mm 5m Audio Cable</span></li>
-                    <li>
-                        <span class="num">1x</span>
-                        <span class="details">Travel Bag</span></li>
-                </ul>
-            </div>
-        </div>
-       
-        <div class="product-images">
-            <div>
-                <img src="./../assets/product2-headphones/mobile/image-gallery-1.jpg" alt="" />
-                <img src="./../assets/product2-headphones/mobile/image-gallery-2.jpg" alt="" />
-            </div>
-            <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
-        </div>
-    </section>
-    <YouMayAlsoLike />
-    <SimilarProducts />
-    <About />
+        </section>
+    </header>
+    <main>
+        <YouMayAlsoLike />
+        <SimilarProducts />
+        <About />
+    </main>
     <Footer />
 </template>
 
