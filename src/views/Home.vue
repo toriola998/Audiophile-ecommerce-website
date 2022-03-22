@@ -13,12 +13,14 @@
     </header>
     <main>
         <Products />
-        <section class="zx9-speaker">
+        <section>
             <div class="speaker1-wrap">
-                <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="Image of a black speaker" class="speaker1"/>
+                <img src="./../assets/home/mobile/image-speaker-zx9.png" 
+                    alt="Image of the ZX9 speaker" 
+                    class="speaker1"/>
                 <div>
                     <h2>ZX9 <br>
-                    SPEAKER</h2>
+                        SPEAKER</h2>
                     <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
                     to deliver truly remarkable sound.</p>
                     <a class="speaker1-cta link">SEE PRODUCT</a>
@@ -26,26 +28,28 @@
             </div>
         </section>
 
-        <section class="zx7-yx1-speaker"> 
+        <section> 
             <div class="speaker2-wrap flex">
                 <div>
                     <h2>ZX7 SPEAKER</h2>
                     <PlainButton link="" action="SEE PRODUCT"/>
                 </div>
             </div>
+        </section>
+        <section>
             <div class="image-flex">
                 <img src="./../assets/home/mobile/image-earphones-yx1.jpg"
                     srcset="./../assets/home/mobile/image-earphones-yx1.jpg 500w,
                             ./../assets/home/tablet/image-earphones-yx1.jpg  1000w,
                             ./../assets/home/desktop/image-earphones-yx1.jpg  1500vw" 
                     class="earphone" 
-                    alt="earphones"/>
+                    alt="Picture of the YX1 earphone"/>
                 <div class="earphones-wrap flex">
                     <div>
                         <h2>YX1 EARPHONES</h2>
                         <PlainButton link="" action="SEE PRODUCT"/>
                     </div>
-                </div>
+                </div> 
             </div>
         </section>
         <About />
@@ -283,7 +287,7 @@ export default {
     .head {
         padding: 10rem;
     }
-    
+
     section {
         padding: 0 10rem;
     }
