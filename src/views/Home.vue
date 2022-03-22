@@ -117,8 +117,7 @@ export default {
         font-size: .9rem;
     }
 
-    .zx9-speaker,
-    .zx7-yx1-speaker{
+    section{
         padding: 0 1.5rem;
     }
 
@@ -223,9 +222,27 @@ export default {
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 760px) {
     .image-flex {
         display: flex;
+    }
+
+    .speaker1-wrap {
+        display: flex;
+        padding: 4rem 4rem 0;
+    }
+
+    .speaker1-wrap > div{
+        margin-left: 3rem;
+    }
+
+    .speaker1-cta {
+        margin: 1.3rem 0 0 0;
+    }
+
+    .speaker1-wrap h2,
+    .upgrade  {
+        text-align: initial;
     }
 }
 
@@ -241,17 +258,11 @@ export default {
     }
 
     p, 
-    h1,
-    .speaker1-wrap h2  {
+    h1 {
         text-align: initial;
     }
 
-    .hero-cta{
-        margin: initial;
-    }
-
     .speaker1-wrap {
-        display: flex;
         padding: 4rem 6rem 0;
     }
 
@@ -259,13 +270,22 @@ export default {
         margin-left: 5rem;
     }
 
-    .speaker1-cta {
-        margin: 1.3rem 0 0 0;
+    .hero-cta{
+        margin: initial;
     }
 
-    .zx9-speaker,
-    .zx7-yx1-speaker {
+    section {
         padding: 0 6rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .head {
+        padding: 10rem;
+    }
+    
+    section {
+        padding: 0 10rem;
     }
 }
 </style>
