@@ -3,11 +3,11 @@
         <Header />
         <section class="product-details">
             <a href="" class="back">Go back</a>
-            <div class="flex-tab">
+            <div class="flex-tab" v-for="item in products" :key="item.id">
                 <!--<div class="hero-wrap flex">-->
                 <img src="" alt="product" class="hero-product"/>
                 <!--</div>-->
-                <div v-for="item in products" :key="item.id"> 
+                <div> 
                     <p class="new">NEW PRODUCT</p>
                     <h3>{{ item.name }}</h3>
                     <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 

@@ -7,36 +7,47 @@
                 <h1>XX99 MARK II HEADPHONES</h1>
                 <p class="note">Experience natural, life like audio and exceptional build 
                 quality made for the passionate music enthusiast.</p>
-                <OrangeButton link="" btnAction="SEE PRODUCT"/>
-            </div> 
+                <OrangeButton link="" btnAction="SEE PRODUCT" class="hero-cta"/>
+            </div>
         </div>
     </header>
     <main>
-         <Products />
-        <div class="speaker1-wrap">
-            <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="speaker" class="speaker1"/>
-            <h2>ZX9 <br>
-                SPEAKER</h2>
-            <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
-            to deliver truly remarkable sound.</p>
-            <a class="speaker1-cta link">SEE PRODUCT</a>
-        </div>
-    
-        <div class="speaker2-wrap flex">
-            <div>
-                <h2>ZX7 SPEAKER</h2>
-                <PlainButton link="" action="SEE PRODUCT"/>
-            </div>
-        </div>
-        <div class="image-flex">
-            <img src="./../assets/home/mobile/image-earphones-yx1.jpg" class="earphone" alt="earphones"/>
-            <div class="earphones-wrap flex">
+        <Products />
+        <section class="zx9-speaker">
+            <div class="speaker1-wrap">
+                <img src="./../assets/home/mobile/image-speaker-zx9.png" alt="Image of a black speaker" class="speaker1"/>
                 <div>
-                    <h2>YX1 EARPHONES</h2>
+                    <h2>ZX9 <br>
+                    SPEAKER</h2>
+                    <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
+                    to deliver truly remarkable sound.</p>
+                    <a class="speaker1-cta link">SEE PRODUCT</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="zx7-yx1-speaker"> 
+            <div class="speaker2-wrap flex">
+                <div>
+                    <h2>ZX7 SPEAKER</h2>
                     <PlainButton link="" action="SEE PRODUCT"/>
                 </div>
             </div>
-        </div>
+            <div class="image-flex">
+                <img src="./../assets/home/mobile/image-earphones-yx1.jpg"
+                    srcset="./../assets/home/mobile/image-earphones-yx1.jpg 500w,
+                            ./../assets/home/tablet/image-earphones-yx1.jpg  1000w,
+                            ./../assets/home/desktop/image-earphones-yx1.jpg  1500vw" 
+                    class="earphone" 
+                    alt="earphones"/>
+                <div class="earphones-wrap flex">
+                    <div>
+                        <h2>YX1 EARPHONES</h2>
+                        <PlainButton link="" action="SEE PRODUCT"/>
+                    </div>
+                </div>
+            </div>
+        </section>
         <About />
     </main>
     <Footer />
@@ -106,11 +117,16 @@ export default {
         font-size: .9rem;
     }
 
+    .zx9-speaker,
+    .zx7-yx1-speaker{
+        padding: 0 1.5rem;
+    }
+
     .speaker1-wrap {
         background-image: url("./../assets/home/desktop/pattern-circles.svg");
         background-color: #D87D4A;
         height: auto;
-        width: 90vw;
+        width: 100%;
         margin: 6rem auto 2rem;
         border-radius: 5px;
         padding: 4rem 1.5rem;
@@ -155,7 +171,7 @@ export default {
     .speaker2-wrap {
         background-image: url("./../assets/home/mobile/image-speaker-zx7.jpg");
         height: 250px;
-        width: 90vw;
+        width: 100%;
         border-radius: 7px;
         margin: auto;
     } 
@@ -170,7 +186,7 @@ export default {
     
     .earphones-wrap {
         background-color: #F1F1F1;
-        width: 90vw;
+        width: 100%;
         border-radius: 7px;
         margin: auto;
         padding: 2rem;
@@ -210,6 +226,46 @@ export default {
 @media screen and (min-width: 700px) {
     .image-flex {
         display: flex;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .head {
+      background-image: url("./../assets/home/desktop/image-hero.jpg"); 
+      justify-content: initial;
+      padding: 4rem;
+    }
+
+    .head > div {
+        width: 45%;
+    }
+
+    p, 
+    h1,
+    .speaker1-wrap h2  {
+        text-align: initial;
+    }
+
+    .hero-cta{
+        margin: initial;
+    }
+
+    .speaker1-wrap {
+        display: flex;
+        padding: 4rem 6rem 0;
+    }
+
+    .speaker1-wrap > div{
+        margin-left: 5rem;
+    }
+
+    .speaker1-cta {
+        margin: 1.3rem 0 0 0;
+    }
+
+    .zx9-speaker,
+    .zx7-yx1-speaker {
+        padding: 0 6rem;
     }
 }
 </style>

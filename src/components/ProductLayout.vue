@@ -4,7 +4,7 @@
         <img :src="require(`@/assets/${imageFileName}/mobile/image-category-page-preview.jpg`)"
             alt="headphone" 
             class="headphone mobile"/>
-        <!--SHOW IMAGE ONLY ON TABLET DEVICES-->
+        <!--SHOW IMAGE ONLY ON TABLET DEVICES--->
         <img :src="require(`@/assets/${imageFileName}/tablet/image-category-page-preview.jpg`)"
             alt="headphone" 
             class="headphone tablet"/>
