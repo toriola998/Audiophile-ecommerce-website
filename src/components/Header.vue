@@ -1,10 +1,21 @@
 <template>
     <div>
         <div class="flex">
-            <img src="./../assets/icons/hamburger.svg" alt="menu"/>
-            <img src="./../assets/icons/logo.svg" alt="logo"/>
-            <img src="./../assets/icons/cart.svg" alt="cart-icon"/>
+            <button>
+                <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
+            </button>
+            <router-link to="/">
+                <img src="./../assets/icons/logo.svg" alt="Audiophile - Home"/>
+            </router-link>
+            <button>
+                <img src="./../assets/icons/cart.svg" alt="Cart for products"/>
+            </button>
         </div> 
+
+        <nav>
+            <ul><li></li>
+            </ul>
+        </nav>
     </div> 
 </template>
 
@@ -21,5 +32,10 @@ export default {
         justify-content: space-between;
         height: 5rem;
         border-bottom: 1px solid #979797;
+    }
+
+    button {
+        background-color: transparent;
+        border: 0;
     }
 </style>

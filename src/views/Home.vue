@@ -12,7 +12,7 @@
         </div>
     </header>
     <main>
-        <Products />
+        <ProductsMenu />
         <section aria-labelledby="zx9-speaker">
             <div class="speaker1-wrap">
                 <img src="./../assets/home/mobile/image-speaker-zx9.png" 
@@ -64,7 +64,7 @@
 <script>
 import Header from './../components/Header.vue'
 import OrangeButton from './../components/OrangeButton.vue'
-import Products from './../components/Products.vue'
+import ProductsMenu from '../components/ProductsMenu.vue'
 import PlainButton from './../components/PlainButton.vue'
 import About from './../components/About.vue'
 import Footer from './../components/Footer.vue'
@@ -74,7 +74,7 @@ export default {
     components: { 
         Header,
         OrangeButton,
-        Products,
+        ProductsMenu,
         PlainButton,
         About,
         Footer

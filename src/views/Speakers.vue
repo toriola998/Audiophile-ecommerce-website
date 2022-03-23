@@ -17,7 +17,7 @@
                         speakers for home or studio use."
                         class="reverse-flex" />
                                  
-        <Products />
+        <ProductsMenu />
         <About />
     </main>
     <Footer />
@@ -28,7 +28,7 @@ import Header from '../components/Header.vue'
 import ProductHeader from '../components/ProductHeader.vue'
 //import OrangeButton from '../components/OrangeButton.vue'
 import ProductLayout from '../components/ProductLayout.vue'
-import Products from '../components/Products.vue'
+import ProductsMenu from '../components/ProductsMenu.vue'
 import About from '../components/About.vue'
 import Footer from '../components/Footer.vue'
 
@@ -39,7 +39,7 @@ export default {
         ProductHeader,
         //OrangeButton,
         ProductLayout,
-        Products,
+        ProductsMenu,
         About,
         Footer
     }

@@ -9,7 +9,7 @@
                     aboutProduct="Tailor your listening experience with bespoke dynamic drivers 
                     from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound
                     even in noisy environments with its active noise cancellation feature." />                             
-        <Products />
+        <ProductsMenu />
         <About />
     </main>
     <Footer />
@@ -20,7 +20,7 @@ import Header from '../components/Header.vue'
 import ProductHeader from '../components/ProductHeader.vue'
 //import OrangeButton from '../components/OrangeButton.vue'
 import ProductLayout from '../components/ProductLayout.vue'
-import Products from '../components/Products.vue'
+import ProductsMenu from '../components/ProductsMenu.vue'
 import About from '../components/About.vue'
 import Footer from '../components/Footer.vue'
 
@@ -31,7 +31,7 @@ export default {
         ProductHeader,
         //OrangeButton,
         ProductLayout,
-        Products,
+        ProductsMenu,
         About,
         Footer
     }
