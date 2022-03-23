@@ -3,18 +3,20 @@
         <div class="footer">
             <div>
                 <div class="line"></div>
-                <img src="./../assets/icons/logo.svg" alt="logo" class="logo" />
+                <router-link to="/">
+                    <img src="./../assets/icons/logo.svg" alt="Audiophile - Home" class="logo" />
+                </router-link>
 
                 <nav>
                     <ul class="footer-links">
                         <li>
-                            <a>HOME</a></li>
+                            <router-link to="/">HOME</router-link></li>
                         <li>
-                            <a>HEADPHONES</a></li>
+                            <router-link to="/headphones">HEADPHONES</router-link></li>
                         <li>
-                            <a>SPEAKERS</a></li>
+                            <router-link to="/speakers">SPEAKERS</router-link></li>
                         <li>
-                            <a>EARPHONES</a></li>
+                            <router-link to="/earphones">EARPHONES</router-link></li>
                     </ul>
                 </nav>
             
@@ -25,9 +27,9 @@
                 <div class="flex footer-flex">
                     <p class="right">Copyright 2021. All Rights Reserved</p>
                     <div class="flex social-media">
-                        <img src="./../assets/shared/desktop/icon-facebook.svg" alt="facebook"/>
-                        <img src="./../assets/shared/desktop/icon-twitter.svg" alt="twitter"/>
-                        <img src="./../assets/shared/desktop/icon-instagram.svg" alt="instagram"/>
+                        <img src="./../assets/shared/desktop/icon-facebook.svg" alt="facebook page"/>
+                        <img src="./../assets/shared/desktop/icon-twitter.svg" alt="twitter handle"/>
+                        <img src="./../assets/shared/desktop/icon-instagram.svg" alt="instagram page"/>
                     </div>
                 </div>  
             </div>
