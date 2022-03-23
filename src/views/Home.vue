@@ -235,9 +235,17 @@ export default {
         display: flex;
     }
 
+    .earphones-wrap {
+        margin: 1.8rem 0 1.8rem 1rem;
+    }
+
     .speaker1-wrap {
         display: flex;
         padding: 4rem 4rem 0;
+    }
+
+    .speaker2-wrap {
+        background-image: url("./../assets/home/tablet/image-speaker-zx7.jpg");
     }
 
     .speaker1-wrap > div{
@@ -263,6 +271,18 @@ export default {
 
     .head > div {
         width: 45%;
+    }
+
+    .speaker2-wrap {
+        background-image: url("./../assets/home/desktop/image-speaker-zx7.jpg");
+    }
+
+    .speaker2-wrap > div {
+        padding-left: 4rem;
+    }
+
+    .earphones-wrap {
+        padding-left: 4rem ;
     }
 
     p, 
