@@ -58,7 +58,7 @@
         </section>
         <About />
     </main>
-    <Footer />
+    <TheFooter />
 </template>
 
 <script>
@@ -67,7 +67,7 @@ import OrangeButton from './../components/OrangeButton.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import PlainButton from './../components/PlainButton.vue'
 import About from './../components/About.vue'
-import Footer from './../components/Footer.vue'
+import TheFooter from '../components/TheFooter.vue'
 
 export default {
     name: 'Home',
@@ -77,7 +77,7 @@ export default {
         ProductsMenu,
         PlainButton,
         About,
-        Footer
+        TheFooter
     }
 }
 </script>

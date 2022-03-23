@@ -20,7 +20,7 @@
         <ProductsMenu />
         <About />
     </main>
-    <Footer />
+    <TheFooter />
 </template>
 
 <script>
@@ -30,7 +30,7 @@ import ProductHeader from '../components/ProductHeader.vue'
 import ProductLayout from '../components/ProductLayout.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import About from '../components/About.vue'
-import Footer from '../components/Footer.vue'
+import TheFooter from '../components/TheFooter.vue'
 
 export default {
     name: 'Speakers',
@@ -41,7 +41,7 @@ export default {
         ProductLayout,
         ProductsMenu,
         About,
-        Footer
+        TheFooter
     }
 }
 </script>

@@ -72,7 +72,7 @@
         <SimilarProducts />
         <About />
     </main>
-    <Footer />
+    <TheFooter />
 </template>
 
 <script>
@@ -83,7 +83,7 @@ import OrangeButton from './../components/OrangeButton.vue'
 import YouMayAlsoLike from './../components/YouMayAlsoLike.vue'
 import SimilarProducts from './../components/SimilarProducts.vue'
 import About from './../components/About.vue'
-import Footer from './../components/Footer.vue'
+import TheFooter from '../components/TheFooter.vue'
 export default {
     name: 'ProductDetail',
     components: {
@@ -93,7 +93,7 @@ export default {
         YouMayAlsoLike,
         SimilarProducts,
         About,
-        Footer
+        TheFooter
     },
     data() {
         return {
