@@ -70,7 +70,7 @@
     <main>
         <YouMayAlsoLike />
         <SimilarProducts />
-        <About />
+        <AboutUs />
     </main>
     <TheFooter />
 </template>
@@ -82,7 +82,7 @@ import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import YouMayAlsoLike from './../components/YouMayAlsoLike.vue'
 import SimilarProducts from './../components/SimilarProducts.vue'
-import About from './../components/About.vue'
+import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 export default {
     name: 'ProductDetail',
@@ -92,7 +92,7 @@ export default {
         AddToCartButton,
         YouMayAlsoLike,
         SimilarProducts,
-        About,
+        AboutUs,
         TheFooter
     },
     data() {

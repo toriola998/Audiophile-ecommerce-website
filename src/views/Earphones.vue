@@ -10,7 +10,7 @@
                     from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound
                     even in noisy environments with its active noise cancellation feature." />                             
         <ProductsMenu />
-        <About />
+        <AboutUs />
     </main>
     <TheFooter />
 </template>
@@ -21,7 +21,7 @@ import ProductHeader from '../components/ProductHeader.vue'
 //import OrangeButton from '../components/OrangeButton.vue'
 import ProductLayout from '../components/ProductLayout.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
-import About from '../components/About.vue'
+import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 
 export default {
@@ -32,7 +32,7 @@ export default {
         //OrangeButton,
         ProductLayout,
         ProductsMenu,
-        About,
+        AboutUs,
         TheFooter
     }
 }

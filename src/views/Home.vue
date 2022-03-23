@@ -56,7 +56,7 @@
                 </div> 
             </div>
         </section>
-        <About />
+        <AboutUs />
     </main>
     <TheFooter />
 </template>
@@ -66,7 +66,7 @@ import NavBar from '../components/NavBar.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import PlainButton from './../components/PlainButton.vue'
-import About from './../components/About.vue'
+import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 
 export default {
@@ -76,7 +76,7 @@ export default {
         OrangeButton,
         ProductsMenu,
         PlainButton,
-        About,
+        AboutUs,
         TheFooter
     }
 }

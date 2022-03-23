@@ -23,7 +23,7 @@
                         tastes with the XX59 headphones. The stylish yet durable versatile wireless headset
                         is a brilliant companion at home or on the move." />              
         <ProductsMenu />
-        <About />
+        <AboutUs />
     </main>
     <TheFooter />
 </template>
@@ -34,7 +34,7 @@ import ProductHeader from './../components/ProductHeader.vue'
 //import OrangeButton from './../components/OrangeButton.vue'
 import ProductLayout from './../components/ProductLayout.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
-import About from './../components/About.vue'
+import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 
 export default {
@@ -45,7 +45,7 @@ export default {
        // OrangeButton,
         ProductLayout,
         ProductsMenu,
-        About,
+        AboutUs,
         TheFooter
     }
 }
