@@ -1,6 +1,6 @@
 <template>
     <header>
-        <Header/>
+        <NavBar />
         <div class="head flex">
             <div>
                 <p class="new">NEW PRODUCT</p>
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import Header from './../components/Header.vue'
+import NavBar from '../components/NavBar.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import PlainButton from './../components/PlainButton.vue'
@@ -72,7 +72,7 @@ import Footer from './../components/Footer.vue'
 export default {
     name: 'Home',
     components: { 
-        Header,
+        NavBar,
         OrangeButton,
         ProductsMenu,
         PlainButton,

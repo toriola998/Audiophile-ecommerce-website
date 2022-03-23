@@ -32,9 +32,9 @@
 </template>
 
 <script>
-import ProductsMenu from './../components/ProductsMenu.vue'
+import ProductsMenu from './ProductsMenu.vue'
 export default {
-    name: 'TheHeader',
+    name: 'NavBar',
     data () {
         return {
             showNav: false,

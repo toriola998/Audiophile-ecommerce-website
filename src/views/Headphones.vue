@@ -1,6 +1,6 @@
 <template>
     <header>
-        <Header />
+        <NavBar />
         <ProductHeader product="HEADPHONES" />
     </header>
     <main>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Header from './../components/Header.vue'
+import NavBar from '../components/NavBar.vue'
 import ProductHeader from './../components/ProductHeader.vue'
 //import OrangeButton from './../components/OrangeButton.vue'
 import ProductLayout from './../components/ProductLayout.vue'
@@ -40,7 +40,7 @@ import Footer from './../components/Footer.vue'
 export default {
     name: 'Headphones',
     components:  {
-        Header,
+        NavBar,
         ProductHeader,
        // OrangeButton,
         ProductLayout,

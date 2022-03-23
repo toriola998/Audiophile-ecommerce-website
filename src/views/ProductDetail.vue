@@ -1,6 +1,6 @@
 <template>
     <header>
-        <Header />
+        <NavBar />
         <section class="product-details">
             <a href="" class="back">Go back</a>
             <div class="flex-tab" v-for="item in products" :key="item.id">
@@ -77,7 +77,7 @@
 
 <script>
 import data from './../../data.json'
-import Header from './../components/Header.vue'
+import NavBar from '../components/NavBar.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import YouMayAlsoLike from './../components/YouMayAlsoLike.vue'
@@ -87,7 +87,7 @@ import Footer from './../components/Footer.vue'
 export default {
     name: 'ProductDetail',
     components: {
-        Header,
+        NavBar,
         OrangeButton,
         AddToCartButton,
         YouMayAlsoLike,
