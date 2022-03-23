@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="flex">
-            <button>
+            <button 
+                    @click="showNav = !showNav">
                 <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
             </button>
             <router-link to="/">
@@ -16,12 +17,24 @@
             <ul><li></li>
             </ul>
         </nav>
+
+        <ProductsMenu v-show="showNav"
+                    class="mobile-navigation"/>
     </div> 
 </template>
 
 <script>
+import ProductsMenu from './../components/ProductsMenu.vue'
 export default {
-
+    name: 'TheHeader',
+    data () {
+        return {
+            showNav: false,
+        }
+    },
+    components: {
+        ProductsMenu,
+    }
 }
 </script>
 
@@ -38,4 +51,25 @@ export default {
         background-color: transparent;
         border: 0;
     }
+
+    .mobile-navigation {
+        position: absolute;
+        z-index: 99999;
+        background-color: #fff;
+        right: 0;
+        left: 0;
+    }
+
+    /*.mobile-navigation::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0, 0.4)
+    }*/
+
+
 </style>
