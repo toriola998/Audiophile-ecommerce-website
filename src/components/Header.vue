@@ -1,25 +1,33 @@
 <template>
-    <div>
+    <div class="nav-wrap">
         <div class="flex">
-            <button 
-                    @click="showNav = !showNav">
-                <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
-            </button>
-            <router-link to="/">
-                <img src="./../assets/icons/logo.svg" alt="Audiophile - Home"/>
-            </router-link>
+            <div class="reverse-flex">
+                <nav aria-controls="menu">
+                    <button @click="showNav = !showNav"  class="menu">
+                        <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
+                    </button>
+                    <ProductsMenu v-show="showNav"
+                                id="menu"
+                                class="mobile-navigation"/> 
+                    <ul>
+                        <li>
+                            <router-link to="/">HOME</router-link></li>
+                        <li>
+                            <router-link to="/headphones">HEADPHONES</router-link></li>
+                        <li>
+                            <router-link to="/speakers">SPEAKERS</router-link></li>
+                        <li>
+                            <router-link to="/earphones">EARPHONES</router-link></li>
+                    </ul>
+                </nav>
+                <router-link to="/">
+                    <img src="./../assets/icons/logo.svg" alt="Audiophile - Home"/>
+                </router-link>
+            </div>
             <button>
                 <img src="./../assets/icons/cart.svg" alt="Cart for products"/>
             </button>
         </div> 
-
-        <nav>
-            <ul><li></li>
-            </ul>
-        </nav>
-
-        <ProductsMenu v-show="showNav"
-                    class="mobile-navigation"/>
     </div> 
 </template>
 
@@ -39,9 +47,11 @@ export default {
 </script>
 
 <style scoped>
-    .flex {
+    .nav-wrap{
         background-color: #191919;
         padding: 0 1.2rem;
+    }
+    .flex {
         justify-content: space-between;
         height: 5rem;
         border-bottom: 1px solid #979797;
@@ -58,6 +68,7 @@ export default {
         background-color: #fff;
         right: 0;
         left: 0;
+        top: 5rem;
     }
 
     /*.mobile-navigation::before {
@@ -71,5 +82,57 @@ export default {
         background-color: rgba(0,0,0, 0.4)
     }*/
 
+    ul {
+        display: none;
+    }
 
+    @media screen and (min-width: 700px) {
+        .menu {
+            display: none;
+        }
+
+        ul{
+            display: flex;
+        }
+
+        .reverse-flex {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        ul li {
+            padding: 0 .5rem;
+        }
+
+        ul li a {
+            color: #fff;
+            font-size: .9rem;
+        }
+
+        ul li a:hover {
+            color: #D87D4A;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+         .reverse-flex {
+            width: 70%;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+         .reverse-flex {
+            width: 70%;
+        }
+
+        .flex {
+            height: 7rem;
+        }
+
+        .nav-wrap {
+            padding: 0 10rem;
+        }
+    }
 </style>
