@@ -39,12 +39,15 @@
 
         <section aria-labelledby="yx1-earphones">
             <div class="image-flex">
-                <img src="./../assets/home/mobile/image-earphones-yx1.jpg"
-                    srcset="./../assets/home/mobile/image-earphones-yx1.jpg 500w,
-                            ./../assets/home/tablet/image-earphones-yx1.jpg  1000w,
-                            ./../assets/home/desktop/image-earphones-yx1.jpg  1500vw" 
-                    class="earphone" 
-                    alt="Picture of the YX1 earphone"/>
+                <picture>
+                    <source media="(min-width: 1000px)" 
+                            srcset="./../assets/home/desktop/image-earphones-yx1.jpg">
+                    <source media="(min-width: 700px)" 
+                            srcset="./../assets/home/tablet/image-earphones-yx1.jpg">
+                    <img src="./../assets/home/mobile/image-earphones-yx1.jpg" 
+                            alt="Picture of the YX1 earphone"
+                            class="earphone">
+                </picture>
                 <div class="earphones-wrap flex">
                     <div>
                         <h2 id="yx1-earphones">YX1 EARPHONES</h2>
@@ -197,7 +200,7 @@ export default {
     }
 
     .earphone {
-        width: 90vw;
+        width: 100%;
         border-radius: 7px;
         display: block;
         height: auto; 
