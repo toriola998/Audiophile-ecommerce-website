@@ -3,22 +3,24 @@
         <div class="footer">
             <div>
                 <div class="line"></div>
-                <router-link to="/">
-                    <img src="./../assets/icons/logo.svg" alt="Audiophile - Home" class="logo" />
-                </router-link>
+                <div class="flex-tab">
+                    <router-link to="/">
+                        <img src="./../assets/icons/logo.svg" alt="Audiophile - Home" class="logo" />
+                    </router-link>
 
-                <nav>
-                    <ul class="footer-links">
-                        <li>
-                            <router-link to="/">HOME</router-link></li>
-                        <li>
-                            <router-link to="/headphones">HEADPHONES</router-link></li>
-                        <li>
-                            <router-link to="/speakers">SPEAKERS</router-link></li>
-                        <li>
-                            <router-link to="/earphones">EARPHONES</router-link></li>
-                    </ul>
-                </nav>
+                    <nav>
+                        <ul class="footer-links">
+                            <li>
+                                <router-link to="/">HOME</router-link></li>
+                            <li>
+                                <router-link to="/headphones">HEADPHONES</router-link></li>
+                            <li>
+                                <router-link to="/speakers">SPEAKERS</router-link></li>
+                            <li>
+                                <router-link to="/earphones">EARPHONES</router-link></li>
+                        </ul>
+                    </nav>
+                </div>
             
                 <p class="note">Audiophile is an all in one stop to fulfill your audio needs. We're a
                 small team of music lovers and sound specialists who are devoted to helping 
@@ -138,11 +140,27 @@ export default {
 
     @media screen and (min-width: 1000px) {
         .footer {
-            padding: 0 6rem 2rem;
+            padding: 0 6rem 3rem;
+        }
+
+        .flex-tab {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6rem;
+        }
+
+        li a:hover {
+            color: #D87D4A;
+        }
+
+        .footer .logo,
+        li {
+            margin: unset;
         }
 
         .note {
             width: 600px;
+            margin: 3.5rem 0;
         }
 
         .social-media {
