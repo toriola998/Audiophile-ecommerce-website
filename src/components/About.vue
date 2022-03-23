@@ -1,17 +1,23 @@
 <template>
-    <div class="best-audio-gear">
-        <img src="./../assets/shared/mobile/image-best-gear.jpg" class="about-img mobile" alt=""/>
-        <img src="./../assets/shared/tablet/image-best-gear.jpg" class="about-img tablet" alt=""/>
-        <img src="./../assets/shared/desktop/image-best-gear.jpg" class="about-img desktop" alt=""/>
+    <section class="best-audio-gear" aria-labelledby="about-us">
+        <picture>
+            <source media="(min-width: 1000px)" 
+                    srcset="./../assets/shared/desktop/image-best-gear.jpg">
+            <source media="(min-width: 760px)" 
+                    srcset="./../assets/shared/tablet/image-best-gear.jpg">
+            <img src="./../assets/shared/mobile/image-best-gear.jpg" 
+                    alt="A fine man using an earphone"
+                    class="about-img">
+        </picture>
         <div class="about-content">
-            <h2>BRINGING YOU THE <span>BEST</span> AUDIO GEAR</h2>
+            <h2 id="about-us">BRINGING YOU THE <span>BEST</span> AUDIO GEAR</h2>
             <p>Located at the heart of New York City, Audiophile is the premier store for high end headphones,
             earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
             rooms available for you to browse and experience a wide range of our products. Stop by our 
             store to meet some of the fantastic people who make Audiophile the best place to buy your portable
             audio equipment.</p>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -28,7 +34,7 @@ export default {
     .about-img {
         width: 100%;
         height: auto;
-        /*display: block;*/
+        display: block;
         margin: auto;
         border-radius: 7px ;
     }
@@ -72,13 +78,23 @@ export default {
             text-align: initial;
         }
 
+        h2 {
+            width: 370px;
+            font-size: 2.5rem ;
+        }
+
+        p {
+            font-size: 1.05rem ;
+        }
+
         .about-img {
-            width: 45%;
+            width: 85%;
             margin-left: 4rem;
         }
 
         .about-content {
             padding: initial;
+            width: 50%;
         }
     }
 
@@ -86,5 +102,11 @@ export default {
         .best-audio-gear {
             padding: 6rem 10rem;
         }
+
+        .about-img {
+            
+            margin-left: 6rem;
+        }
+        
     }
 </style>
