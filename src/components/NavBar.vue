@@ -120,6 +120,10 @@ export default {
          .reverse-flex {
             width: 70%;
         }
+
+         ul li {
+            padding: 0 1rem;
+        }
     }
 
     @media screen and (min-width: 1200px) {

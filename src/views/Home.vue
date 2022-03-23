@@ -232,7 +232,8 @@ export default {
 
 @media screen and (min-width: 760px) {
     .image-flex {
-        display: flex;
+        display: grid;
+        grid-template-columns: 50% 50%;
     }
 
     .earphones-wrap {
@@ -246,6 +247,7 @@ export default {
 
     .speaker2-wrap {
         background-image: url("./../assets/home/tablet/image-speaker-zx7.jpg");
+        height: 34 0px;
     }
 
     .speaker1-wrap > div{
