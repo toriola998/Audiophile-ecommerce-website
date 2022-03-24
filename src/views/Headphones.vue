@@ -1,6 +1,6 @@
 <template>
+    <NavBar />
     <header>
-        <NavBar />
         <ProductHeader product="HEADPHONES" />
     </header>
     <main>

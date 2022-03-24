@@ -1,6 +1,6 @@
 <template>
+    <NavBar />
     <header>
-        <NavBar />
         <div class="head flex">
             <div>
                 <p class="new">NEW PRODUCT</p>

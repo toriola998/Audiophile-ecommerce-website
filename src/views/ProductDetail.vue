@@ -1,6 +1,6 @@
 <template>
+    <NavBar />
     <header>
-        <NavBar />
         <section class="product-details">
             <a href="" class="back">Go back</a>
             <div class="flex-tab" v-for="item in products" :key="item.id">
