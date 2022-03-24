@@ -8,33 +8,52 @@
             <main>
                 <form> 
                     <p class="orange">BILLING DETAILS</p>
-                        <label for="Name">Name</label><br>
-                        <input type="text" placeholder="Alexei Ward" v-model="name"/>
+                        <label for="name">Name</label><br>
+                        <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                     
-                        <label for="Email">Email</label><br>
-                        <input type="email" placeholder="alexei@gmail.com" v-model="email"/>
+                        <label for="email">Email</label><br>
+                        <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                     
-                        <label for="Number">Number</label><br>
-                        <input type="number" placeholder="+1 202-555-0136" v-model="number"/>
+                        <label for="number">Number</label><br>
+                        <input type="tel" placeholder="+1 202-555-0136" id="number" v-model="number"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                     
                         <p class="orange">SHIPPING INFO</p>
-                        <label for="Address">Address</label><br>
-                        <input type="text" placeholder="1137 Williams Avenue" v-model="address"/>
+                        <label for="address">Address</label><br>
+                        <input type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                     
-                        <label for="Zip Code">Zip Code</label><br>
-                        <input type="number" placeholder="10001" v-model="zipCode"/>
+                        <label for="zip-code">Zip Code</label><br>
+                        <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                     
-                        <label for="City">City</label><br>
-                        <input type="text" placeholder="New York" v-model="city"/>
+                        <label for="city">City</label><br>
+                        <input type="text" placeholder="New York" id="city" v-model="city"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                    
-                        <label for="Country">Country</label><br>
-                        <input type="text" placeholder="United States" v-model="country"/>
+                        <label for="country">Country</label><br>
+                        <input type="text" placeholder="United States" id="country" v-model="country"/>
+                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
+
+                        <p class="orange">PAYMENT DETAILS</p>
+                        <p>Payment Method</p>
+                        
+                        <div class="flex checkbox-wrap">
+                            <input type="checkbox" placeholder="238521993" id="e-money" v-model="address"/>
+                            <label for="e-money">e-Money</label>
+                        </div>  
+                        
+                        <input type="number" placeholder="6891" v-model="zipCode"/>
+                    
+
+                        <label for="e-money-number">e-money Number</label><br>
+                        <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
+                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
+                    
+                        <label for="e-money-pin">e-money Pin</label><br>
+                        <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                 </form>
             </main>
@@ -83,11 +102,24 @@ export default {
     }
 
     input {
-        padding-left: 2rem;
+        margin: .5rem 0 1.5rem;
+    }
+
+    input,
+    .checkbox-wrap {
         border: 1px solid #cfcfcf;
         border-radius: 5px;
         width: 100%;
         height: 3rem;
-        margin: .5rem 0 1.5rem;
+        padding-left: 2rem;
+    }
+
+    .checkbox-wrap {
+        margin-top: 1rem;
+    }
+
+    input[type="checkbox"] {
+        width: initial;
+        margin: 0 1rem 0 0;
     }
 </style>
