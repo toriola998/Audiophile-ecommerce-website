@@ -8,48 +8,34 @@
             <main>
                 <form> 
                     <p class="orange">BILLING DETAILS</p>
-                    <div class="input-wrap">
                         <label for="Name">Name</label><br>
                         <input type="text" placeholder="Alexei Ward" v-model="name"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    </div>
- 
-                    <div class="input-wrap">
+                    
                         <label for="Email">Email</label><br>
                         <input type="email" placeholder="alexei@gmail.com" v-model="email"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    </div>
-
-                    <div class="input-wrap">
+                    
                         <label for="Number">Number</label><br>
                         <input type="number" placeholder="+1 202-555-0136" v-model="number"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    </div>
-
-                    <p class="orange">SHIPPING INFO</p>
-                    <div class="input-wrap">
+                    
+                        <p class="orange">SHIPPING INFO</p>
                         <label for="Address">Address</label><br>
                         <input type="text" placeholder="1137 Williams Avenue" v-model="address"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    </div>
-
-                    <div class="input-wrap">
+                    
                         <label for="Zip Code">Zip Code</label><br>
                         <input type="number" placeholder="10001" v-model="zipCode"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    </div>
-
-                    <div class="input-wrap">
+                    
                         <label for="City">City</label><br>
                         <input type="text" placeholder="New York" v-model="city"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    </div>
-
-                    <div class="input-wrap">
+                   
                         <label for="Country">Country</label><br>
                         <input type="text" placeholder="United States" v-model="country"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    </div>
                 </form>
             </main>
         </div>
