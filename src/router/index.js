@@ -5,7 +5,7 @@ import Headphones from './../views/Headphones.vue'
 import Speakers from './../views/Speakers.vue'
 import Earphones from './../views/Earphones.vue'
 import ProductDetail from './../views/ProductDetail.vue'
-import Checkout from './../viewsCheckout.vue'
+import Checkout from './../views/Checkout.vue'
 
 const router = createRouter({
     history:  createWebHistory(),

@@ -71,6 +71,12 @@ export default {
         top: 5rem;
     }
 
+    .reverse-flex {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+
     /*.mobile-navigation::before {
         content: '';
         position: absolute;
@@ -96,9 +102,7 @@ export default {
         }
 
         .reverse-flex {
-            display: flex;
             flex-direction: row-reverse;
-            justify-content: space-between;
             width: 80%;
         }
 
