@@ -5,6 +5,7 @@ import Headphones from './../views/Headphones.vue'
 import Speakers from './../views/Speakers.vue'
 import Earphones from './../views/Earphones.vue'
 import ProductDetail from './../views/ProductDetail.vue'
+import Checkout from './../viewsCheckout.vue'
 
 const router = createRouter({
     history:  createWebHistory(),
@@ -37,7 +38,13 @@ const router = createRouter({
         path: '/product-detail/:productId',
         name: 'ProductDetail',
         component: ProductDetail
-     }
+     },
+
+     {
+      path: '/checkout',
+      name: 'Checkout',
+      component: Checkout
+   }
     ]
 })
 export default router;
