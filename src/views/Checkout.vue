@@ -67,6 +67,40 @@
                             that your order will not be cancelled.</p>
                         </div>
                 </form>
+
+                <section aria-labelledby="summary" class="summary-container">
+                    <h2 id="summary">SUMMARY</h2>
+                    <ul>
+                        <li class="flex"> 
+                            <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
+                            <div class="flex ">
+                                <p>
+                                    <span class="product-name">XX99 MK II </span><br>
+                                    <span class="product-price">$ 2,999</span>
+                                </p>
+                                <span class="product-quantity">*1</span>
+                            </div>
+                        </li>
+
+                        <li class="flex"> 
+                            <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
+                            <div class="flex ">
+                                <p>
+                                    <span class="product-name">XX99 MK II </span><br>
+                                    <span class="product-price">$ 2,999</span>
+                                </p>
+                                <span class="product-quantity">*1</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <ul>
+                        <li>
+                            <span class="title">TOTAL</span>
+                            <span class="price">$ 2,999</span>
+                        </li>
+                    </ul>
+                </section>
             </main>
         </div>
     </div>
@@ -91,7 +125,8 @@ export default {
         background-color: #f1f1f1;
     }
 
-    .checkout-container > div {
+    form,
+    .summary-container{
         background-color: #fff;
         padding: 2rem 1rem;
         border-radius: 7px;
@@ -99,6 +134,9 @@ export default {
 
     label, 
     .orange,
+    .product-name,
+    .product-price,
+    .product-quantity,
     .sub-heading,
     input::placeholder {
         font-weight: 700;
@@ -148,5 +186,38 @@ export default {
         font-weight: 500;
     }
 
+    .summary-container {
+        margin-top: 2rem;
+    }
 
+    .product-image {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 5px;
+    }
+
+    .product-name {
+        padding-bottom: .4rem;
+    }
+
+    .product-price,
+    .product-quantity {
+        color: #000;
+        opacity: 0.5;
+    }
+
+    ul {
+        padding: 1.5rem 0;
+    }
+
+    li {
+        margin-bottom: 1.5rem;
+    }
+
+    li > .flex {
+       justify-content: space-between;
+       width: 100%; 
+       margin-left: 1.2rem;
+       align-items: baseline;
+    }
 </style>
