@@ -19,7 +19,8 @@ export default {
         box-sizing: border-box;
     }
 
-    body {
+    body,
+    input::placeholder{
         font-family: 'Manrope', sans-serif;
         font-style: normal;
     }

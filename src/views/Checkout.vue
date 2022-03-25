@@ -6,127 +6,129 @@
                 <h1>CHECKOUT</h1>
             </header>
             <main>
-                <form> 
-                    <p class="orange">BILLING DETAILS</p>
-                    <div class="tab-grid">
-                        <div>
-                            <label for="name">Name</label><br>
-                            <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
-                        </div>
-
-                        <div>
-                            <label for="email">Email</label><br>
-                            <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
-                        </div>
-                        <div>
-                            <label for="number">Number</label><br>
-                            <input type="tel" placeholder="+1 202-555-0136" id="number" v-model="number"/>
-                        </div>
-                    </div> 
-                    
-                    <p class="orange">SHIPPING INFO</p>
-                    <div>
-                        <label for="address">Address</label><br>
-                        <input type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
-                    </div>
-
-                    <div class="tab-grid">
-                        <div>
-                            <label for="zip-code">Zip Code</label><br>
-                            <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
-                        </div>
-
-                        <div>
-                            <label for="city">City</label><br>
-                            <input type="text" placeholder="New York" id="city" v-model="city"/>
-                        </div>
-
-                        <div>
-                            <label for="country">Country</label><br>
-                            <input type="text" placeholder="United States" id="country" v-model="country"/>
-                        </div>
-                    </div> 
-                    <p class="orange">PAYMENT DETAILS</p>
-                    <div class="tab-grid">
-                        <p class="sub-heading">Payment Method</p>
-                        <div class="checkbox-container">
-                            <div class="flex checkbox-wrap">
-                                <input type="checkbox" id="e-money" v-model="address"/>
-                                <label for="e-money">e-Money</label>
+                <div class="checkout-inner">
+                    <form> 
+                        <p class="orange">BILLING DETAILS</p>
+                        <div class="tab-grid">
+                            <div>
+                                <label for="name">Name</label><br>
+                                <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
                             </div>
 
-                            <div class="flex checkbox-wrap">
-                                <input type="checkbox" id="cash-on-delivery" v-model="address"/>
-                                <label for="cash-on-delivery">Cash on delivery</label>
-                            </div>   
-                        </div>
-                    </div>
-
-                    <div class="tab-grid">
-                        <div>
-                            <label for="e-money-number">e-money Number</label><br>
-                            <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
-                        </div>
-
-                        <div>
-                            <label for="e-money-pin">e-money PIN</label><br>
-                            <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
-                        </div>
-                    </div>  
-                    
-                    <div class="tab-flex">
-                        <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
-                        <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
-                        courier arrives at your residence. Just make sure your address is correct so 
-                        that your order will not be cancelled.</p>
-                    </div>
-                </form>
-
-                <section aria-labelledby="summary" class="summary-container">
-                    <h2 id="summary">SUMMARY</h2>
-                    <ul class="product-summary">
-                        <li class="flex"> 
-                            <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
-                            <div class="flex ">
-                                <p>
-                                    <span class="product-name">XX99 MK II </span><br>
-                                    <span class="product-price">$ 2,999</span>
-                                </p>
-                                <span class="product-quantity">*1</span>
+                            <div>
+                                <label for="email">Email</label><br>
+                                <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
                             </div>
-                        </li>
-
-                        <li class="flex"> 
-                            <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
-                            <div class="flex ">
-                                <p>
-                                    <span class="product-name">XX99 MK II </span><br>
-                                    <span class="product-price">$ 2,999</span>
-                                </p>
-                                <span class="product-quantity">*1</span>
+                            <div>
+                                <label for="number">Number</label><br>
+                                <input type="tel" placeholder="+1 202-555-0136" id="number" v-model="number"/>
                             </div>
-                        </li>
-                    </ul>
-                    
-                    <ul>
-                        <li class="flex total-wrap">
-                            <span class="title">TOTAL</span>
-                            <span class="price">$ 2,999</span>
-                        </li>
-                        <li class="flex total-wrap">
-                            <span class="title">SHIPPING</span>
-                            <span class="price">$ 2,999</span>
-                        </li>
-                        <li class="flex total-wrap">
-                            <span class="title">VAT (INCLUDED)</span>
-                            <span class="price">$ 2,999</span>
-                        </li>
-                        <li class="flex total-wrap grand">
-                            <span class="title">GRAND TOTAL</span>
-                            <span class="price">$ 2,999</span>
-                        </li>
-                    </ul>
-                </section>
+                        </div> 
+
+                        <p class="orange">SHIPPING INFO</p>
+                        <div>
+                            <label for="address">Address</label><br>
+                            <input type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
+                        </div>
+
+                        <div class="tab-grid">
+                            <div>
+                                <label for="zip-code">Zip Code</label><br>
+                                <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
+                            </div>
+
+                            <div>
+                                <label for="city">City</label><br>
+                                <input type="text" placeholder="New York" id="city" v-model="city"/>
+                            </div>
+
+                            <div>
+                                <label for="country">Country</label><br>
+                                <input type="text" placeholder="United States" id="country" v-model="country"/>
+                            </div>
+                        </div> 
+                        <p class="orange">PAYMENT DETAILS</p>
+                        <div class="tab-grid">
+                            <p class="sub-heading">Payment Method</p>
+                            <div class="checkbox-container">
+                                <div class="flex checkbox-wrap">
+                                    <input type="checkbox" id="e-money" v-model="address"/>
+                                    <label for="e-money">e-Money</label>
+                                </div>
+
+                                <div class="flex checkbox-wrap">
+                                    <input type="checkbox" id="cash-on-delivery" v-model="address"/>
+                                    <label for="cash-on-delivery">Cash on delivery</label>
+                                </div>   
+                            </div>
+                        </div>
+
+                        <div class="tab-grid">
+                            <div>
+                                <label for="e-money-number">e-money Number</label><br>
+                                <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
+                            </div>
+
+                            <div>
+                                <label for="e-money-pin">e-money PIN</label><br>
+                                <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
+                            </div>
+                        </div>  
+                        
+                        <div class="tab-flex">
+                            <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
+                            <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
+                            courier arrives at your residence. Just make sure your address is correct so 
+                            that your order will not be cancelled.</p>
+                        </div>
+                    </form>
+
+                    <section aria-labelledby="summary" class="summary-container">
+                        <h2 id="summary">SUMMARY</h2>
+                        <ul class="product-summary">
+                            <li class="flex"> 
+                                <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
+                                <div class="flex ">
+                                    <p>
+                                        <span class="product-name">XX99 MK II </span><br>
+                                        <span class="product-price">$ 2,999</span>
+                                    </p>
+                                    <span class="product-quantity">*1</span>
+                                </div>
+                            </li>
+
+                            <li class="flex"> 
+                                <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
+                                <div class="flex ">
+                                    <p>
+                                        <span class="product-name">XX99 MK II </span><br>
+                                        <span class="product-price">$ 2,999</span>
+                                    </p>
+                                    <span class="product-quantity">*1</span>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <ul>
+                            <li class="flex total-wrap">
+                                <span class="title">TOTAL</span>
+                                <span class="price">$ 2,999</span>
+                            </li>
+                            <li class="flex total-wrap">
+                                <span class="title">SHIPPING</span>
+                                <span class="price">$ 2,999</span>
+                            </li>
+                            <li class="flex total-wrap">
+                                <span class="title">VAT (INCLUDED)</span>
+                                <span class="price">$ 2,999</span>
+                            </li>
+                            <li class="flex total-wrap grand">
+                                <span class="title">GRAND TOTAL</span>
+                                <span class="price">$ 2,999</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
             </main>
         </div>
     </div>
@@ -229,6 +231,7 @@ export default {
 
     .product-price,
     .title,
+    input::placeholder,
     .product-quantity {
         color: #000;
         opacity: 0.5;
@@ -291,6 +294,33 @@ export default {
         grid-template-columns: auto auto;
         gap: 40px;
         margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .checkout-container {
+        padding: 2rem 6rem;
+    }
+
+    form {
+        width: 65%;
+    }
+
+    .summary-container {
+        margin-top: initial;
+        height: 28rem;
+        width: 35%;
+    }
+
+    .checkout-inner {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .checkout-container {
+        padding: 2rem 10rem;
     }
 }
 </style>
