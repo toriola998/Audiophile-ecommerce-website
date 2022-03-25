@@ -70,7 +70,7 @@
 
                 <section aria-labelledby="summary" class="summary-container">
                     <h2 id="summary">SUMMARY</h2>
-                    <ul>
+                    <ul class="product-summary">
                         <li class="flex"> 
                             <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
                             <div class="flex ">
@@ -95,8 +95,20 @@
                     </ul>
                     
                     <ul>
-                        <li>
+                        <li class="flex total-wrap">
                             <span class="title">TOTAL</span>
+                            <span class="price">$ 2,999</span>
+                        </li>
+                        <li class="flex total-wrap">
+                            <span class="title">SHIPPING</span>
+                            <span class="price">$ 2,999</span>
+                        </li>
+                        <li class="flex total-wrap">
+                            <span class="title">VAT (INCLUDED)</span>
+                            <span class="price">$ 2,999</span>
+                        </li>
+                        <li class="flex total-wrap grand">
+                            <span class="title">GRAND TOTAL</span>
                             <span class="price">$ 2,999</span>
                         </li>
                     </ul>
@@ -133,11 +145,12 @@ export default {
     }
 
     label, 
+    .price,
     .orange,
+    .sub-heading,
     .product-name,
     .product-price,
     .product-quantity,
-    .sub-heading,
     input::placeholder {
         font-weight: 700;
     }
@@ -201,16 +214,17 @@ export default {
     }
 
     .product-price,
+    .title,
     .product-quantity {
         color: #000;
         opacity: 0.5;
     }
 
-    ul {
-        padding: 1.5rem 0;
+    .product-summary {
+        margin-top: 1.5rem;
     }
-
-    li {
+    
+    .product-summary li {
         margin-bottom: 1.5rem;
     }
 
@@ -219,5 +233,26 @@ export default {
        width: 100%; 
        margin-left: 1.2rem;
        align-items: baseline;
+    }
+
+    .total-wrap {
+        justify-content: space-between;
+        margin-bottom: .5rem;
+    }
+
+    .price {
+        font-size: 1.2rem;
+    }
+
+    .title {
+        font-size: 500 ;
+    }
+
+    .grand {
+        margin-top: 1.5rem;
+    }
+
+    .grand > .price {
+        color: #D87D4A;
     }
 </style>
