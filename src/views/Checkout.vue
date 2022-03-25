@@ -41,20 +41,29 @@
                         <p>Payment Method</p>
                         
                         <div class="flex checkbox-wrap">
-                            <input type="checkbox" placeholder="238521993" id="e-money" v-model="address"/>
+                            <input type="checkbox" id="e-money" v-model="address"/>
                             <label for="e-money">e-Money</label>
-                        </div>  
-                        
-                        <input type="number" placeholder="6891" v-model="zipCode"/>
-                    
+                        </div>
 
+                        <div class="flex checkbox-wrap">
+                            <input type="checkbox" id="cash-on-delivery" v-model="address"/>
+                            <label for="cash-on-delivery">Cash on delivery</label>
+                        </div>   
+                        
                         <label for="e-money-number">e-money Number</label><br>
                         <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
                     
-                        <label for="e-money-pin">e-money Pin</label><br>
+                        <label for="e-money-pin">e-money PIN</label><br>
                         <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
+
+                        <div>
+                            <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
+                            <p>The 'Cash on Delivery' option enables you to pay in cash when our delivery
+                            courier arrives at your residence. Just make sure your address is correct so 
+                            that your order will not be cancelled.</p>
+                        </div>
                 </form>
             </main>
         </div>
@@ -87,7 +96,8 @@ export default {
     }
 
     label, 
-    .orange {
+    .orange,
+    input::placeholder {
         font-weight: 700;
     }
 
@@ -122,4 +132,5 @@ export default {
         width: initial;
         margin: 0 1rem 0 0;
     }
+
 </style>
