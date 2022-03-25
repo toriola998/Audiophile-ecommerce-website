@@ -8,38 +8,47 @@
             <main>
                 <form> 
                     <p class="orange">BILLING DETAILS</p>
-                        <label for="name">Name</label><br>
-                        <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
+                    <div class="tab-grid">
+                        <div>
+                            <label for="name">Name</label><br>
+                            <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
+                        </div>
+
+                        <div>
+                            <label for="email">Email</label><br>
+                            <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
+                        </div>
+                        <div>
+                            <label for="number">Number</label><br>
+                            <input type="tel" placeholder="+1 202-555-0136" id="number" v-model="number"/>
+                        </div>
+                    </div> 
                     
-                        <label for="email">Email</label><br>
-                        <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    
-                        <label for="number">Number</label><br>
-                        <input type="tel" placeholder="+1 202-555-0136" id="number" v-model="number"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    
-                        <p class="orange">SHIPPING INFO</p>
+                    <p class="orange">SHIPPING INFO</p>
+                    <div>
                         <label for="address">Address</label><br>
                         <input type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    
-                        <label for="zip-code">Zip Code</label><br>
-                        <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    
-                        <label for="city">City</label><br>
-                        <input type="text" placeholder="New York" id="city" v-model="city"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                   
-                        <label for="country">Country</label><br>
-                        <input type="text" placeholder="United States" id="country" v-model="country"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
+                    </div>
 
-                        <p class="orange">PAYMENT DETAILS</p>
+                    <div class="tab-grid">
+                        <div>
+                            <label for="zip-code">Zip Code</label><br>
+                            <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
+                        </div>
+
+                        <div>
+                            <label for="city">City</label><br>
+                            <input type="text" placeholder="New York" id="city" v-model="city"/>
+                        </div>
+
+                        <div>
+                            <label for="country">Country</label><br>
+                            <input type="text" placeholder="United States" id="country" v-model="country"/>
+                        </div>
+                    </div> 
+                    <p class="orange">PAYMENT DETAILS</p>
+                    <div class="tab-grid">
                         <p class="sub-heading">Payment Method</p>
-                        
                         <div class="checkbox-container">
                             <div class="flex checkbox-wrap">
                                 <input type="checkbox" id="e-money" v-model="address"/>
@@ -51,21 +60,26 @@
                                 <label for="cash-on-delivery">Cash on delivery</label>
                             </div>   
                         </div>
-                        
+                    </div>
+
+                    <div class="tab-grid">
+                        <div>
                             <label for="e-money-number">e-money Number</label><br>
                             <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
-                            <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                        
+                        </div>
+
+                        <div>
                             <label for="e-money-pin">e-money PIN</label><br>
                             <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
-                            <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                        
-                        <div>
-                            <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
-                            <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
-                            courier arrives at your residence. Just make sure your address is correct so 
-                            that your order will not be cancelled.</p>
                         </div>
+                    </div>  
+                    
+                    <div class="tab-flex">
+                        <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
+                        <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
+                        courier arrives at your residence. Just make sure your address is correct so 
+                        that your order will not be cancelled.</p>
+                    </div>
                 </form>
 
                 <section aria-labelledby="summary" class="summary-container">
@@ -140,7 +154,7 @@ export default {
     form,
     .summary-container{
         background-color: #fff;
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
         border-radius: 7px;
     }
 
@@ -187,7 +201,7 @@ export default {
         margin-top: 1rem;
     }
 
-    input[type="checkbox"] {
+    .tab-grid input[type="checkbox"] {
         width: initial;
         margin: 0 1rem 0 0;
     }
@@ -223,7 +237,7 @@ export default {
     .product-summary {
         margin-top: 1.5rem;
     }
-    
+
     .product-summary li {
         margin-bottom: 1.5rem;
     }
@@ -255,4 +269,28 @@ export default {
     .grand > .price {
         color: #D87D4A;
     }
+
+    
+@media screen and (min-width: 700px) {
+    .tab-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .tab-grid input{
+        margin: .5rem 0 0 0;
+    }
+
+    .orange {
+        margin: 4.5rem 0 1.5rem;
+    }
+
+    .tab-flex {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 40px;
+        margin-top: 2rem;
+    }
+}
 </style>
