@@ -38,29 +38,31 @@
                         <!---<p class="error" v-if="nameError">Can't be empty</p>-->
 
                         <p class="orange">PAYMENT DETAILS</p>
-                        <p>Payment Method</p>
+                        <p class="sub-heading">Payment Method</p>
                         
-                        <div class="flex checkbox-wrap">
-                            <input type="checkbox" id="e-money" v-model="address"/>
-                            <label for="e-money">e-Money</label>
+                        <div class="checkbox-container">
+                            <div class="flex checkbox-wrap">
+                                <input type="checkbox" id="e-money" v-model="address"/>
+                                <label for="e-money">e-Money</label>
+                            </div>
+
+                            <div class="flex checkbox-wrap">
+                                <input type="checkbox" id="cash-on-delivery" v-model="address"/>
+                                <label for="cash-on-delivery">Cash on delivery</label>
+                            </div>   
                         </div>
-
-                        <div class="flex checkbox-wrap">
-                            <input type="checkbox" id="cash-on-delivery" v-model="address"/>
-                            <label for="cash-on-delivery">Cash on delivery</label>
-                        </div>   
                         
-                        <label for="e-money-number">e-money Number</label><br>
-                        <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-                    
-                        <label for="e-money-pin">e-money PIN</label><br>
-                        <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
-                        <!---<p class="error" v-if="nameError">Can't be empty</p>-->
-
+                            <label for="e-money-number">e-money Number</label><br>
+                            <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
+                            <!---<p class="error" v-if="nameError">Can't be empty</p>-->
+                        
+                            <label for="e-money-pin">e-money PIN</label><br>
+                            <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
+                            <!---<p class="error" v-if="nameError">Can't be empty</p>-->
+                        
                         <div>
                             <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
-                            <p>The 'Cash on Delivery' option enables you to pay in cash when our delivery
+                            <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
                             courier arrives at your residence. Just make sure your address is correct so 
                             that your order will not be cancelled.</p>
                         </div>
@@ -97,6 +99,7 @@ export default {
 
     label, 
     .orange,
+    .sub-heading,
     input::placeholder {
         font-weight: 700;
     }
@@ -107,7 +110,8 @@ export default {
         margin: 1.5rem 0;
     }
 
-    label {
+    label,
+    .sub-heading {
         font-size: .85rem;
     }
 
@@ -124,6 +128,10 @@ export default {
         padding-left: 2rem;
     }
 
+    .checkbox-container {
+        margin-bottom: 1.5rem;
+    }
+
     .checkbox-wrap {
         margin-top: 1rem;
     }
@@ -132,5 +140,13 @@ export default {
         width: initial;
         margin: 0 1rem 0 0;
     }
+
+    .cash-delivery {
+        font-size: .9rem;
+        opacity: 0.5;
+        color: #000;
+        font-weight: 500;
+    }
+
 
 </style>
