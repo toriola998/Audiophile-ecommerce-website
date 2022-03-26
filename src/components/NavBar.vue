@@ -7,7 +7,7 @@
                         <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
                     </button>
                     <teleport to="body">
-                    <ProductsMenu v-show="showNav"
+                        <ProductsMenu v-show="showNav"
                                 id="menu"
                                 class="mobile-navigation"/> 
                     </teleport>
@@ -53,6 +53,7 @@ export default {
         background-color: #191919;
         padding: 0 1.2rem;
     }
+
     .flex {
         justify-content: space-between;
         height: 5rem;
@@ -79,7 +80,7 @@ export default {
         width: 70%;
     }
 
-    #modal {
+    /*#modal {
         content: '';
         position: absolute;
         top: 0;
@@ -88,8 +89,8 @@ export default {
         width: 100%;
         height: 100%;
         background-color: rgba(0,0,0, 0.4)
-    }
-    
+    }*/
+
     ul {
         display: none;
     }
