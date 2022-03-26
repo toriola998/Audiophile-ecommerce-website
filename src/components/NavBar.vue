@@ -6,9 +6,11 @@
                     <button @click="showNav = !showNav"  class="menu">
                         <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
                     </button>
+                    <teleport to="body">
                     <ProductsMenu v-show="showNav"
                                 id="menu"
                                 class="mobile-navigation"/> 
+                    </teleport>
                     <ul>
                         <li>
                             <router-link to="/">HOME</router-link></li>
@@ -77,7 +79,7 @@ export default {
         width: 70%;
     }
 
-    /*.mobile-navigation::before {
+    #modal {
         content: '';
         position: absolute;
         top: 0;
@@ -86,8 +88,8 @@ export default {
         width: 100%;
         height: 100%;
         background-color: rgba(0,0,0, 0.4)
-    }*/
-
+    }
+    
     ul {
         display: none;
     }
