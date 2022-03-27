@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="flex">{{ product}}</h2>
+        <h1 class="flex">{{ product}}</h1>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-     h2 {
+     h1 {
         background-color: #191919;
         justify-content: center;
         height: 5rem;
@@ -23,7 +23,7 @@ export default {
     }
 
     @media screen and (min-width: 520px) {
-       h2 {
+       h1 {
            height: 10rem;
        }
     }
