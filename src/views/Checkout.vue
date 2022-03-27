@@ -125,12 +125,12 @@
                                 <span class="price">$ 2,999</span>
                             </li>
                         </ul>
-                        <OrangeButton btnAction="CONTINUE" class="continue"/>
+                        <OrangeButton @click="showCard = !showCard" btnAction="CONTINUE" class="continue"/>
                         <teleport to="body">
                             <div v-show="showCard"
                                 @click.self.stop.prevent ="showCard = !showCard"
                                 class="modal-overlay">
-                                <!--<CartDetails v-show="showCard"/>-->
+                                <ThankYouCard v-show="showCard"/>
                             </div>
                         </teleport>
                     </section>
@@ -144,12 +144,14 @@
 <script>
 import NavBar from './../components/NavBar.vue'
 import OrangeButton from './../components/OrangeButton.vue'
+import ThankYouCard from './../components/ThankYouCard.vue'
 import TheFooter from './../components/TheFooter.vue'
 export default {
     name: 'Checkout',
     components: {
         NavBar,
         OrangeButton,
+        ThankYouCard,
         TheFooter
     },
     data () {
