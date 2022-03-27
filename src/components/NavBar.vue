@@ -32,7 +32,7 @@
 
             <teleport to="body">
                 <div v-show="showCart"
-                    @click="showCart = !showCart"
+                    @click.self.stop.prevent ="showCart = !showCart"
                     class="cart-overlay flex">
                     <CartDetails v-show="showCart"/>
                  </div>
