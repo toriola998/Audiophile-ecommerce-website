@@ -6,7 +6,7 @@
             <source media="(min-width: 760px)" 
                     srcset="./../assets/shared/tablet/image-best-gear.jpg">
             <img src="./../assets/shared/mobile/image-best-gear.jpg" 
-                    alt="A fine man using an earphone"
+                    alt="A fine man using an headphone"
                     class="about-img">
         </picture>
         <div class="about-content">

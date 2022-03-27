@@ -1,5 +1,6 @@
 <template>
     <NavBar />
+    <CartDetails />
     <header>
         <div class="head flex">
             <div>
@@ -63,6 +64,7 @@
 
 <script>
 import NavBar from '../components/NavBar.vue'
+import CartDetails from '../components/CartDetails.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import PlainButton from './../components/PlainButton.vue'
@@ -73,6 +75,7 @@ export default {
     name: 'Home',
     components: { 
         NavBar,
+        CartDetails,
         OrangeButton,
         ProductsMenu,
         PlainButton,

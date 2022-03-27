@@ -34,6 +34,10 @@ export default {
         text-decoration: none;
     }
 
+    button {
+        background-color: transparent;
+    }
+
     button, input {
         outline: none;
         border: none;

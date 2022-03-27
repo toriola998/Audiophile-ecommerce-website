@@ -14,9 +14,6 @@ export default {
         background-color: #D87D4A;
         text-align: center;
         color: white;
-    }
-
-    .link {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -25,5 +22,9 @@ export default {
         width: 10rem;
         font-size: .9rem;
         cursor: pointer;
+    }
+
+    .cta:hover {
+        background-color: #FBAF85;
     }
 </style>
