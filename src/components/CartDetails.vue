@@ -123,4 +123,19 @@ export default {
     .checkout {
         width: 100%;
     }
+
+    
+    @media screen and (min-width: 700px) {
+        .cart-container {
+            right: 1rem;
+            top: 7rem;
+        }
+    }
+
+     @media screen and (min-width: 1200px) {
+        .cart-container {
+            right: 10rem;
+            top: 10rem;
+        }
+    }
 </style>

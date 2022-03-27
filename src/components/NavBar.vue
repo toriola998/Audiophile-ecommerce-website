@@ -32,8 +32,9 @@
 
             <teleport to="body">
                 <div v-show="showCart"
+                    @click="showCart = !showCart"
                     class="cart-overlay flex">
-                    <CartDetails />
+                    <CartDetails v-show="showCart"/>
                  </div>
             </teleport>
         </div> 
@@ -91,7 +92,6 @@ export default {
     }
 
     .cart-overlay {
-        content: '';
         position: fixed;
         top: 0;
         left: 0;
@@ -149,12 +149,12 @@ export default {
             width: 70%;
         }
 
-        .flex {
-            height: 7rem;
-        }
-
         .nav-wrap {
             padding: 0 10rem;
+        }
+
+        .nav-wrap .flex {
+            height: 7rem;
         }
     }
 </style>
