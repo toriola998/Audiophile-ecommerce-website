@@ -127,6 +127,7 @@
                                 <span class="price">$ 2,999</span>
                             </li>
                         </ul>
+                        <OrangeButton btnAction="CONTINUE" class="continue"/>
                     </section>
                 </div>
             </main>
@@ -137,11 +138,13 @@
 
 <script>
 import NavBar from './../components/NavBar.vue'
+import OrangeButton from './../components/OrangeButton.vue'
 import TheFooter from './../components/TheFooter.vue'
 export default {
     name: 'Checkout',
     components: {
         NavBar,
+        OrangeButton,
         TheFooter
     }
 }
@@ -273,6 +276,10 @@ export default {
         color: #D87D4A;
     }
 
+    .continue {
+        margin: 2rem 0 0 0;
+        width: 100%;
+    }
     
 @media screen and (min-width: 700px) {
     .tab-grid {
@@ -308,7 +315,7 @@ export default {
 
     .summary-container {
         margin-top: initial;
-        height: 28rem;
+        height: 34rem;
         width: 35%;
     }
 
