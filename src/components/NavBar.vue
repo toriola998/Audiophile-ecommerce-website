@@ -33,7 +33,7 @@
             <teleport to="body">
                 <div v-show="showCart"
                     @click.self.stop.prevent ="showCart = !showCart"
-                    class="cart-overlay flex">
+                    class="modal-overlay">
                     <CartDetails v-show="showCart"/>
                  </div>
             </teleport>
@@ -89,17 +89,6 @@ export default {
         display: flex;
         justify-content: space-between;
         width: 70%;
-    }
-
-    .cart-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 99;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        background-color: rgba(0,0,0, 0.55)  
     }
 
     ul {

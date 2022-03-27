@@ -128,6 +128,13 @@
                             </li>
                         </ul>
                         <OrangeButton btnAction="CONTINUE" class="continue"/>
+                        <teleport to="body">
+                            <div v-show="showCard"
+                                @click.self.stop.prevent ="showCard = !showCard"
+                                class="modal-overlay">
+                                <!--<CartDetails v-show="showCard"/>-->
+                            </div>
+                        </teleport>
                     </section>
                 </div>
             </main>
@@ -146,6 +153,11 @@ export default {
         NavBar,
         OrangeButton,
         TheFooter
+    },
+    data () {
+        return {
+            showCard: false
+        }
     }
 }
 </script>

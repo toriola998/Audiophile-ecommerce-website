@@ -55,9 +55,17 @@ export default {
         list-style-type: none;
     }
 
-    .tablet,
-    .desktop {
-        display: none;
+     .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0,0,0, 0.55)  
     }
 
     @media screen and (min-width: 700px) {
