@@ -1,13 +1,11 @@
 <template>
     <NavBar />
-    <div class="checkout-container">
+    <main class="checkout-container">
         <div>
-            <header>
-                <h1>CHECKOUT</h1>
-            </header>
-            <main>
+            <div>
                 <div class="checkout-inner">
-                    <form> 
+                    <form>
+                        <h1>CHECKOUT</h1> 
                         <p class="orange">BILLING DETAILS</p>
                         <div class="tab-grid">
                             <div>
@@ -137,9 +135,9 @@
                         </teleport>
                     </section>
                 </div>
-            </main>
+            </div>
         </div>
-    </div>
+    </main>
     <TheFooter />
 </template>
 
@@ -305,7 +303,7 @@ export default {
     }
 
     .orange {
-        margin: 4.5rem 0 1.5rem;
+        margin: 3rem 0 1.5rem;
     }
 
     .tab-flex {
