@@ -1,7 +1,7 @@
 <template>
     <div class="cart-container">
         <div class="flex cart-head">
-            <p class="cart">CART(3)</p>
+            <p class="cart">CART (3)</p>
             <button class="remove">Remove all</button>
         </div>
         <ul class="product-summary">
@@ -54,7 +54,9 @@ export default {
         background-color: #fff;
         padding: 2rem 1.5rem;
         border-radius: 7px;
-        width: 25rem;
+        width: auto;
+        position: absolute;
+        z-index: 999;
     }
 
     .cart,

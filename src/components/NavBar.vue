@@ -26,24 +26,34 @@
                     <img src="./../assets/icons/logo.svg" alt="Audiophile - Home"/>
                 </router-link>
             </div>
-            <button>
+            <button @click="showCart = !showCart">
                 <img src="./../assets/icons/cart.svg" alt="Cart for products"/>
             </button>
+
+            <teleport to="body">
+                <div v-show="showCart"
+                    class="cart-overlay flex">
+                    <CartDetails />
+                 </div>
+            </teleport>
         </div> 
     </div> 
 </template>
 
 <script>
 import ProductsMenu from './ProductsMenu.vue'
+import CartDetails from '../components/CartDetails.vue'
 export default {
     name: 'NavBar',
     data () {
         return {
             showNav: false,
+            showCart: false,
         }
     },
     components: {
         ProductsMenu,
+        CartDetails,
     }
 }
 </script>
@@ -80,16 +90,17 @@ export default {
         width: 70%;
     }
 
-    /*#modal {
+    .cart-overlay {
         content: '';
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
-        z-index: 999;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0, 0.4)
-    }*/
+        z-index: 99;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        background-color: rgba(0,0,0, 0.55)  
+    }
 
     ul {
         display: none;
