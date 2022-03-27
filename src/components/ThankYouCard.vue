@@ -6,7 +6,7 @@
         <h1>THANK YOU <br> FOR YOUR ORDER</h1>
         <p class="confirmation">You will receive an email confirmation shortly.</p>
         
-        <div>
+        <div class="flex-bg">
             <div class="grey-bg">
             <ul>
                 <li class="flex"> 
@@ -22,9 +22,11 @@
             </ul>
             <p class="other-items">and 2 other item(s)</p>
             </div>
-            <div class="black-bg">
-                <p class="grand">GRAND TOTAL</p>
-                <p class="total-price">$5, 446</p>
+            <div class="black-bg flex">
+                <div>
+                    <p class="grand">GRAND TOTAL</p>
+                    <p class="total-price">$5, 446</p>
+                </div>
             </div>
         </div>
         <OrangeButton btnAction="BACK TO HOME" class="back-home"/>
@@ -67,7 +69,6 @@ export default {
         padding: 1rem 0;
         color: #000;
         opacity: 0.5;
-        font-size: 1.1rem;
     }
 
      li > .flex {
@@ -99,7 +100,7 @@ export default {
 
     ul li {
         border-bottom: 1px solid #ccc;
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 0;
     }
 
     .black-bg {
@@ -136,5 +137,16 @@ export default {
     .back-home {
         width: 100%;
         margin-top: 2rem;
+    }
+
+    @media screen and (min-width: 520px) {
+        .modal-container {
+            width: 470px;
+        }
+
+        .flex-bg {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
     }
 </style>
