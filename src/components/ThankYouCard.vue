@@ -144,6 +144,18 @@ export default {
             width: 470px;
         }
 
+        .black-bg {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+         .grey-bg {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 7px;
+        }
+
         .flex-bg {
             display: grid;
             grid-template-columns: auto auto;
