@@ -38,6 +38,10 @@ export default {
         text-decoration: none;
     }
 
+    a, button {
+        cursor: pointer;
+    }
+
     button {
         background-color: transparent;
     }

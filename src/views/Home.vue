@@ -141,11 +141,11 @@ export default {
         width: 100%;
         margin: 6rem auto 2rem;
         border-radius: 5px;
-        padding: 4rem 1.5rem;
+        padding: 3rem 1.5rem;
     }
 
     .speaker1 {
-        width: 60%;
+        width: 55%;
         display: block;
         margin: auto;
     }
@@ -155,12 +155,13 @@ export default {
         font-size: 2rem;
         text-align: center;
         line-height: 1.1;
-        margin: 1.5rem 0;
+        margin: 1.7rem 0;
     }
     
     .upgrade {
         font-size: .9rem;
         line-height: 1.6;
+        opacity: 0.75;
     }
 
     .speaker1-cta {
@@ -176,8 +177,8 @@ export default {
         margin: 1.1rem auto 0;
         height: 3rem;
         width: 10rem;
-        font-size: .9rem;
-        cursor: pointer;
+        font-size: .81rem;
+        font-weight: 700;
     }
 
     .speaker2-wrap {

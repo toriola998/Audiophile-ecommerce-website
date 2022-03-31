@@ -51,9 +51,10 @@ export default {
 
     p {
         color: #000;
-        opacity: 0.5;
+        opacity: 0.7;
         line-height: 1.7;
         font-size: .9rem;
+        font-weight: 500;
     }
 
     span {

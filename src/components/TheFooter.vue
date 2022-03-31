@@ -26,7 +26,7 @@
                 small team of music lovers and sound specialists who are devoted to helping 
                 you get the most out of personal audio. Come and visit our demo facility 
                 - we're open 7 days a week.</p>
-                <div class="flex footer-flex">
+                <div class="footer-flex">
                     <p class="right">Copyright 2021. All Rights Reserved</p>
                     <div class="flex social-media">
                         <img src="./../assets/shared/desktop/icon-facebook.svg" alt="facebook page"/>
@@ -123,6 +123,8 @@ export default {
         }
 
         .footer-flex {
+            display: flex;
+            align-content: center;
             justify-content: space-between;
         }
         

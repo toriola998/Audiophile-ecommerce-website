@@ -14,7 +14,7 @@ export default {
         font-weight: 700;
         height: 3rem;
         width: 10rem;
-        font-size: .9rem;
+        font-size: .81rem;
         cursor: pointer;
         display: flex;
         justify-content: center;
