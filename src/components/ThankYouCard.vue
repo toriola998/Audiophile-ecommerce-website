@@ -161,4 +161,10 @@ export default {
             grid-template-columns: auto auto;
         }
     }
+
+    @media screen and (min-width: 520px) {
+        .confirmation {
+            padding: 1.5rem 0;
+        }
+    }
 </style>
