@@ -67,6 +67,13 @@ export default {
         }
     }
 
+    @media screen and (min-width: 700px) {
+        h2 {
+            margin: 2.5rem 0;
+            font-size: 2.3rem;
+        }
+    }
+
     @media screen and (min-width: 1000px) {
         .best-audio-gear {
             display: flex;

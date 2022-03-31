@@ -145,7 +145,7 @@ export default {
     }
 
     .speaker1 {
-        width: 55%;
+        width: 155px;
         display: block;
         margin: auto;
     }
@@ -222,7 +222,6 @@ export default {
          font-size: 3rem;
      }
 
-    .note,
     .upgrade {
         font-size: 1.07rem;
     } 
@@ -237,6 +236,23 @@ export default {
 }
 
 @media screen and (min-width: 760px) {
+    .head {
+        height: 100vh;
+    }
+
+    .head > div {
+        width: 45%;
+    }
+
+    h1 {
+        margin-top: 1.5rem;
+        font-size: 3.2rem;
+    }
+
+    .note {
+        margin: 1.8rem 0;
+    }
+
     .image-flex {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -253,7 +269,7 @@ export default {
 
     .speaker2-wrap {
         background-image: url("./../assets/home/tablet/image-speaker-zx7.jpg");
-        height: 34 0px;
+        height: 340px;
     }
 
     .speaker1-wrap > div{
