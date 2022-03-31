@@ -19,6 +19,10 @@ export default {
         box-sizing: border-box;
     }
 
+    p {
+        font-weight: 400;
+    }
+
     body,
     input::placeholder{
         font-family: 'Manrope', sans-serif;
@@ -69,26 +73,10 @@ export default {
     }
 
     @media screen and (min-width: 700px) {
-        .mobile,
-        .desktop {
-            display: none;
-        }
-
-        .tablet {
-            display: block;
-        }
+ 
     }
 
     @media screen and (min-width: 1000px) {
-        .mobile,
-        .tablet {
-            display: none;
-        }
-
-        .desktop {
-            display: block;
-        }
-
         .reverse-flex {
             flex-direction: row-reverse;
         }

@@ -1,5 +1,5 @@
 <template>
-    <a :href="link" class="cta link">{{ btnAction}}</a>
+    <router-link to="" class="cta"> {{ btnAction }} </router-link>
 </template>
 
 <script>

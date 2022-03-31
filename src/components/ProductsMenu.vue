@@ -1,29 +1,41 @@
 <template>
     <div class="wrap">
         <div class="box">
-            <img src="./../assets/Products/product1.svg" class="product" alt=""/>
+            <img src="./../assets/Products/product1.svg" 
+                class="product" 
+                alt="Image of a headphone"/>
             <p>HEADPHONES</p>
             <div class="flex shop">
-                <a href="">SHOP</a>
-                <img src="./../assets/shared/desktop/icon-arrow-right.svg" alt=""/>
+                <router-link to="/headphones">SHOP
+                      <img src="./../assets/shared/desktop/icon-arrow-right.svg" 
+                            alt="click here to visit headhones products"/>
+                </router-link>
             </div> 
         </div>
 
          <div class="box">
-            <img src="./../assets/Products/product2.svg" class="product" alt=""/>
+            <img src="./../assets/Products/product2.svg" 
+                 class="product" 
+                 alt="Image of a speaker"/>
             <p>SPEAKERS</p>
             <div class="flex shop">
-                <a href="">SHOP</a>
-                <img src="./../assets/shared/desktop/icon-arrow-right.svg" alt=""/>
+                <router-link to="/speakers">SHOP
+                    <img src="./../assets/shared/desktop/icon-arrow-right.svg" 
+                         alt="click here to visit speakers products"/> 
+                </router-link> 
             </div> 
         </div>
 
          <div class="box">
-            <img src="./../assets/Products/product3.svg" class="product" alt=""/>
+            <img src="./../assets/Products/product3.svg" 
+                 class="product" 
+                 alt="Image of an earphone"/>
             <p>EARPHONES</p>
             <div class="flex shop">
-                <a href="">SHOP</a>
-                <img src="./../assets/shared/desktop/icon-arrow-right.svg" alt=""/>
+                <router-link to="/earphones">SHOP
+                    <img src="./../assets/shared/desktop/icon-arrow-right.svg" 
+                         alt="click here to visit earphones products"/>
+                </router-link>
             </div> 
         </div>
     </div>
@@ -64,7 +76,12 @@ export default {
     a {
         color: #000;
         opacity: 0.5;
-        margin-right: .8rem;
+        font-size: .85rem;
+        font-weight: 700;
+    }
+
+    a img {
+        margin-left: .6rem;
     }
 
     .shop {

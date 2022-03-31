@@ -7,7 +7,7 @@
                 <h1>XX99 MARK II HEADPHONES</h1>
                 <p class="note">Experience natural, life like audio and exceptional build 
                 quality made for the passionate music enthusiast.</p>
-                <OrangeButton link="" btnAction="SEE PRODUCT" class="hero-cta"/>
+                <OrangeButton to="/headphones" btnAction="SEE PRODUCT" class="hero-cta"/>
             </div>
         </div>
     </header>
@@ -117,6 +117,11 @@ export default {
     p, h1{
         text-align: center;
         color: white;
+    }
+
+    h1 {
+        line-height: 1.1;
+        font-size: 2.1rem
     }
 
     .note {
