@@ -107,9 +107,9 @@ export default {
         letter-spacing: 6px; 
         font-size: 0.9rem;
         margin-bottom: 1rem;
+        opacity: 0.5;
     }
 
-    .new,
     .note {
         opacity: .7;
     }
@@ -220,14 +220,6 @@ export default {
 
      h1 {
          font-size: 3rem;
-     }
-
-    .upgrade {
-        font-size: 1.07rem;
-    } 
-
-    .speaker1 {
-        width: 45%;
     }
 
     .speaker1-wrap h2{
@@ -253,6 +245,11 @@ export default {
         margin: 1.8rem 0;
     }
 
+    .speaker1 {
+        width: 45%;
+        margin-bottom: -0.4rem;
+    }
+
     .image-flex {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -273,7 +270,7 @@ export default {
     }
 
     .speaker1-wrap > div{
-        margin-left: 3rem;
+        margin-left: 5rem;
     }
 
     .speaker1-cta {
@@ -297,8 +294,25 @@ export default {
         width: 45%;
     }
 
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .note,
+    .upgrade {
+        width: 325px;
+    }
+
+    .upgrade {
+        margin: 2.5rem 0;
+    }
+
     .speaker2-wrap {
         background-image: url("./../assets/home/desktop/image-speaker-zx7.jpg");
+    }
+
+    .speaker1-wrap h2 {
+        font-size: 2.7rem;
     }
 
     .speaker2-wrap > div {
@@ -332,6 +346,10 @@ export default {
 }
 
 @media screen and (min-width: 1200px) {
+    .speaker1 {
+        width: 40%;
+    }
+
     .head {
         padding: 10rem;
     }

@@ -124,7 +124,11 @@ export default {
     }
 
     @media screen and (min-width: 1000px) {
-         .reverse-flex {
+        .nav-wrap{
+            padding: 0 4rem;
+        }
+
+        .reverse-flex {
             width: 70%;
         }
 
