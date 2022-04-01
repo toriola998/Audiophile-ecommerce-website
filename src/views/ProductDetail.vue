@@ -2,7 +2,9 @@
     <NavBar />
     <header>
         <section class="product-details">
-            <a href="" class="back">Go back</a>
+            <router-link to="/g" class="back">
+                Go back
+            </router-link>
             <div class="flex-tab" v-for="item in products" :key="item.id">
                 <!--<div class="hero-wrap flex">-->
                 <img src="" alt="product" class="hero-product"/>
