@@ -50,17 +50,19 @@ export default {
         color: #D87D4A;
         letter-spacing: 5px;
         font-size: .9rem;
+        margin: 1rem 0;
     }
 
     h2 {
         font-size: 1.7rem;
         margin: 1.5rem auto;
-        width: 320px
+        width: 320px;
+        line-height: 1;
     }
 
     p {
         color: #000;
-        opacity: 0.5;
+        opacity: 0.8;
         line-height: 1.6;
         margin-bottom: 2rem;
     }
@@ -75,6 +77,14 @@ export default {
     .headphone {
         width: 100%;
     }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        padding: 0 7rem;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -82,11 +92,20 @@ export default {
         display: grid;
         grid-template-columns: 50% auto;
         align-items: center;
-        padding: 0 6rem 6rem;
+        padding: 6rem 6rem;
+    }
+
+    h2 {
+        margin: 1rem 0;
+        font-size: 2.2rem;
     }
 
     .about-products {
         margin-left: 4rem;
+    }
+
+    p {
+        padding: unset;
     }
 
     p, h2 {
@@ -108,7 +127,12 @@ export default {
 
 @media screen and (min-width: 1200px) {
     .wrap1 {
-        padding: 0 10rem 6rem;
+        padding: 6rem 10rem;
+    }
+
+     h2 {
+        margin: 1rem 0 2rem;
+        font-size: 2.2rem;
     }
 }
 </style>

@@ -27,4 +27,18 @@ export default {
            height: 10rem;
        }
     }
+
+    @media screen and (min-width: 700px) {
+        h1 {
+           font-size: 1.7rem;
+       }
+    }
+
+    
+    @media screen and (min-width: 1000px) {
+        h1 {
+           font-size: 2.2rem;
+           height: 13rem;
+       }
+    }
 </style>
