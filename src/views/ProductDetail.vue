@@ -115,7 +115,7 @@ export default {
         }
     },
     mounted() {
-        this.productDetails()
+       // this.productDetails()
     }
 }
 </script>
