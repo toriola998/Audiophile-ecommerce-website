@@ -2,17 +2,15 @@
     <NavBar />
     <header>
         <section class="product-details">
-            <router-link to="/g" class="back">
+            <router-link to="/" class="back">
                 Go back
             </router-link>
-            <div class="flex-tab" v-for="item in productList" :key="item.id">
+            <div class="flex-tab">
                 <img src="" alt="product" class="hero-product"/>
                 <div> 
                     <p class="new">NEW PRODUCT</p>
-                    <h3>{{ item.name }}</h3>
-                    <p class="about-product">The new XX99 Mark II headphones is the pinnacle of pristine audio. It 
-                    redefines your premium headphone experience by reproducing the balanced depth and
-                    precision of studio-quality sound.</p>
+                    <h3>{{ productId}}</h3>
+                    <p class="about-product"> {{productDetails.name}} </p>
                     <p class="price">$ 2,999</p>
 
                     <div class="flex">
@@ -76,6 +74,7 @@
 </template>
 
 <script>
+import data from './../../data'
 import NavBar from '../components/NavBar.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
@@ -94,13 +93,29 @@ export default {
         AboutUs,
         TheFooter
     },
-    computed: {
-        
+     data() {
+        return {
+            products: data,
+           // productId: this.$route.params.productId
+        }
     },
 
-    updated() {
-        console.log(this.productList)
-    }
+    computed: {
+        productId() {
+            return this.$route.params.productId
+        },
+        productDetails() {
+            return this.products.find( (item) => {
+                    return item.id === parseInt(this.productId)
+            })
+        },
+ },
+
+ created() {
+     console.log(this.products)
+     console.log(this.productDetails)
+ }
+    
 }
 </script>
 

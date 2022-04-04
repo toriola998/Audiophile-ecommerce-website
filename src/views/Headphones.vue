@@ -4,36 +4,39 @@
         <ProductHeader product="HEADPHONES" />
     </header>
     <main>
-        <ProductLayout imageFileName="product2-headphones"
-                    productName="XX99 MARK II HEADPHONES"
-                    aboutProduct="The new XX99 Mark II headphones is the pinnacle of pristine audio.
-                    It redefines your premium headphone experience by reproducing the balanced depth 
-                    and precision of studio-quality sound." />
-
-        <ProductLayout imageFileName="product-mark-one-headphones"
-                        productName="XX99 MARK I HEADPHONES"
-                        aboutProduct="As the gold standard for headphones, the classic XX99 Mark I offers 
-                        detailed and accurate audio reproduction for audiophiles,
-                        mixing engineers, and music aficionados alike in studios and on the go."
-                        class="reverse-flex" />
-                    
-        <ProductLayout imageFileName="product-headphones"
-                        productName="XX59 HEADPHONES"
-                        aboutProduct="Enjoy your audio almost anywhere and customize it to your specific 
-                        tastes with the XX59 headphones. The stylish yet durable versatile wireless headset
-                        is a brilliant companion at home or on the move." />              
-        <ProductsMenu />
+        <div class="wrap1" v-for="item in products" :key="item.id">  
+            <div v-if="item.category === 'headphones' ">
+               <!-- <picture>
+                   <source media="(min-width: 1000px)" 
+                            :srcset="item.image.desktop">
+                    <source media="(min-width: 700px)" 
+                            :srcset="item.image.tablet">-->
+                    <img :src="`./.${item.image.mobile}`"
+                            alt="Picture of the YX1 earphone"
+                            class="headphone">
+               <!-- </picture>-->
+                <div class="about-products">
+                    <div >
+                    <p class="new">NEW PRODUCT</p>
+                    <h2>{{ item.name}}</h2>
+                    <p>{{item.description}}</p>
+                    <OrangeButton :to="{name: 'ProductDetail', params: { productId: item.id },}" btnAction="SEE PRODUCT" class="button"/>
+                    </div>
+                </div>
+            </div>
+        </div>
         <AboutUs />
     </main>
     <TheFooter />
 </template>
 
 <script>
+import data from './../../data'
 import NavBar from '../components/NavBar.vue'
 import ProductHeader from './../components/ProductHeader.vue'
-//import OrangeButton from './../components/OrangeButton.vue'
-import ProductLayout from './../components/ProductLayout.vue'
-import ProductsMenu from '../components/ProductsMenu.vue'
+import OrangeButton from './../components/OrangeButton.vue'
+//import ProductLayout from './../components/ProductLayout.vue'
+//import ProductsMenu from '../components/ProductsMenu.vue'
 import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 
@@ -42,12 +45,32 @@ export default {
     components:  {
         NavBar,
         ProductHeader,
-       // OrangeButton,
-        ProductLayout,
-        ProductsMenu,
+        OrangeButton,
+        // ProductLayout,
+        //ProductsMenu,
         AboutUs,
         TheFooter
-    }
+    },
+
+    data() {
+        return {
+            products: data,
+            //productId: this.$route.params.productId,
+        }
+    },
+
+    /*computed: {
+        productDetails() {
+            return this.products.find( (item) => {
+                item.id === this.productId
+            })
+        }
+    },
+
+    mounted() {
+        this.productDetails()
+    }*/
+
 }
 </script>
 
