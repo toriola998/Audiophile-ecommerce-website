@@ -5,7 +5,7 @@
             <router-link to="/g" class="back">
                 Go back
             </router-link>
-            <div class="flex-tab" v-for="item in products" :key="item.id">
+            <div class="flex-tab" v-for="item in productList" :key="item.id">
                 <img src="" alt="product" class="hero-product"/>
                 <div> 
                     <p class="new">NEW PRODUCT</p>
@@ -76,7 +76,6 @@
 </template>
 
 <script>
-import data from './../../data.json'
 import NavBar from '../components/NavBar.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
@@ -95,27 +94,12 @@ export default {
         AboutUs,
         TheFooter
     },
-    data() {
-        return {
-            products: [],
-            productId: this.$route.params.productId
-        }
-    },
-    methods: {
-         getProducts() {
-             this.products = data
-             console.log(this.products)
-         }     
-    },
     computed: {
-        productDetails() {
-            return this.products.find( (item) => {
-                item.id === this.productId
-            })
-        }
+        
     },
-    mounted() {
-       // this.productDetails()
+
+    updated() {
+        console.log(this.productList)
     }
 }
 </script>

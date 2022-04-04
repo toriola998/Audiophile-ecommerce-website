@@ -1,8 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
+import data from './../../data.json'
 
-Vue.use(Vuex)
-
-export const store = new Vuex.Store({
-  //code goes here..
+const store = createStore({
+    state () {
+        return {
+          productList: data,
+          //products: [],
+         // productId: this.$route.params.productId
+        }
+    },    
 })
+
+export default store;
+
