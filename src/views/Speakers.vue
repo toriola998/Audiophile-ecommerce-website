@@ -1,9 +1,9 @@
 <template>
     <NavBar />
-    <header>
+    <header role="banner">
         <ProductHeader product="SPEAKERS" />
     </header>
-    <main>
+    <main role="main">
         <ProductLayout imageFileName="product-speaker" 
                         productName="ZX9 SPEAKERS"
                         aboutProduct="Upgrade your sound system with the all new ZX9 active speaker. It’s a 

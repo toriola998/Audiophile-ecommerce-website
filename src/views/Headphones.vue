@@ -1,9 +1,9 @@
 <template>
     <NavBar />
-    <header>
+    <header role="banner">
         <ProductHeader product="HEADPHONES" />
     </header>
-    <main>
+    <main role="main">
         <div class="wrap1">
         <div v-for="item in products" :key="item.id">  
             <div v-if="item.category === 'headphones' ">

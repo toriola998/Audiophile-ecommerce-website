@@ -1,6 +1,6 @@
 <template>
     <NavBar />
-    <main class="checkout-container">
+    <main class="checkout-container" role="main">
         <div>
             <div>
                 <div class="checkout-inner">

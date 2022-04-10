@@ -1,9 +1,9 @@
 <template>
     <NavBar />
-    <header>
+    <header role="banner">
         <ProductHeader product="EARPHONES" />
     </header>
-    <main>
+    <main role="main">
         <ProductLayout  imageFileName="product-earphones" 
                     productName="YX1 WIRELESS EARPHONES"
                     aboutProduct="Tailor your listening experience with bespoke dynamic drivers 

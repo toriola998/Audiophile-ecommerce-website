@@ -2,7 +2,7 @@
     <div class="nav-wrap">
         <div class="flex">
             <div class="reverse-flex">
-                <nav aria-controls="menu">
+                <nav role="navigation">
                     <button @click="showNav = !showNav"  class="menu">
                         <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
                     </button>

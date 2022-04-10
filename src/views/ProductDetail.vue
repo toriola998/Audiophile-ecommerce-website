@@ -1,7 +1,7 @@
 <template>
     <NavBar />
-    <header>
-        <section class="product-details">
+    <header role="banner">
+        <div class="product-details">
             <router-link to="/" class="back">
                 Go back
             </router-link>
@@ -43,9 +43,9 @@
                 </div>
                 <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
             </div>
-        </section>
+        </div>
     </header>
-    <main>
+    <main role="main">
         <YouMayAlsoLike />
         <SimilarProducts />
         <AboutUs />
@@ -104,15 +104,6 @@ export default {
         display: block;
         margin: 1rem 0;
     }
-
-    /*.hero-wrap {
-        background-color: #f1f1f1; 
-        justify-content: center;
-        width: 100%;
-        margin: 0 auto 1.5rem;
-        padding: 3rem 0;
-        border-radius: 7px;
-    }*/
 
     .hero-product {
         display: block;
