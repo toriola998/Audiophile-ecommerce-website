@@ -6,12 +6,13 @@
                 Go back
             </router-link>
             <div class="flex-tab">
-                <img src="" alt="product" class="hero-product"/>
+                <img :src="productDetails.image.mobile" 
+                     :alt="product" class="hero-product"/>
                 <div> 
                     <p class="new">NEW PRODUCT</p>
-                    <h3>{{ productId}}</h3>
-                    <p class="about-product"> {{productDetails.name}} </p>
-                    <p class="price">$ 2,999</p>
+                    <h3>{{ productDetails.name}}</h3>
+                    <p class="about-product"> {{productDetails.description}} </p>
+                    <p class="price">$ {{productDetails.price}}</p>
 
                     <div class="flex">
                         <AddToCartButton/>
@@ -23,24 +24,16 @@
             <div class="features-wrap">  
                 <div class="product-features">
                     <h3>FEATURES</h3>
-                    <p class="about-product">Featuring a genuine leather head strap and premium earcups, these 
-                    headphones deliver superior comfort for those who like to enjoy endless listening. It 
-                    includes intuitive controls designed for any situation. Whether you're taking a business call 
-                    or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.</p>
-                    
-                    <p class="about-product">The advanced Active Noise Cancellation with built-in equalizer allow 
-                    you to experience your audio world on your terms. It lets you enjoy your audio in peace, but 
-                    quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant 
-                    connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, 
-                    cutting-edge technology, and a modern design aesthetic.</p>  
+                    <p class="about-product">{{ productDetails.features}}</p>
+                    <p class="about-product"></p>  
                 </div>
                 <div class="details-wrap"> 
                     <h3>IN THE BOX</h3>
-                    <ul class="box-details">
+                    <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
                         <li>
-                            <span class="num">1x</span>
-                            <span class="details">Headphone Unit</span></li>
-                        <li>
+                            <span class="num">{{info.quantity}}x</span>
+                            <span class="details">{{info.item}}</span></li>
+                        <!--<li>
                             <span class="num">2x</span>
                             <span class="details">Replacement Earcups</span></li>
                         <li>
@@ -51,7 +44,7 @@
                             <span class="details">3.5mm 5m Audio Cable</span></li>
                         <li>
                             <span class="num">1x</span>
-                            <span class="details">Travel Bag</span></li>
+                            <span class="details">Travel Bag</span></li>--> 
                     </ul>
                 </div>
             </div>
@@ -96,7 +89,6 @@ export default {
      data() {
         return {
             products: data,
-           // productId: this.$route.params.productId
         }
     },
 
@@ -109,13 +101,7 @@ export default {
                     return item.id === parseInt(this.productId)
             })
         },
- },
-
- created() {
-     console.log(this.products)
-     console.log(this.productDetails)
- }
-    
+ }  
 }
 </script>
 
