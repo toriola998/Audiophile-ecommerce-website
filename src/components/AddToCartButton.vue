@@ -1,8 +1,12 @@
 <template>
     <div class="grey-bg flex">
-        <img src="./../assets/icons/add.svg" alt="minus-cart" />
+        <button>
+            <img src="./../assets/icons/minus.svg" alt="reduce number of product from cart" />
+        </button>
         <p>1</p>
-        <img src="./../assets/icons/minus.svg" alt="add-to-cart" />
+        <button>
+            <img src="./../assets/icons/add.svg" alt="increase number of product in cart" />
+        </button>
     </div>
 </template>
 
