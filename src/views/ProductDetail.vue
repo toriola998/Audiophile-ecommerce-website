@@ -24,8 +24,7 @@
             <div class="features-wrap">  
                 <div class="product-features">
                     <h3>FEATURES</h3>
-                    <p class="about-product">{{ productDetails.features}}</p>
-                    <p class="about-product"></p>  
+                    <p class="about-product">{{ productDetails.features}}</p> 
                 </div>
                 <div class="details-wrap"> 
                     <h3>IN THE BOX</h3>
@@ -33,18 +32,6 @@
                         <li>
                             <span class="num">{{info.quantity}}x</span>
                             <span class="details">{{info.item}}</span></li>
-                        <!--<li>
-                            <span class="num">2x</span>
-                            <span class="details">Replacement Earcups</span></li>
-                        <li>
-                            <span class="num">1x</span>
-                            <span class="details">User Manual</span></li>
-                        <li>
-                            <span class="num">1x</span>
-                            <span class="details">3.5mm 5m Audio Cable</span></li>
-                        <li>
-                            <span class="num">1x</span>
-                            <span class="details">Travel Bag</span></li>--> 
                     </ul>
                 </div>
             </div>
