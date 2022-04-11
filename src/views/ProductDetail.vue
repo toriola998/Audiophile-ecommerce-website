@@ -16,7 +16,7 @@
 
                     <div class="flex">
                         <AddToCartButton/>
-                        <OrangeButton btnAction="ADD TO CART"/>
+                        <OrangeButton btnAction="ADD TO CART" />
                     </div> 
                 </div>  
             </div>
@@ -73,7 +73,8 @@ export default {
         AboutUs,
         TheFooter
     },
-     data() {
+
+    data() {
         return {
             products: data,
         }
@@ -83,12 +84,13 @@ export default {
         productId() {
             return this.$route.params.productId
         },
+
         productDetails() {
             return this.products.find( (item) => {
                     return item.id === parseInt(this.productId)
             })
         },
- }  
+    }  
 }
 </script>
 
