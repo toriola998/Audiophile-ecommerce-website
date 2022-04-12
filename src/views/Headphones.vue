@@ -4,29 +4,30 @@
         <ProductHeader product="HEADPHONES" />
     </header>
     <main role="main">
-        <div class="wrap1">
-        <div v-for="item in products" :key="item.id">  
-            <div v-if="item.category === 'headphones' ">
-               <!-- <picture>
-                   <source media="(min-width: 1000px)" 
-                            :srcset="item.image.desktop">
-                    <source media="(min-width: 700px)" 
-                            :srcset="item.image.tablet">-->
-                    <img :src="require(`@/assets/${item.image.mobile}`)"
-                            alt="Picture of the YX1 earphone"
-                            class="headphone">
-               <!-- </picture>-->
-                <div class="about-products">
-                    <div >
-                    <p class="new">NEW PRODUCT</p>
-                    <h2>{{ item.name}}</h2>
-                    <p>{{item.description}}</p>
-                    <OrangeButton :to="{name: 'ProductDetail', params: { productId: item.id },}" btnAction="SEE PRODUCT" class="button"/>
+        <div class="products-container">
+            <div v-for="item in products" :key="item.id">  
+                <div v-if="item.category === 'headphones'" class="wrap1">
+                <picture>
+                    <source media="(min-width: 1000px)" 
+                                :srcset="require(`@/assets/${item.categoryImage.desktop}`)">
+                        <source media="(min-width: 700px)" 
+                                :srcset="require(`@/assets/${item.categoryImage.tablet}`)">
+                        <img :src="require(`@/assets/${item.categoryImage.mobile}`)"
+                                alt="Picture of the YX1 earphone"
+                                class="headphone">
+                </picture>
+                    <div class="about-products">
+                        <div >
+                        <p class="new">NEW PRODUCT</p>
+                        <h2>{{ item.name}}</h2>
+                        <p>{{item.description}}</p>
+                        <OrangeButton :to="{name: 'ProductDetail', params: { productId: item.id },}" btnAction="SEE PRODUCT" class="button"/>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+        <ProductsMenu /> 
         <AboutUs />
     </main>
     <TheFooter />
@@ -38,7 +39,7 @@ import NavBar from '../components/NavBar.vue'
 import ProductHeader from './../components/ProductHeader.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 //import ProductLayout from './../components/ProductLayout.vue'
-//import ProductsMenu from '../components/ProductsMenu.vue'
+import ProductsMenu from '../components/ProductsMenu.vue'
 import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 
@@ -49,7 +50,7 @@ export default {
         ProductHeader,
         OrangeButton,
         // ProductLayout,
-        //ProductsMenu,
+        ProductsMenu,
         AboutUs,
         TheFooter
     },
@@ -112,21 +113,42 @@ export default {
         width: 100%;
     }
 
-    h2 {
-        font-size: 2rem;
+    p {
+        padding: 0rem 6rem;
     }
 
-    p {
-        padding: 0 7rem;
+    h2 {
+        font-size: 2rem;
     }
 }
 
 @media screen and (min-width: 1000px) {
+    .products-container {
+        padding: 3rem 6rem 0rem;
+    }
+
     .wrap1 {
         display: grid;
-        grid-template-columns: 50% auto;
-        align-items: center;
-        padding: 6rem 6rem;
+        justify-content: center;
+        column-gap: 3rem;
+        grid-template-columns: 50% 50%;
+    }
+
+    p {
+        padding: unset;
+    }
+
+    h2, 
+    .button {
+        margin: initial;
+    }
+
+    .headphone {
+        margin: unset;
+    }
+
+    p, h2 {
+        text-align: initial;
     }
 
     h2 {
@@ -134,39 +156,23 @@ export default {
         font-size: 2.2rem;
     }
 
-    .about-products {
-        margin-left: 4rem;
-    }
-
-    p {
-        padding: unset;
-    }
-
-    p, h2 {
-        text-align: initial;
-    }
-
-    h2, .button {
-        margin: initial;
-    }
-
     .new {
         margin-bottom: .5rem;
-    }
-
-    h2 {
-        margin-bottom: 1rem;  
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .wrap1 {
+    .products-container {
         padding: 6rem 10rem;
     }
 
-     h2 {
+    .wrap1 {
+        column-gap: 5rem;
+    }
+
+    h2 {
         margin: 1rem 0 2rem;
-        font-size: 2.2rem;
+        font-size: 2.3rem;
     }
 }
 </style>
