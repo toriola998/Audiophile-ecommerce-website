@@ -38,7 +38,6 @@ import data from './../data'
 import NavBar from '../components/NavBar.vue'
 import ProductHeader from './../components/ProductHeader.vue'
 import OrangeButton from './../components/OrangeButton.vue'
-//import ProductLayout from './../components/ProductLayout.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
@@ -49,7 +48,6 @@ export default {
         NavBar,
         ProductHeader,
         OrangeButton,
-        // ProductLayout,
         ProductsMenu,
         AboutUs,
         TheFooter
@@ -64,6 +62,6 @@ export default {
 </script>
 
 <!--ORDINARY 'import styles' WOULDN'T WORK, IT WASN'T SCOPED,
- KEEPS MESSING WITH OTHER ELEMENTS----------->
+ KEEPS MESSING WITH OTHER ELEMENTS STYLES----------->
 <style src="./../assets/product-layout.css" scoped>   
 </style>
