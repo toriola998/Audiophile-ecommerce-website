@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import data from './../../data'
+import data from './../data'
 import NavBar from '../components/NavBar.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'

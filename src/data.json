@@ -92,7 +92,7 @@
     "slug": "xx59-headphones",
     "name": "XX59 Headphones",
     "image": {
-      "mobile": "./assets/product-xx59-headphones/mobile/image-product.jpg",
+      "mobile": "product-xx59-headphones/mobile/image-product.jpg",
       "tablet": "./assets/product-xx59-headphones/tablet/image-product.jpg",
       "desktop": "./assets/product-xx59-headphones/desktop/image-product.jpg"
     },
@@ -176,7 +176,7 @@
     "slug": "xx99-mark-one-headphones",
     "name": "XX99 Mark I Headphones",
     "image": {
-      "mobile": "./assets/product-xx99-mark-one-headphones/mobile/image-product.jpg",
+      "mobile": "product-xx99-mark-one-headphones/mobile/image-product.jpg",
       "tablet": "./assets/product-xx99-mark-one-headphones/tablet/image-product.jpg",
       "desktop": "./assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
     },
@@ -260,7 +260,7 @@
     "slug": "xx99-mark-two-headphones",
     "name": "XX99 Mark II Headphones",
     "image": {
-      "mobile": "./assets/product-xx99-mark-two-headphones/mobile/image-product.jpg",
+      "mobile": "product-xx99-mark-two-headphones/mobile/image-product.jpg",
       "tablet": "./assets/product-xx99-mark-two-headphones/tablet/image-product.jpg",
       "desktop": "./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
     },

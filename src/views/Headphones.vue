@@ -12,8 +12,7 @@
                             :srcset="item.image.desktop">
                     <source media="(min-width: 700px)" 
                             :srcset="item.image.tablet">-->
-                    <img 
-                            :src="`./.${item.image.mobile}`"
+                    <img :src="require(`@/assets/${item.image.mobile}`)"
                             alt="Picture of the YX1 earphone"
                             class="headphone">
                <!-- </picture>-->
@@ -34,7 +33,7 @@
 </template>
 
 <script>
-import data from './../../data'
+import data from './../data'
 import NavBar from '../components/NavBar.vue'
 import ProductHeader from './../components/ProductHeader.vue'
 import OrangeButton from './../components/OrangeButton.vue'
