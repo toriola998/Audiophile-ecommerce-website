@@ -1,11 +1,11 @@
 <template>
-    <a  href="link" class="plain-link">{{ action }}</a>
+    <router-link to="" class="plain-link">{{ action }}</router-link>
 </template>
 
 <script>
 export default {
     name: 'PlainButton',
-    props: ['link', 'action']
+    props: ['action']
 }
 </script>
 
