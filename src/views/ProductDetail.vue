@@ -6,11 +6,18 @@
                 Go back
             </router-link>
             <div class="flex-tab">
-                <img :src="productDetails.image.mobile" 
-                     :alt="product" class="hero-product"/>
+                <picture>
+                    <source media="(min-width: 1000px)" 
+                                :srcset="require(`@/assets/${productDetails.image.desktop}`)">
+                        <source media="(min-width: 630px)" 
+                                :srcset="require(`@/assets/${productDetails.image.tablet}`)">
+                        <img :src="require(`@/assets/${productDetails.image.mobile}`)"
+                                :alt="productDetails.name"
+                                class="hero-product">
+                </picture>
                 <div> 
                     <p class="new">NEW PRODUCT</p>
-                    <h3>{{ productDetails.name}}</h3>
+                    <h3 class="name-product">{{ productDetails.name}}</h3>
                     <p class="about-product"> {{productDetails.description}} </p>
                     <p class="price">$ {{productDetails.price}}</p>
 
@@ -109,15 +116,20 @@ export default {
 
     .hero-product {
         display: block;
-        margin: auto;
+        margin: 0 auto 1.5rem;
         height: auto;
-        width: 80%;
+        width: 100%;
+        border-radius: 7px ;
     }
 
     .new {
         color: #D87D4A;
         letter-spacing: 5px;
         font-size: .9rem;
+    }
+
+    .name-product {
+        text-transform: uppercase;
     }
 
     h3 { 
@@ -173,13 +185,11 @@ export default {
         margin-bottom: 1rem;
     }
 
-@media screen and (min-width: 520px) {
-   .details-wrap {
-       display: grid;
-       grid-template-columns: 35% 60%;
-       justify-content: space-between;
+    .product-features {
+       padding: 2rem 0;
    }
 
+@media screen and (min-width: 520px) {
    .details-wrap h3 {
        margin: initial;
    }
@@ -192,8 +202,10 @@ export default {
 @media screen and (min-width: 630px) {
    .flex-tab {
        display: grid;
-       grid-template-columns: 35% 60%;
-       justify-content: space-between;
+       grid-template-columns: 45% 50%;
+       justify-content: center;
+       align-items: center;
+       column-gap: 2rem;
    }
 }
 
@@ -208,11 +220,10 @@ export default {
 }
 
 @media screen and (min-width: 1200px) {
-   .features-wrap {
-       display: grid;
-       grid-template-columns: 60% 40%;
-       gap: 130px;
-       padding: 4rem 0;
+    .flex-tab {
+       grid-template-columns: 45% 47%;
+       column-gap: 6rem;
+       padding: 6rem 0;
    }
 
    .product-details {
