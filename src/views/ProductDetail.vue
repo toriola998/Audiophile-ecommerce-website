@@ -304,15 +304,10 @@ export default {
     }
 }
 
-
 @media screen and (min-width: 1000px) {
     header,
     main > div{
         padding: 0 6rem;
-    }
-
-    .details-wrap {
-        display: initial;
     }
 }
 
@@ -340,5 +335,12 @@ export default {
    .features-wrap h3 {
        margin: 0 0 2rem 0;
    }
+
+    .features-wrap {
+        display: grid;
+        grid-template-columns: 55% auto;
+        align-items: baseline;
+        column-gap: 10rem;
+    }
 }
 </style>
