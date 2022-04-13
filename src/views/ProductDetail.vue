@@ -17,7 +17,7 @@
                 </picture>
                 <div> 
                     <p class="new">NEW PRODUCT</p>
-                    <h3 class="name-product">{{ productDetails.name}}</h3>
+                    <h1 class="name-product">{{ productDetails.name}}</h1>
                     <p class="about-product"> {{productDetails.description}} </p>
                     <p class="price">$ {{productDetails.price}}</p>
 
@@ -33,7 +33,7 @@
         <div>   
             <div class="features-wrap">  
                 <div class="product-features">
-                    <h3>FEATURES</h3>
+                    <h2>FEATURES</h2>
                     <p class="about-product">{{ productDetails.features}}</p> 
                 </div>
                 <div class="details-wrap"> 
@@ -73,7 +73,8 @@
                     <img :src="require(`@/assets/${productDetails.gallery.third.mobile}`)">
                 </picture>
             </div>-->
-            <h3 class="you-may-also-like">YOU MAY ALSO LIKE</h3>
+
+            <h2 class="you-may-also-like">YOU MAY ALSO LIKE</h2>
             <div class="similar-products-wrap">
                 <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
                     <picture>
@@ -84,7 +85,7 @@
                         <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
                             :alt="similarProduct.slug">
                     </picture>
-                    <h4 class="similar-product-name"> {{similarProduct.name}}</h4>
+                    <h3 class="similar-product-name"> {{similarProduct.name}}</h3>
                     <OrangeButton btnAction="SEE PRODUCT"/>
                 </div>
             </div>
@@ -130,7 +131,7 @@ export default {
                     return item.id === parseInt(this.productId)
             })
         },
-    } 
+    },
 }
 </script>
 

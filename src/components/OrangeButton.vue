@@ -5,7 +5,7 @@
 <script>
 export default {
     name: 'OrangeButton',
-    props: ['btnAction', 'link']
+    props: ['btnAction']
 }
 </script>
 
