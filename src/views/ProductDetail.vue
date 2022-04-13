@@ -97,13 +97,17 @@ export default {
                     return item.id === parseInt(this.productId)
             })
         },
-    }  
+    } 
 }
 </script>
 
 <style scoped>
     .product-details {
         padding: 0 1.5rem;
+    }
+
+    h2, p {
+        text-align: unset;
     }
 
     .back {
