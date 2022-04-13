@@ -106,10 +106,6 @@ export default {
         padding: 0 1.5rem;
     }
 
-    h2, p {
-        text-align: unset;
-    }
-
     .back {
         color: #000;
         font-size: 1rem;
