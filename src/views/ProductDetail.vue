@@ -38,11 +38,13 @@
                 </div>
                 <div class="details-wrap"> 
                     <h3>IN THE BOX</h3>
-                    <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
-                        <li>
-                            <span class="num">{{info.quantity}}x</span>
-                            <span class="details">{{info.item}}</span></li>
-                    </ul>
+                    <div>
+                        <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
+                            <li>
+                                <span class="num">{{info.quantity}}x</span>
+                                <span class="details">{{info.item}}</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         
@@ -72,19 +74,22 @@
                 </picture>
             </div>-->
             <h3 class="you-may-also-like">YOU MAY ALSO LIKE</h3>
-            <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
-                <picture>
-                    <source media="(min-width: 1000px)" 
-                            :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
-                    <source media="(min-width: 700px)" 
-                            :srcset="require(`@/assets/${similarProduct.image.tablet}`)">
-                    <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
-                        :alt="similarProduct.slug">
-                </picture>
-                <h4 class="similar-product-name"> {{similarProduct.name}}</h4>
-                <OrangeButton btnAction="SEE PRODUCT"/>
+            <div class="similar-products-wrap">
+                <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
+                    <picture>
+                        <source media="(min-width: 1000px)" 
+                                :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
+                        <source media="(min-width: 700px)" 
+                                :srcset="require(`@/assets/${similarProduct.image.tablet}`)">
+                        <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
+                            :alt="similarProduct.slug">
+                    </picture>
+                    <h4 class="similar-product-name"> {{similarProduct.name}}</h4>
+                    <OrangeButton btnAction="SEE PRODUCT"/>
+                </div>
             </div>
         </div>
+        <ProductsMenu />
         <AboutUs />
     </main>
     <TheFooter />
@@ -95,6 +100,7 @@ import data from './../data'
 import NavBar from '../components/NavBar.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
+import ProductsMenu from './../components/ProductsMenu.vue'
 import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 export default {
@@ -103,6 +109,7 @@ export default {
         NavBar,
         OrangeButton,
         AddToCartButton,
+        ProductsMenu,
         AboutUs,
         TheFooter
     },
@@ -178,6 +185,7 @@ export default {
         margin-bottom: 2rem;
     }
 
+/***********STYLES FOR FEATURES SECTION STARTS************* */
     .box-details li .num{
         color: #D87D4A;
         padding-right: 1rem;
@@ -209,8 +217,12 @@ export default {
    }
 
 /*************SIMILAR PRODUCTS STYLES STARTS************/
+    .similar-products-wrap {
+        padding-bottom: 4rem ;
+    }
+
     .similar-products {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     .you-may-also-like,
@@ -241,7 +253,7 @@ export default {
    }
 
     header,
-    main {
+    main > div{
         padding: 0 4rem;
     }
 }
@@ -258,7 +270,7 @@ export default {
 
 @media screen and (min-width: 700px) {
     header,
-    main {
+    main > div{
         padding: 0 2rem;
     }
 
@@ -270,6 +282,38 @@ export default {
     .product-images img {
         width: unset;
     }
+
+    .details-wrap,
+    .similar-products-wrap {
+         display: grid;
+    }
+
+    .details-wrap {
+        grid-template-columns: auto auto ;
+    }
+
+    .you-may-also-like {
+        width: initial;
+        margin: initial;
+        padding: 4rem 0 2rem;
+    }
+
+    .similar-products-wrap {
+        grid-template-columns: auto auto auto;
+        column-gap: 2rem;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    header,
+    main > div{
+        padding: 0 6rem;
+    }
+
+    .details-wrap {
+        display: initial;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -280,7 +324,7 @@ export default {
    }
 
     header,
-    main {
+    main > div{
         padding: 0 10rem;
     }
   
