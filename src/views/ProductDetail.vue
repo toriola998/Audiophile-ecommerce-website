@@ -29,59 +29,61 @@
             </div>
         </div>
     </header> 
-    <main role="main">    
-        <div class="features-wrap">  
-            <div class="product-features">
-                <h3>FEATURES</h3>
-                <p class="about-product">{{ productDetails.features}}</p> 
+    <main role="main"> 
+        <div>   
+            <div class="features-wrap">  
+                <div class="product-features">
+                    <h3>FEATURES</h3>
+                    <p class="about-product">{{ productDetails.features}}</p> 
+                </div>
+                <div class="details-wrap"> 
+                    <h3>IN THE BOX</h3>
+                    <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
+                        <li>
+                            <span class="num">{{info.quantity}}x</span>
+                            <span class="details">{{info.item}}</span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="details-wrap"> 
-                <h3>IN THE BOX</h3>
-                <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
-                    <li>
-                        <span class="num">{{info.quantity}}x</span>
-                        <span class="details">{{info.item}}</span></li>
-                </ul>
-            </div>
-        </div>
-    
-        <!--<div class="product-images">
-            <div>
+        
+            <!--<div class="product-images">
+                <div>
+                    <picture>
+                        <source media="(min-width: 1000px)" 
+                                :srcset="require(`@/assets/${productDetails.gallery.first.desktop}`)">
+                        <source media="(min-width: 630px)" 
+                                :srcset="require(`@/assets/${productDetails.gallery.first.tablet}`)">
+                        <img :src="require(`@/assets/${productDetails.gallery.first.mobile}`)">        
+                    </picture>
+                    <picture>
+                        <source media="(min-width: 1000px)" 
+                                :srcset="require(`@/assets/${productDetails.gallery.second.desktop}`)">
+                        <source media="(min-width: 630px)" 
+                                :srcset="require(`@/assets/${productDetails.gallery.second.tablet}`)">
+                        <img :src="require(`@/assets/${productDetails.gallery.second.mobile}`)">
+                    </picture>
+                </div>
                 <picture>
                     <source media="(min-width: 1000px)" 
-                            :srcset="require(`@/assets/${productDetails.gallery.first.desktop}`)">
+                            :srcset="require(`@/assets/${productDetails.gallery.third.desktop}`)">
                     <source media="(min-width: 630px)" 
-                            :srcset="require(`@/assets/${productDetails.gallery.first.tablet}`)">
-                    <img :src="require(`@/assets/${productDetails.gallery.first.mobile}`)">        
+                            :srcset="require(`@/assets/${productDetails.gallery.third.tablet}`)">
+                    <img :src="require(`@/assets/${productDetails.gallery.third.mobile}`)">
                 </picture>
+            </div>-->
+            <h3 class="you-may-also-like">YOU MAY ALSO LIKE</h3>
+            <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
                 <picture>
                     <source media="(min-width: 1000px)" 
-                            :srcset="require(`@/assets/${productDetails.gallery.second.desktop}`)">
-                    <source media="(min-width: 630px)" 
-                            :srcset="require(`@/assets/${productDetails.gallery.second.tablet}`)">
-                    <img :src="require(`@/assets/${productDetails.gallery.second.mobile}`)">
+                            :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
+                    <source media="(min-width: 700px)" 
+                            :srcset="require(`@/assets/${similarProduct.image.tablet}`)">
+                    <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
+                        :alt="similarProduct.slug">
                 </picture>
+                <h4 class="similar-product-name"> {{similarProduct.name}}</h4>
+                <OrangeButton btnAction="SEE PRODUCT"/>
             </div>
-            <picture>
-                <source media="(min-width: 1000px)" 
-                        :srcset="require(`@/assets/${productDetails.gallery.third.desktop}`)">
-                <source media="(min-width: 630px)" 
-                        :srcset="require(`@/assets/${productDetails.gallery.third.tablet}`)">
-                <img :src="require(`@/assets/${productDetails.gallery.third.mobile}`)">
-            </picture>
-        </div>-->
-        <h3 class="you-may-also-like">YOU MAY ALSO LIKE</h3>
-        <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
-            <picture>
-                <source media="(min-width: 1000px)" 
-                        :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
-                <source media="(min-width: 700px)" 
-                        :srcset="require(`@/assets/${similarProduct.image.tablet}`)">
-                <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
-                     :alt="similarProduct.slug">
-            </picture>
-            <h4 class="similar-product-name"> {{similarProduct.name}}</h4>
-            <OrangeButton btnAction="SEE PRODUCT"/>
         </div>
         <AboutUs />
     </main>
@@ -127,7 +129,7 @@ export default {
 
 <style scoped>
     header,
-    main {
+    main > div{
         padding: 0 1.5rem;
     }
 
@@ -174,14 +176,6 @@ export default {
         opacity: 0.5;
         line-height: 1.6;
         margin-bottom: 2rem;
-    }
-
-    .grey-bg {
-        margin-right: 1.5rem;
-    }
-
-    .link {
-        margin: unset;
     }
 
     .box-details li .num{
