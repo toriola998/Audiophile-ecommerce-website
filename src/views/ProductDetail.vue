@@ -27,34 +27,62 @@
                     </div> 
                 </div>  
             </div>
-            
-            <div class="features-wrap">  
-                <div class="product-features">
-                    <h3>FEATURES</h3>
-                    <p class="about-product">{{ productDetails.features}}</p> 
-                </div>
-                <div class="details-wrap"> 
-                    <h3>IN THE BOX</h3>
-                    <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
-                        <li>
-                            <span class="num">{{info.quantity}}x</span>
-                            <span class="details">{{info.item}}</span></li>
-                    </ul>
-                </div>
+        </div>
+    </header> 
+    <main role="main">    
+        <div class="features-wrap">  
+            <div class="product-features">
+                <h3>FEATURES</h3>
+                <p class="about-product">{{ productDetails.features}}</p> 
             </div>
-        
-            <div class="product-images">
-                <div>
-                    <img src="./../assets/product2-headphones/mobile/image-gallery-1.jpg" alt="" />
-                    <img src="./../assets/product2-headphones/mobile/image-gallery-2.jpg" alt="" />
-                </div>
-                <img src="./../assets/product2-headphones/mobile/image-gallery-3.jpg" alt="" />
+            <div class="details-wrap"> 
+                <h3>IN THE BOX</h3>
+                <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
+                    <li>
+                        <span class="num">{{info.quantity}}x</span>
+                        <span class="details">{{info.item}}</span></li>
+                </ul>
             </div>
         </div>
-    </header>
-    <main role="main">
-        <YouMayAlsoLike />
-        <SimilarProducts />
+    
+        <!--<div class="product-images">
+            <div>
+                <picture>
+                    <source media="(min-width: 1000px)" 
+                            :srcset="require(`@/assets/${productDetails.gallery.first.desktop}`)">
+                    <source media="(min-width: 630px)" 
+                            :srcset="require(`@/assets/${productDetails.gallery.first.tablet}`)">
+                    <img :src="require(`@/assets/${productDetails.gallery.first.mobile}`)">        
+                </picture>
+                <picture>
+                    <source media="(min-width: 1000px)" 
+                            :srcset="require(`@/assets/${productDetails.gallery.second.desktop}`)">
+                    <source media="(min-width: 630px)" 
+                            :srcset="require(`@/assets/${productDetails.gallery.second.tablet}`)">
+                    <img :src="require(`@/assets/${productDetails.gallery.second.mobile}`)">
+                </picture>
+            </div>
+            <picture>
+                <source media="(min-width: 1000px)" 
+                        :srcset="require(`@/assets/${productDetails.gallery.third.desktop}`)">
+                <source media="(min-width: 630px)" 
+                        :srcset="require(`@/assets/${productDetails.gallery.third.tablet}`)">
+                <img :src="require(`@/assets/${productDetails.gallery.third.mobile}`)">
+            </picture>
+        </div>-->
+        <h3 class="you-may-also-like">YOU MAY ALSO LIKE</h3>
+        <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
+            <picture>
+                <source media="(min-width: 1000px)" 
+                        :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
+                <source media="(min-width: 700px)" 
+                        :srcset="require(`@/assets/${similarProduct.image.tablet}`)">
+                <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
+                     :alt="similarProduct.slug">
+            </picture>
+            <h4 class="similar-product-name"> {{similarProduct.name}}</h4>
+            <OrangeButton btnAction="SEE PRODUCT"/>
+        </div>
         <AboutUs />
     </main>
     <TheFooter />
@@ -65,8 +93,6 @@ import data from './../data'
 import NavBar from '../components/NavBar.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
-import YouMayAlsoLike from './../components/YouMayAlsoLike.vue'
-import SimilarProducts from './../components/SimilarProducts.vue'
 import AboutUs from '../components/AboutUs.vue'
 import TheFooter from '../components/TheFooter.vue'
 export default {
@@ -75,8 +101,6 @@ export default {
         NavBar,
         OrangeButton,
         AddToCartButton,
-        YouMayAlsoLike,
-        SimilarProducts,
         AboutUs,
         TheFooter
     },
@@ -102,7 +126,8 @@ export default {
 </script>
 
 <style scoped>
-    .product-details {
+    header,
+    main {
         padding: 0 1.5rem;
     }
 
@@ -189,14 +214,42 @@ export default {
        padding: 2rem 0;
    }
 
+/*************SIMILAR PRODUCTS STYLES STARTS************/
+    .similar-products {
+        margin-bottom: 2rem;
+    }
+
+    .you-may-also-like,
+    .similar-product-name {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .you-may-also-like {
+        margin: 4rem 0 2rem;
+    }
+
+    .similar-products img {
+        height: auto;
+        width: 100%;
+        display: block;
+        margin: auto;
+        border-radius: 7px ;
+    }
+
+    .similar-product-name {
+        margin: 1.5rem 0;
+    }
+
 @media screen and (min-width: 520px) {
    .details-wrap h3 {
        margin: initial;
    }
 
-   .product-features {
-       padding: 4rem 0;
-   }
+    header,
+    main {
+        padding: 0 4rem;
+    }
 }
 
 @media screen and (min-width: 630px) {
@@ -210,12 +263,18 @@ export default {
 }
 
 @media screen and (min-width: 700px) {
-    .product-details {
+    header,
+    main {
         padding: 0 2rem;
     }
 
     .product-images {
-        display: flex;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .product-images img {
+        width: unset;
     }
 }
 
@@ -226,10 +285,11 @@ export default {
        padding: 6rem 0;
    }
 
-   .product-details {
-       padding: 0 10rem;
-   }
-
+    header,
+    main {
+        padding: 0 10rem;
+    }
+  
    .product-features {
        padding: initial;
    }

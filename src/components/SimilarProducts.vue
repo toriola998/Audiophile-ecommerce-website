@@ -18,27 +18,5 @@ export default {
 </script>
 
 <style scoped>
-     .wrap3 {
-        padding: 0 1.5rem 2.5rem;
-    }
-
-    .grey-bg {
-        background-color: #f1f1f1;
-        padding: 1rem 0;
-        border-radius: 7px;
-    }
-
-    img {
-        height: auto;
-        width: 30%;
-        display: block;
-        margin: auto;
-    }
-
-    .also-product-name {
-        text-align: center;
-        font-size: 1.4rem;
-        margin: 1.5rem 0;
-    }
-
+    
 </style>
