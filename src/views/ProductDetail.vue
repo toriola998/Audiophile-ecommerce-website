@@ -2,9 +2,10 @@
     <NavBar />
     <header role="banner">
         <div class="product-details">
-            <router-link to="/" class="back">
+            
+            <button class="back" @click="$router.back()">
                 Go back
-            </router-link>
+            </button>
             <div class="flex-tab">
                 <picture>
                     <source media="(min-width: 1000px)" 
@@ -150,7 +151,6 @@ export default {
         color: #000;
         font-size: 1rem;
         opacity: 0.5;
-        display: block;
         margin: 2rem 0;
     }
 
@@ -169,15 +169,18 @@ export default {
     }
 
     h1 {
+        margin: 1rem 0;
+    }
+
+    h1, h2, h3 {
         text-transform: uppercase;
-        margin: 1.5rem 0;
     }
 
     #features {
         margin-bottom: 2rem;
     }
 
-    h3 { 
+    #features, h3 { 
         font-size: 1.7rem;
         margin: 1.5rem 0;
     }
@@ -325,7 +328,7 @@ export default {
     .flex-tab {
        grid-template-columns: 45% 47%;
        column-gap: 6rem;
-       padding: 6rem 0;
+       padding: 2rem 0 6rem;
    }
 
     header,
