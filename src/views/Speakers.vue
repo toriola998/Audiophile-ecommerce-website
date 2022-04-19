@@ -61,7 +61,6 @@ export default {
 }
 </script>
 
-
 <!--ORDINARY 'import styles' WOULDN'T WORK, IT WASN'T SCOPED,
  KEEPS MESSING WITH OTHER ELEMENTS----------->
 <style src="./../assets/product-layout.css" scoped>   

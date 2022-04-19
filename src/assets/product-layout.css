@@ -10,7 +10,8 @@
     border-radius: 7px;
 }
 
-.wrap1 p, h2 {
+.wrap1 p, 
+.wrap1 h2 {
     text-align: center;
 }
 
@@ -81,7 +82,8 @@
         margin: unset;
     }
 
-    .wrap1 p, h2 {
+    .wrap1 p, 
+    .wrap1 h2 {
         text-align: initial;
     }
 
