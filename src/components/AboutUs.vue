@@ -112,7 +112,6 @@ export default {
         }
 
         .about-img {
-            
             margin-left: 6rem;
         }
         

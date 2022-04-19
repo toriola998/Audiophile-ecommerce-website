@@ -76,10 +76,6 @@ export default {
         background-color: rgba(0,0,0, 0.55)  
     }
 
-    @media screen and (min-width: 700px) {
- 
-    }
-
     @media screen and (min-width: 1000px) {
         .reverse-flex {
             flex-direction: row-reverse;
