@@ -31,9 +31,9 @@
     </header> 
     <main role="main"> 
         <div>   
-            <div class="features-wrap">  
+            <section aria-labelledby="features" class="features-wrap">  
                 <div class="product-features">
-                    <h2>FEATURES</h2>
+                    <h2 id="features">FEATURES</h2>
                     <p class="about-product">{{ productDetails.features}}</p> 
                 </div>
                 <div class="details-wrap"> 
@@ -46,7 +46,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
         
             <!--<div class="product-images">
                 <div>
@@ -74,21 +74,26 @@
                 </picture>
             </div>-->
 
-            <h2 class="you-may-also-like">YOU MAY ALSO LIKE</h2>
-            <div class="similar-products-wrap">
-                <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
-                    <picture>
-                        <source media="(min-width: 1000px)" 
-                                :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
-                        <source media="(min-width: 700px)" 
-                                :srcset="require(`@/assets/${similarProduct.image.tablet}`)">
-                        <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
-                            :alt="similarProduct.slug">
-                    </picture>
-                    <h3 class="similar-product-name"> {{similarProduct.name}}</h3>
-                    <OrangeButton btnAction="SEE PRODUCT"/>
+            <section aria-labelledby="products-you-may-also-like">
+                <h2 id="products-you-may-also-like" 
+                    class="you-may-also-like">
+                    YOU MAY ALSO LIKE
+                </h2>
+                <div class="similar-products-wrap">
+                    <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
+                        <picture>
+                            <source media="(min-width: 1000px)" 
+                                    :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
+                            <source media="(min-width: 700px)" 
+                                    :srcset="require(`@/assets/${similarProduct.image.tablet}`)">
+                            <img :src="require(`@/assets/${similarProduct.image.mobile}`)"
+                                :alt="similarProduct.slug">
+                        </picture>
+                        <h3 class="similar-product-name"> {{similarProduct.name}}</h3>
+                        <OrangeButton btnAction="SEE PRODUCT"/>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
         <ProductsMenu />
         <AboutUs />
@@ -146,7 +151,7 @@ export default {
         font-size: 1rem;
         opacity: 0.5;
         display: block;
-        margin: 1rem 0;
+        margin: 2rem 0;
     }
 
     .hero-product {
@@ -163,14 +168,18 @@ export default {
         font-size: .9rem;
     }
 
-    .name-product {
+    h1 {
         text-transform: uppercase;
+        margin: 1.5rem 0;
+    }
+
+    #features {
+        margin-bottom: 2rem;
     }
 
     h3 { 
         font-size: 1.7rem;
         margin: 1.5rem 0;
-        width: 320px;
     }
 
     .price {
@@ -333,7 +342,7 @@ export default {
    }
 
    .details-wrap h3,
-   .features-wrap h3 {
+   .features-wrap h2 {
        margin: 0 0 2rem 0;
    }
 
