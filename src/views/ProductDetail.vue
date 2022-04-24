@@ -23,8 +23,10 @@
                     <p class="price">$ {{productDetails.price}}</p>
 
                     <div class="flex">
-                        <AddToCartButton/>
-                        <OrangeButton btnAction="ADD TO CART" />
+                        <AddToCartButton :number="number" 
+                                         @increase-quantity="increaseQuantity()"
+                                         @decrease-quantity="decreaseQuantity()"/>
+                        <OrangeButton btnAction="ADD TO CART" @click="AddToCart()"/>
                     </div> 
                 </div>  
             </div>
@@ -124,6 +126,34 @@ export default {
     data() {
         return {
             products: data,
+            number: 1,
+        }
+    },
+
+    methods: {
+        AddToCart() {
+            const cartObject = {
+                productImage: this.productDetails.image.mobile,
+                productName: this.productDetails.name,
+                productPrice: this.productDetails.price,
+                noOfItems: this.number,
+                id: this.productDetails.id,
+            }
+
+            this.$store.commit('ADD_TO_CART', cartObject)
+            console.log(this.$store.getters.RETURN_CART)
+        },
+
+        increaseQuantity() {
+            this.number++;
+        },
+
+        decreaseQuantity() {
+          if(this.number == 0){
+               this.number = 0
+           }else {
+              this.number--;
+           }
         }
     },
 
