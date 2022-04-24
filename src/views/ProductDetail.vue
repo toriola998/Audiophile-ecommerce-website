@@ -139,9 +139,9 @@ export default {
                 noOfItems: this.number,
                 id: this.productDetails.id,
             }
-
-            this.$store.commit('ADD_TO_CART', cartObject)
-            console.log(this.$store.getters.RETURN_CART)
+            
+            this.$store.dispatch('addToCart', cartObject)
+            
         },
 
         increaseQuantity() {
@@ -158,6 +158,9 @@ export default {
     },
 
     computed: {
+        storeItems() {
+            return this.$store.getters.RETURN_CART
+        },
         productId() {
             return this.$route.params.productId
         },

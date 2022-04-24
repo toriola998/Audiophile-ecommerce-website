@@ -27,6 +27,7 @@
                 </router-link>
             </div>
             <button @click="showCart = !showCart">
+                <p class="cart flex">{{ totalCartNumber }}</p>
                 <img src="./../assets/icons/cart.svg" alt="Cart for products"/>
             </button>
 
@@ -50,12 +51,48 @@ export default {
         return {
             showNav: false,
             showCart: false,
+            //totalCartNumber: 0,
+            globalState: this.$store.getters.RETURN_CART,
+
         }
     },
     components: {
         ProductsMenu,
         CartDetails,
-    }
+    },
+    methods: {
+         totalCartNumber() {
+            //return this.$store.getters.SOMETHING
+           // let totalNumber = 0;
+            return this.cartItem.reduce( (curr, acc) => {
+                //totalNumber += item.noOfItems
+                return curr.noOfItems += acc 
+            }, {
+                noOfItems: 0,
+            })
+            
+            //return totalNumber;
+        },
+
+    },
+    computed: {
+        // totalCartNumber() {
+        //     //return this.$store.getters.SOMETHING
+        //    // let totalNumber = 0;
+        //     return this.cartItem.reduce( (curr, acc) => {
+        //         //totalNumber += item.noOfItems
+        //         return curr.noOfItems += acc 
+        //     }, {
+        //         noOfItems: 0,
+        //     })
+            
+        //     //return totalNumber;
+        // },
+
+        cartItem() {
+            return this.$store.getters.RETURN_CART
+        }
+    },
 }
 </script>
 
@@ -93,6 +130,14 @@ export default {
 
     ul {
         display: none;
+    }
+
+    .cart {
+        background-color: #D87D4A;
+        justify-content: center;
+        color: #fff;
+        height: 2rem;
+        border-radius: 20px;
     }
 
     @media screen and (min-width: 700px) {
