@@ -16,11 +16,6 @@
 export default {
     name: 'AddToCartButton',
     props: ['id', 'number'],
-    data () {
-        return  {
-           //number: 1,
-        }
-    },
 }
 </script>
 

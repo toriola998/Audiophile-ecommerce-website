@@ -131,19 +131,6 @@ export default {
     },
 
     methods: {
-        AddToCart() {
-            const cartObject = {
-                productImage: this.productDetails.image.mobile,
-                productName: this.productDetails.name,
-                productPrice: this.productDetails.price,
-                noOfItems: this.number,
-                id: this.productDetails.id,
-            }
-            
-            this.$store.dispatch('addToCart', cartObject)
-            
-        },
-
         increaseQuantity() {
             this.number++;
         },
@@ -158,9 +145,6 @@ export default {
     },
 
     computed: {
-        storeItems() {
-            return this.$store.getters.RETURN_CART
-        },
         productId() {
             return this.$route.params.productId
         },
