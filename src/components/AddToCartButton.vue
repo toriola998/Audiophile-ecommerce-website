@@ -4,7 +4,7 @@
             <img src="./../assets/icons/minus.svg" 
                  alt="reduce number of product from cart" />
         </button>
-        <p :id="id">{{ number }}</p>
+        <p> {{ productQuantity }} </p>
         <button @click="$emit('increaseQuantity')">
             <img src="./../assets/icons/add.svg" 
                  alt="increase number of product in cart" />
@@ -15,7 +15,7 @@
 <script>
 export default {
     name: 'AddToCartButton',
-    props: ['id', 'number'],
+    props: ['id', 'productQuantity'],
 }
 </script>
 

@@ -9,21 +9,21 @@
             <div class="flex-tab">
                 <picture>
                     <source media="(min-width: 1000px)" 
-                                :srcset="require(`@/assets/${productDetails.image.desktop}`)">
+                                :srcset="require(`@/assets/${product.image.desktop}`)">
                         <source media="(min-width: 630px)" 
-                                :srcset="require(`@/assets/${productDetails.image.tablet}`)">
-                        <img :src="require(`@/assets/${productDetails.image.mobile}`)"
-                                :alt="productDetails.name"
+                                :srcset="require(`@/assets/${product.image.tablet}`)">
+                        <img :src="require(`@/assets/${product.image.mobile}`)"
+                                :alt="product.name"
                                 class="hero-product">
                 </picture>
                 <div> 
                     <p class="new">NEW PRODUCT</p>
-                    <h1 class="name-product">{{ productDetails.name}}</h1>
-                    <p class="about-product"> {{productDetails.description}} </p>
-                    <p class="price">$ {{productDetails.price}}</p>
+                    <h1 class="name-product">{{ product.name}}</h1>
+                    <p class="about-product"> {{product.description}} </p>
+                    <p class="price">$ {{product.price}}</p>
 
                     <div class="flex">
-                        <AddToCartButton :number="number" 
+                        <AddToCartButton :productQuantity="productQuantity" 
                                          @increase-quantity="increaseQuantity()"
                                          @decrease-quantity="decreaseQuantity()"/>
                         <OrangeButton btnAction="ADD TO CART" @click="AddToCart()"/>
@@ -37,12 +37,12 @@
             <section aria-labelledby="features" class="features-wrap">  
                 <div class="product-features">
                     <h2 id="features">FEATURES</h2>
-                    <p class="about-product">{{ productDetails.features}}</p> 
+                    <p class="about-product">{{ product.features}}</p> 
                 </div>
                 <div class="details-wrap"> 
                     <h3>IN THE BOX</h3>
                     <div>
-                        <ul class="box-details" v-for="info in productDetails.includes" :key="info.id">
+                        <ul class="box-details" v-for="info in product.includes" :key="info.id">
                             <li>
                                 <span class="num">{{info.quantity}}x</span>
                                 <span class="details">{{info.item}}</span></li>
@@ -55,25 +55,25 @@
                 <div>
                     <picture>
                         <source media="(min-width: 1000px)" 
-                                :srcset="require(`@/assets/${productDetails.gallery.first.desktop}`)">
+                                :srcset="require(`@/assets/${product.gallery.first.desktop}`)">
                         <source media="(min-width: 630px)" 
-                                :srcset="require(`@/assets/${productDetails.gallery.first.tablet}`)">
-                        <img :src="require(`@/assets/${productDetails.gallery.first.mobile}`)">        
+                                :srcset="require(`@/assets/${product.gallery.first.tablet}`)">
+                        <img :src="require(`@/assets/${product.gallery.first.mobile}`)">        
                     </picture>
                     <picture>
                         <source media="(min-width: 1000px)" 
-                                :srcset="require(`@/assets/${productDetails.gallery.second.desktop}`)">
+                                :srcset="require(`@/assets/${product.gallery.second.desktop}`)">
                         <source media="(min-width: 630px)" 
-                                :srcset="require(`@/assets/${productDetails.gallery.second.tablet}`)">
-                        <img :src="require(`@/assets/${productDetails.gallery.second.mobile}`)">
+                                :srcset="require(`@/assets/${product.gallery.second.tablet}`)">
+                        <img :src="require(`@/assets/${product.gallery.second.mobile}`)">
                     </picture>
                 </div>
                 <picture>
                     <source media="(min-width: 1000px)" 
-                            :srcset="require(`@/assets/${productDetails.gallery.third.desktop}`)">
+                            :srcset="require(`@/assets/${product.gallery.third.desktop}`)">
                     <source media="(min-width: 630px)" 
-                            :srcset="require(`@/assets/${productDetails.gallery.third.tablet}`)">
-                    <img :src="require(`@/assets/${productDetails.gallery.third.mobile}`)">
+                            :srcset="require(`@/assets/${product.gallery.third.tablet}`)">
+                    <img :src="require(`@/assets/${product.gallery.third.mobile}`)">
                 </picture>
             </div>-->
 
@@ -83,7 +83,7 @@
                     YOU MAY ALSO LIKE
                 </h2>
                 <div class="similar-products-wrap">
-                    <div class="similar-products" v-for="similarProduct in productDetails.others" :key="similarProduct.slug">
+                    <div class="similar-products" v-for="similarProduct in product.others" :key="similarProduct.slug">
                         <picture>
                             <source media="(min-width: 1000px)" 
                                     :srcset="require(`@/assets/${similarProduct.image.desktop}`)">
@@ -126,20 +126,20 @@ export default {
     data() {
         return {
             products: data,
-            number: 1,
+            productQuantity: 1,
         }
     },
 
     methods: {
         increaseQuantity() {
-            this.number++;
+            this.productQuantity++;
         },
 
         decreaseQuantity() {
-          if(this.number == 0){
-               this.number = 0
+          if(this.productQuantity == 0){
+               this.productQuantity = 0
            }else {
-              this.number--;
+              this.productQuantity--;
            }
         }
     },
@@ -149,7 +149,7 @@ export default {
             return this.$route.params.productId
         },
 
-        productDetails() {
+        product() {
             return this.products.find( (item) => {
                     return item.id === parseInt(this.productId)
             })
