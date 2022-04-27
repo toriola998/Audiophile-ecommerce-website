@@ -40,7 +40,7 @@
                         <div>
                             <span class="flex">
                                 <label for="address">Address</label><br>
-                                <span class="err name-err">Provide address</span>
+                                <span class="err" v-if="addressError">Provide detailed address</span>
                             </span>
                             <input type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
                         </div>
@@ -49,7 +49,8 @@
                             <div>
                                 <span class="flex">
                                     <label for="zip-code">Zip Code</label><br>
-                                    <span class="err name-err">Must be a number</span>
+                                    <span class="err" v-if="zipCodeError">Privide zip code</span>
+                                    <span class="err" v-if="zipNanError">Must be a number</span>
                                 </span>
                                 <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
                             </div>
@@ -57,7 +58,7 @@
                             <div>
                                 <span class="flex">
                                     <label for="city">City</label><br>
-                                    <span class="err name-err">Provide city</span>
+                                    <span class="err" v-if="cityError">Provide city</span>
                                 </span>
                                 <input type="text" placeholder="New York" id="city" v-model="city"/>
                             </div>
@@ -65,7 +66,7 @@
                             <div>
                                 <span class="flex">
                                     <label for="country">Country</label><br>
-                                    <span class="err name-err">Provide country</span>
+                                    <span class="err" v-if="countryError">Provide country</span>
                                 </span>
                                 <input type="text" placeholder="United States" id="country" v-model="country"/>
                             </div>
@@ -187,11 +188,20 @@ export default {
             email: "",
             message: "",
             phoneNumber: "",
+            address: "",
+            zipCode: "",
+            city: "",
+            country: "",
             nameError: false,
             emailError: false,
             invalidEmailError: false,
             phoneError: false,
             invalidPhoneError: false,
+            addressError: false,
+            zipCodeError: false,
+            zipNanError: false,
+            cityError: false,
+            countryError: false,
         }
     },
     methods: {
@@ -234,6 +244,38 @@ export default {
             } else {
                 this.phoneError = false
                 this.invalidPhoneError = false
+            }
+
+            /*******FORM VALIDATION FOR ADDRESS INPUT FIELD */
+            if(!this.address) { //if address field is empty
+                this.addressError = true //show error message
+            }else {
+                this.addressError = false //remove error message if input field isn't empty
+            }
+
+            /*******FORM VALIDATION FOR ZIP-CODE INPUT FIELD */
+            if(!this.zipCode) { //if zipCode field is empty
+                this.zipCodeError = true //show error message
+
+            }else if (isNaN(this.zipCode)){
+                this.zipNanError = true //show error message
+            }else {
+                this.zipCodeError = false //remove error message if input field isn't empty
+                this.zipNanError = false;
+            }
+
+            /*******FORM VALIDATION FOR CITY INPUT FIELD */
+            if(!this.city) { //if zipCode field is empty
+                this.cityError = true //show error message
+            }else {
+                this.cityError = false //remove error message if input field isn't empty
+            }
+
+            /*******FORM VALIDATION FOR COUNTRY INPUT FIELD */
+            if(!this.country) { //if country field is empty
+                this.countryError = true //show error message
+            }else {
+                this.countryError = false //remove error message if input field isn't empty
             }
         }
     }
