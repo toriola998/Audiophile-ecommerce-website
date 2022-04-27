@@ -1,41 +1,38 @@
 <template>
     <div class="cart-container">
-        <div class="flex cart-head">
-            <p class="cart">CART ({{ cartSize }})</p>
+        <p v-if="cartSize === 0" class="empty-cart-msg">Oops! Your cart is empty</p>
+        <div v-else>
+            <div class="flex cart-head">
+                <p class="cart">CART ({{ cartSize }})</p>
+                <!--SHOW BUTTON ONLY WHEN THERE'S PRODUCT IN THE CART-->
+                <button class="remove"  
+                        @click="emptyCart()">
+                        Remove all
+                </button>
+            </div>
 
-            <!--SHOW BUTTON ONLY WHEN THERE'S PRODUCT IN THE CART-->
-            <button class="remove" 
-                    v-if="cartSize != 0" 
-                    @click="emptyCart()">
-                    Remove all
-            </button>
-        </div>
-        
-        <p>Oops! Your cart is empty</p>
-        <ul class="product-summary">
-            <li class="flex" v-for="cartItem in cart" :key="cartItem"> 
-                <img :src="cartItem.productImage"  class="product-image" alt=""/>
-                <div class="flex ">
-                    <p>
-                        <span class="product-name">{{ cartItem.productName.substring(0, 9) }}...</span><br>
-                        <span class="product-price">{{ cartItem.productPrice }}</span>
-                    </p>
-                    <AddToCartButton/>
-                </div>
-            </li>
-        </ul>
-
-        <!--SHOW total-price ONLY WHEN THERE'S PRODUCT IN THE CART-->
-        <ul>
-            <li class="flex total-wrap" v-if="cartSize != 0">
-                <span class="title">TOTAL</span>
-                <span class="price">$ {{ cartTotalAmount }}</span>
-            </li>
-        </ul>
-        <OrangeButton btnAction="CHECKOUT" 
-                     class="checkout" 
-                     v-if="cartSize != 0"
-                     @click="checkout()" />
+            <ul class="product-summary">
+                <li class="flex" v-for="cartItem in cart" :key="cartItem"> 
+                    <img :src="cartItem.productImage"  class="product-image" alt=""/>
+                    <div class="flex ">
+                        <p>
+                            <span class="product-name">{{ cartItem.productName.substring(0, 9) }}...</span><br>
+                            <span class="product-price">{{ cartItem.productPrice }}</span>
+                        </p>
+                        <AddToCartButton/>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li class="flex total-wrap">
+                    <span class="title">TOTAL</span>
+                    <span class="price">$ {{ cartTotalAmount }}</span>
+                </li>
+            </ul>
+            <OrangeButton btnAction="CHECKOUT" 
+                        class="checkout" 
+                        @click="checkout()" />
+            </div>
     </div>
 </template>
 
@@ -86,6 +83,13 @@ export default {
         min-height: 220px;
         position: absolute;
         z-index: 999;
+    }
+
+    .empty-cart-msg {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        font-weight: 600;
     }
 
     .cart,
