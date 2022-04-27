@@ -10,28 +10,28 @@
                         <div class="tab-grid">
                             <div>
                                 <span class="flex">
-                                    <label for="name">Name</label><br>
+                                    <label for="name" :class="{ labelErrorColor: nameError }">Name</label><br>
                                     <span class="err" v-if="nameError">Name can't be empty</span>
                                 </span>
-                                <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
+                                <input type="text" :class="{ borderErrorColor: nameError }" placeholder="Alexei Ward" id="name" v-model="name"/>
                             </div>
 
                             <div>
                                 <span class="flex">
-                                    <label for="email">Email</label><br>
+                                    <label for="email" :class="{ labelErrorColor: emailError }">Email</label><br>
                                     <span class="err" v-if="emailError">Email can't be empty</span>
                                     <span class="err" v-if="invalidEmailError">Wrong format</span>
                                 </span>
-                                <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
+                                <input type="email" :class="{ borderErrorColor: emailError }" placeholder="alexei@gmail.com" id="email" v-model="email"/>
                             </div>
 
                             <div>
                                 <span class="flex">
-                                    <label for="number">Number</label><br>
+                                    <label for="number" :class="{ labelErrorColor: phoneError }" >Number</label><br>
                                     <span class="err" v-if="phoneError">Fill in your number</span>
                                     <span class="err" v-if="invalidPhoneError">Incorrect Phone number</span>
                                 </span>
-                                <input type="tel" placeholder="+1 202-555-0136" id="number" 
+                                <input :class="{ labelErrorColor: phoneError }" type="tel" placeholder="+1 202-555-0136" id="number" 
                                v-model="phoneNumber"/>
                             </div>
                         </div> 
@@ -39,36 +39,36 @@
                         <p class="orange">SHIPPING INFO</p>
                         <div>
                             <span class="flex">
-                                <label for="address">Address</label><br>
+                                <label for="address" :class="{ labelErrorColor: addressError }" >Address</label><br>
                                 <span class="err" v-if="addressError">Provide detailed address</span>
                             </span>
-                            <input type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
+                            <input :class="{ borderErrorColor: addressError }"  type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
                         </div>
 
                         <div class="tab-grid">
                             <div>
                                 <span class="flex">
-                                    <label for="zip-code">Zip Code</label><br>
+                                    <label for="zip-code" :class="{ labelErrorColor: zipCodeError }" >Zip Code</label><br>
                                     <span class="err" v-if="zipCodeError">Privide zip code</span>
                                     <span class="err" v-if="zipNanError">Must be a number</span>
                                 </span>
-                                <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
+                                <input :class="{ borderErrorColor: zipCodeError }" type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
                             </div>
 
                             <div>
                                 <span class="flex">
-                                    <label for="city">City</label><br>
+                                    <label for="city" :class="{ labelErrorColor: cityError }" >City</label><br>
                                     <span class="err" v-if="cityError">Provide city</span>
                                 </span>
-                                <input type="text" placeholder="New York" id="city" v-model="city"/>
+                                <input :class="{ borderErrorColor: cityError }" type="text" placeholder="New York" id="city" v-model="city"/>
                             </div>
 
                             <div>
                                 <span class="flex">
-                                    <label for="country">Country</label><br>
+                                    <label for="country" :class="{ labelErrorColor: countryError }" >Country</label><br>
                                     <span class="err" v-if="countryError">Provide country</span>
                                 </span>
-                                <input type="text" placeholder="United States" id="country" v-model="country"/>
+                                <input type="text" :class="{ borderErrorColor: countryError }" placeholder="United States" id="country" v-model="country"/>
                             </div>
                         </div> 
                         <p class="orange">PAYMENT DETAILS</p>
@@ -76,30 +76,30 @@
                             <p class="sub-heading">Payment Method</p>
                             <div class="checkbox-container">
                                 <div class="flex checkbox-wrap">
-                                    <input type="checkbox" id="e-money" v-model="address"/>
+                                    <input type="radio" id="e-money" v-model="payOnline"/>
                                     <label for="e-money">e-Money</label>
                                 </div>
 
                                 <div class="flex checkbox-wrap">
-                                    <input type="checkbox" id="cash-on-delivery" v-model="address"/>
+                                    <input type="radio" id="cash-on-delivery" v-model="payWithCash"/>
                                     <label for="cash-on-delivery">Cash on delivery</label>
                                 </div>   
                             </div>
                         </div>
 
-                        <div class="tab-grid">
+                        <div class="tab-grid" v-if="!payWithCash && payOnline">
                             <div>
                                 <label for="e-money-number">e-money Number</label><br>
-                                <input type="number" placeholder="238521993" id="e-money-number" v-model="address"/>
+                                <input type="number" placeholder="238521993" id="e-money-number" v-model="eMoneyNumber"/>
                             </div>
 
                             <div>
                                 <label for="e-money-pin">e-money PIN</label><br>
-                                <input type="number" placeholder="6891" id="e-money-pin" v-model="zipCode"/>
+                                <input type="number" placeholder="6891" id="e-money-pin" v-model="eMoneyPin"/>
                             </div>
                         </div>  
                         
-                        <div class="tab-flex">
+                        <div class="tab-flex" v-if="payWithCash && !payOnline">
                             <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
                             <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
                             courier arrives at your residence. Just make sure your address is correct so 
@@ -202,6 +202,9 @@ export default {
             zipNanError: false,
             cityError: false,
             countryError: false,
+
+            payWithCash: false,
+            payOnline: true,
         }
     },
     methods: {
@@ -315,6 +318,14 @@ export default {
         color: #CD2C2C;
     }
 
+    .labelErrorColor {
+        color: #CD2C2C;
+    }
+
+    .borderErrorColor{
+        border: 2px solid #CD2C2C;
+    }
+
     .orange {
         color: #D87D4A;
         font-size: .9rem;
@@ -352,7 +363,7 @@ export default {
         margin-top: 1rem;
     }
 
-    .tab-grid input[type="checkbox"] {
+    .tab-grid input[type="radio"] {
         width: initial;
         margin: 0 1rem 0 0;
     }
@@ -446,7 +457,10 @@ export default {
         display: grid;
         grid-template-columns: auto auto;
         gap: 40px;
-        margin-top: 2rem;
+    }
+
+      form {
+        padding: 2rem 1.5rem 4rem;
     }
 }
 
