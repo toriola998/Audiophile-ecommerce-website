@@ -11,7 +11,7 @@
                             <div>
                                 <span class="flex">
                                     <label for="name">Name</label><br>
-                                    <span class="err name-err">Name cannot be empty</span>
+                                    <span class="err" v-if="nameError">Name can't be empty</span>
                                 </span>
                                 <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
                             </div>
@@ -19,7 +19,8 @@
                             <div>
                                 <span class="flex">
                                     <label for="email">Email</label><br>
-                                    <span class="err name-err">Email cannot be empty</span>
+                                    <span class="err" v-if="emailError">Email can't be empty</span>
+                                    <span class="err" v-if="invalidEmailError">Wrong format</span>
                                 </span>
                                 <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
                             </div>
@@ -179,12 +180,41 @@ export default {
     },
     data () {
         return {
-            showCard: false
+            showCard: false,
+            name: "",
+            email: "",
+            message: "",
+            nameError: false,
+            emailError: false,
+            invalidEmailError: false,
+            messageError: false,
         }
     },
-    method: {
+    methods: {
+        validEmail (email) {
+            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        },
+
         payForProducts() {
             console.log('redddd')
+             /*******FORM VALIDATION FOR NAME INPUT FIELD */
+            if(!this.name) { //if email field is empty
+                this.nameError = true //show error message
+            }else {
+                this.nameError = false //remove error message if input field isn't empty
+            }
+
+            /*******FORM VALIDATION FOR EMAIL INPUT FIELD */
+            if(!this.email) {  //if email field is empty
+                this.emailError = true  //show "can't be empty"
+            } else if (!this.validEmail(this.email)) {   //if it isn,t empty but its invalid
+                    this.invalidEmailError = true  // show "invalid email"
+                    this.emailError = false   //remove cant be empty since it's not empty, just invalid
+            } else {
+                this.emailError = false
+                this.invalidEmailError = false
+            }
         }
     }
 }
