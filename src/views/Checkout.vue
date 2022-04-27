@@ -9,39 +9,61 @@
                         <p class="orange">BILLING DETAILS</p>
                         <div class="tab-grid">
                             <div>
-                                <label for="name">Name</label><br>
+                                <span class="flex">
+                                    <label for="name">Name</label><br>
+                                    <span class="err name-err">Name cannot be empty</span>
+                                </span>
                                 <input type="text" placeholder="Alexei Ward" id="name" v-model="name"/>
                             </div>
 
                             <div>
-                                <label for="email">Email</label><br>
+                                <span class="flex">
+                                    <label for="email">Email</label><br>
+                                    <span class="err name-err">Email cannot be empty</span>
+                                </span>
                                 <input type="email" placeholder="alexei@gmail.com" id="email" v-model="email"/>
                             </div>
+
                             <div>
-                                <label for="number">Number</label><br>
+                                <span class="flex">
+                                    <label for="number">Number</label><br>
+                                    <span class="err name-err">Fill in your number</span>
+                                </span>
                                 <input type="tel" placeholder="+1 202-555-0136" id="number" v-model="number"/>
                             </div>
                         </div> 
 
                         <p class="orange">SHIPPING INFO</p>
                         <div>
-                            <label for="address">Address</label><br>
+                            <span class="flex">
+                                <label for="address">Address</label><br>
+                                <span class="err name-err">Provide address</span>
+                            </span>
                             <input type="text" placeholder="1137 Williams Avenue" id="address" v-model="address"/>
                         </div>
 
                         <div class="tab-grid">
                             <div>
-                                <label for="zip-code">Zip Code</label><br>
+                                <span class="flex">
+                                    <label for="zip-code">Zip Code</label><br>
+                                    <span class="err name-err">Must be a number</span>
+                                </span>
                                 <input type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
                             </div>
 
                             <div>
-                                <label for="city">City</label><br>
+                                <span class="flex">
+                                    <label for="city">City</label><br>
+                                    <span class="err name-err">Provide city</span>
+                                </span>
                                 <input type="text" placeholder="New York" id="city" v-model="city"/>
                             </div>
 
                             <div>
-                                <label for="country">Country</label><br>
+                                <span class="flex">
+                                    <label for="country">Country</label><br>
+                                    <span class="err name-err">Provide country</span>
+                                </span>
                                 <input type="text" placeholder="United States" id="country" v-model="country"/>
                             </div>
                         </div> 
@@ -125,7 +147,8 @@
                                 <span class="price">$ 2,999</span>
                             </li>
                         </ul>
-                        <OrangeButton @click="showCard = !showCard" btnAction="CONTINUE" class="continue"/>
+                        <!--click="showCard = !showCard"-->
+                        <OrangeButton @click="payForProducts()" btnAction="CONTINUE" class="continue"/>
                         <teleport to="body">
                             <div v-show="showCard"
                                 @click.self.stop.prevent ="showCard = !showCard"
@@ -158,6 +181,11 @@ export default {
         return {
             showCard: false
         }
+    },
+    method: {
+        payForProducts() {
+            console.log('redddd')
+        }
     }
 }
 </script>
@@ -186,6 +214,15 @@ export default {
         font-weight: 700;
     }
 
+    span.flex {
+        justify-content: space-between;
+    }
+
+    .err {
+        font-size: .85rem;
+        color: #CD2C2C;
+    }
+
     .orange {
         color: #D87D4A;
         font-size: .9rem;
@@ -199,6 +236,11 @@ export default {
 
     input {
         margin: .5rem 0 1.5rem;
+    }
+
+    input:hover,
+    .checkbox-wrap:hover{
+        border: 1px solid #D87D4A;
     }
 
     input,
