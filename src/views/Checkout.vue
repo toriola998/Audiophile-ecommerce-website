@@ -28,9 +28,11 @@
                             <div>
                                 <span class="flex">
                                     <label for="number">Number</label><br>
-                                    <span class="err name-err">Fill in your number</span>
+                                    <span class="err" v-if="phoneError">Fill in your number</span>
+                                    <span class="err" v-if="invalidPhoneError">Incorrect Phone number</span>
                                 </span>
-                                <input type="tel" placeholder="+1 202-555-0136" id="number" v-model="number"/>
+                                <input type="tel" placeholder="+1 202-555-0136" id="number" 
+                               v-model="phoneNumber"/>
                             </div>
                         </div> 
 
@@ -184,16 +186,23 @@ export default {
             name: "",
             email: "",
             message: "",
+            phoneNumber: "",
             nameError: false,
             emailError: false,
             invalidEmailError: false,
-            messageError: false,
+            phoneError: false,
+            invalidPhoneError: false,
         }
     },
     methods: {
         validEmail (email) {
             var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
+        },
+
+         validatePhoneNumber(number) {
+            var re = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/
+            return re.test(number);
         },
 
         payForProducts() {
@@ -214,6 +223,17 @@ export default {
             } else {
                 this.emailError = false
                 this.invalidEmailError = false
+            }
+
+            /*******FORM VALIDATION FOR PHONE-NUMBER INPUT FIELD */
+            if(!this.phoneNumber) {  //if phone field is empty
+                this.phoneError = true  //show "can't be empty"
+            } else if (!this.validatePhoneNumber(this.phoneNumber)) {   //if it isn,t empty but its invalid
+                    this.invalidPhoneError = true  // show "invalid phone number"
+                    this.phoneError = false   //remove cant be empty since it's not empty, just invalid
+            } else {
+                this.phoneError = false
+                this.invalidPhoneError = false
             }
         }
     }
