@@ -71,7 +71,7 @@ export default {
         padding: 0 1.2rem;
     }
 
-    .flex {
+    .nav-wrap > .flex {
         justify-content: space-between;
         height: 5rem;
         border-bottom: 1px solid #979797;
@@ -153,6 +153,10 @@ export default {
          ul li {
             padding: 0 1rem;
         }
+
+        .cart {
+            right: 3rem;
+        }
     }
 
     @media screen and (min-width: 1200px) {
@@ -164,8 +168,13 @@ export default {
             padding: 0 10rem;
         }
 
-        .nav-wrap .flex {
+        .nav-wrap > .flex {
             height: 7rem;
+        }
+
+         .cart {
+            right: 9rem;
+            top: 1.3rem;
         }
     }
 </style>
