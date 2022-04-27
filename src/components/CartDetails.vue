@@ -32,7 +32,7 @@
             <OrangeButton btnAction="CHECKOUT" 
                         class="checkout" 
                         @click="checkout()" />
-            </div>
+        </div>
     </div>
 </template>
 
@@ -83,12 +83,12 @@ export default {
         min-height: 220px;
         position: absolute;
         z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .empty-cart-msg {
-        display: flex;
-        justify-content: center;
-        margin-top: 4rem;
         font-weight: 600;
     }
 
@@ -162,6 +162,14 @@ export default {
         .cart-container {
             right: 1rem;
             top: 7rem;
+            width: 45%;
+            min-height: 270px;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        .cart-container {
+            width: 38%;
         }
     }
 
@@ -169,6 +177,7 @@ export default {
         .cart-container {
             right: 10rem;
             top: 10rem;
+            width: 27%;
         }
     }
 </style>
