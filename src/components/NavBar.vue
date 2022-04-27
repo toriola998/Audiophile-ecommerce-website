@@ -27,7 +27,7 @@
                 </router-link>
             </div>
             <button @click="showCart = !showCart">
-                <p class="cart flex">0</p>
+                <p class="cart flex">{{ cartSize }}</p>
                 <img src="./../assets/icons/cart.svg" alt="Cart for products"/>
             </button>
 
@@ -57,6 +57,11 @@ export default {
         ProductsMenu,
         CartDetails,
     },
+    computed: {
+        cartSize() {
+            return this.$store.getters.cartSize;
+        }
+    }
 }
 </script>
 

@@ -1,40 +1,41 @@
 <template>
     <div class="cart-container">
         <div class="flex cart-head">
-            <p class="cart">CART (3)</p>
-            <button class="remove">Remove all</button>
+            <p class="cart">CART ({{ cartSize }})</p>
+
+            <!--SHOW BUTTON ONLY WHEN THERE'S PRODUCT IN THE CART-->
+            <button class="remove" 
+                    v-if="cartSize != 0" 
+                    @click="emptyCart()">
+                    Remove all
+            </button>
         </div>
+        
+        <p>Oops! Your cart is empty</p>
         <ul class="product-summary">
-            <li class="flex"> 
-                <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
+            <li class="flex" v-for="cartItem in cart" :key="cartItem"> 
+                <img :src="cartItem.productImage"  class="product-image" alt=""/>
                 <div class="flex ">
                     <p>
-                        <span class="product-name">XX99 MK II </span><br>
-                        <span class="product-price">$ 2,999</span>
+                        <span class="product-name">{{ cartItem.productName.substring(0, 9) }}...</span><br>
+                        <span class="product-price">{{ cartItem.productPrice }}</span>
                     </p>
-                    <AddToCartButton />
-                </div>
-            </li>
-
-            <li class="flex"> 
-                <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
-                <div class="flex ">
-                    <p>
-                        <span class="product-name">XX99 MK II </span><br>
-                        <span class="product-price">$ 2,999</span>
-                    </p>
-                    <AddToCartButton />
+                    <AddToCartButton/>
                 </div>
             </li>
         </ul>
 
+        <!--SHOW total-price ONLY WHEN THERE'S PRODUCT IN THE CART-->
         <ul>
-            <li class="flex total-wrap">
+            <li class="flex total-wrap" v-if="cartSize != 0">
                 <span class="title">TOTAL</span>
-                <span class="price">$ 2,999</span>
+                <span class="price">$ {{ cartTotalAmount }}</span>
             </li>
         </ul>
-        <OrangeButton btnAction="CHECKOUT" class="checkout"/>
+        <OrangeButton btnAction="CHECKOUT" 
+                     class="checkout" 
+                     v-if="cartSize != 0"
+                     @click="checkout()" />
     </div>
 </template>
 
@@ -45,7 +46,34 @@ export default {
     components: {
         AddToCartButton,
         OrangeButton
-    }
+    },
+
+    methods: {
+        checkout() {
+            if(this.cartSize > 0){
+                this.$router.push({ path: '/checkout' })
+            }
+        },
+
+        emptyCart(){
+            this.$store.state.cart = [] 
+        }
+    },
+
+    computed: {
+        cartSize() {
+            return this.$store.getters.cartSize
+        },
+
+        cart() {
+            return this.$store.state.cart
+        },
+
+        cartTotalAmount() {
+            return this.$store.getters.cartTotalAmount
+        }
+    },
+
 }
 </script>
 
@@ -54,7 +82,8 @@ export default {
         background-color: #fff;
         padding: 2rem 1.5rem;
         border-radius: 7px;
-        width: auto;
+        width: 90%;
+        min-height: 220px;
         position: absolute;
         z-index: 999;
     }

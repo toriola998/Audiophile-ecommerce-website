@@ -126,7 +126,7 @@ export default {
     data() {
         return {
             products: data,
-            productQuantity: 1,
+
         }
     },
 
@@ -141,6 +141,21 @@ export default {
            }else {
               this.productQuantity--;
            }
+        },
+
+        AddToCart() {
+            const productDetail = {
+                productId: this.productId,
+                productName: this.product.name,
+                productPrice: this.product.price,
+                productDescription: this.product.description,
+                productImage: this.product.image,
+                quantity: this.$store.state.productQuantity
+            }
+            
+            console.log(productDetail)
+            console.log(this.$store.state.cart)
+            this.$store.commit('addToCart', productDetail)
         }
     },
 
@@ -153,6 +168,10 @@ export default {
             return this.products.find( (item) => {
                     return item.id === parseInt(this.productId)
             })
+        },
+
+        productQuantity() {
+            return this.$store.getters.productQuantity
         },
     },
 }
