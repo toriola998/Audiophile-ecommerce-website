@@ -394,7 +394,7 @@ export default {
     .back {
         color: #000;
         font-size: 1rem;
-        opacity: 0.5;
+        opacity: 0.7;
         margin-bottom: 2rem;
     }
 
