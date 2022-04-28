@@ -4,7 +4,7 @@
         <div>
             <div>
                 <div class="checkout-inner">
-                    <form>
+                    <form action="" method="post">
                         <h1>CHECKOUT</h1> 
                         <p class="orange">BILLING DETAILS</p>
                         <div class="tab-grid">
@@ -29,7 +29,7 @@
                                 <span class="flex">
                                     <label for="number" :class="{ labelErrorColor: phoneError }" >Number</label><br>
                                     <span class="err" v-if="phoneError">Fill in your number</span>
-                                    <span class="err" v-if="invalidPhoneError">Incorrect Phone number</span>
+                                    <!--<span class="err" v-if="invalidPhoneError">Incorrect Phone number</span>-->
                                 </span>
                                 <input :class="{ borderErrorColor: phoneError }" type="tel" placeholder="+1 202-555-0136" id="number" 
                                v-model="phoneNumber"/>
@@ -50,7 +50,7 @@
                                 <span class="flex">
                                     <label for="zip-code" :class="{ labelErrorColor: zipCodeError }" >Zip Code</label><br>
                                     <span class="err" v-if="zipCodeError">Privide zip code</span>
-                                    <span class="err" v-if="zipNanError">Must be a number</span>
+                                    <!--<span class="err" v-if="zipNanError">Must be a number</span>-->
                                 </span>
                                 <input :class="{ borderErrorColor: zipCodeError }" type="number" placeholder="10001" id="zip-code" v-model="zipCode"/>
                             </div>
@@ -141,7 +141,7 @@
                             </li>
                         </ul>
                         <!--click="showCard = !showCard"-->
-                        <OrangeButton @click="payForProducts()" btnAction="CONTINUE" class="continue"/>
+                        <OrangeButton @click="payForProducts()" btnAction="CONTINUE" type="submit" class="continue"/>
                         <teleport to="body">
                             <div v-show="showCard"
                                 @click.self.stop.prevent ="showCard = !showCard"
@@ -227,9 +227,9 @@ export default {
             /*******FORM VALIDATION FOR PHONE-NUMBER INPUT FIELD */
             if(!this.phoneNumber) {  //if phone field is empty
                 this.phoneError = true  //show "can't be empty"
-            } else if (!this.validatePhoneNumber(this.phoneNumber)) {   //if it isn,t empty but its invalid
-                    this.invalidPhoneError = true  // show "invalid phone number"
-                    this.phoneError = false   //remove cant be empty since it's not empty, just invalid
+            // } else if (!this.validatePhoneNumber(this.phoneNumber)) {   //if it isn,t empty but its invalid
+            //         this.invalidPhoneError = true  // show "invalid phone number"
+            //         this.phoneError = false   //remove cant be empty since it's not empty, just invalid
             } else {
                 this.phoneError = false
                 this.invalidPhoneError = false
@@ -245,12 +245,8 @@ export default {
             /*******FORM VALIDATION FOR ZIP-CODE INPUT FIELD */
             if(!this.zipCode) { //if zipCode field is empty
                 this.zipCodeError = true //show error message
-
-            }else if (isNaN(this.zipCode)){
-                this.zipNanError = true //show error message
             }else {
                 this.zipCodeError = false //remove error message if input field isn't empty
-                this.zipNanError = false;
             }
 
             /*******FORM VALIDATION FOR CITY INPUT FIELD */
@@ -265,6 +261,12 @@ export default {
                 this.countryError = true //show error message
             }else {
                 this.countryError = false //remove error message if input field isn't empty
+            }
+
+            if(!this.name && !this.email && !this.validEmail(this.email) && !this.phoneNumber && !this.address && !this.zipCode && !this.city && !this.country){
+                this.showCard = false;
+            }else {
+                this.showCard = true
             }
         }
     },
