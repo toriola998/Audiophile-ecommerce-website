@@ -31,7 +31,7 @@
                                     <span class="err" v-if="phoneError">Fill in your number</span>
                                     <span class="err" v-if="invalidPhoneError">Incorrect Phone number</span>
                                 </span>
-                                <input :class="{ labelErrorColor: phoneError }" type="tel" placeholder="+1 202-555-0136" id="number" 
+                                <input :class="{ borderErrorColor: phoneError }" type="tel" placeholder="+1 202-555-0136" id="number" 
                                v-model="phoneNumber"/>
                             </div>
                         </div> 
@@ -76,30 +76,30 @@
                             <p class="sub-heading">Payment Method</p>
                             <div class="checkbox-container">
                                 <div class="flex checkbox-wrap">
-                                    <input type="radio" id="e-money" v-model="payOnline"/>
+                                    <input type="radio" id="e-money" name="payment" v-model="eMoney" checked />
                                     <label for="e-money">e-Money</label>
                                 </div>
 
                                 <div class="flex checkbox-wrap">
-                                    <input type="radio" id="cash-on-delivery" v-model="payWithCash"/>
+                                    <input type="radio" id="cash-on-delivery" name="payment" v-model="cashOnDelivery" />
                                     <label for="cash-on-delivery">Cash on delivery</label>
                                 </div>   
                             </div>
                         </div>
 
-                        <div class="tab-grid" v-if="!payWithCash && payOnline">
+                        <div class="tab-grid"> 
                             <div>
                                 <label for="e-money-number">e-money Number</label><br>
-                                <input type="number" placeholder="238521993" id="e-money-number" v-model="eMoneyNumber"/>
+                                <input type="number" placeholder="238521993" id="e-money-number" v-model="eMoneyNumber" />
                             </div>
 
                             <div>
                                 <label for="e-money-pin">e-money PIN</label><br>
-                                <input type="number" placeholder="6891" id="e-money-pin" v-model="eMoneyPin"/>
+                                <input type="number" placeholder="6891" id="e-money-pin" v-model="eMoneyPin" />
                             </div>
                         </div>  
                         
-                        <div class="tab-flex" v-if="payWithCash && !payOnline">
+                        <div class="tab-flex">
                             <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
                             <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
                             courier arrives at your residence. Just make sure your address is correct so 
@@ -110,18 +110,18 @@
                     <section aria-labelledby="summary" class="summary-container">
                         <h2 id="summary">SUMMARY</h2>
                         <ul class="product-summary">
-                            <li class="flex"> 
+                            <li class="flex" v-for="item in cart" :key="item.id"> 
                                 <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
                                 <div class="flex ">
                                     <p>
-                                        <span class="product-name">XX99 MK II </span><br>
-                                        <span class="product-price">$ 2,999</span>
+                                        <span class="product-name"> {{ item.name }} </span><br>
+                                        <span class="product-price">{{ item.price}}</span>
                                     </p>
                                     <span class="product-quantity">*1</span>
                                 </div>
                             </li>
 
-                            <li class="flex"> 
+                           <!-- <li class="flex"> 
                                 <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
                                 <div class="flex ">
                                     <p>
@@ -130,17 +130,17 @@
                                     </p>
                                     <span class="product-quantity">*1</span>
                                 </div>
-                            </li>
+                            </li>-->
                         </ul>
                         
                         <ul>
                             <li class="flex total-wrap">
                                 <span class="title">TOTAL</span>
-                                <span class="price">$ 2,999</span>
+                                <span class="price"> $ {{cartTotalAmount}}</span>
                             </li>
                             <li class="flex total-wrap">
                                 <span class="title">SHIPPING</span>
-                                <span class="price">$ 2,999</span>
+                                <span class="price">$ 50 </span>
                             </li>
                             <li class="flex total-wrap">
                                 <span class="title">VAT (INCLUDED)</span>
@@ -202,9 +202,6 @@ export default {
             zipNanError: false,
             cityError: false,
             countryError: false,
-
-            payWithCash: false,
-            payOnline: true,
         }
     },
     methods: {
@@ -213,10 +210,10 @@ export default {
             return re.test(email);
         },
 
-         validatePhoneNumber(number) {
-            var re = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/
-            return re.test(number);
-        },
+        //  validatePhoneNumber(number) {
+        //     var re = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/;
+        //     return re.test(number);
+        // },
 
         payForProducts() {
             console.log('redddd')
@@ -280,6 +277,15 @@ export default {
             }else {
                 this.countryError = false //remove error message if input field isn't empty
             }
+        }
+    },
+    computed: {
+        cart() {
+            return this.$store.state.cart
+        },
+
+        cartTotalAmount() {
+            return this.$store.getters.cartTotalAmount
         }
     }
 }
