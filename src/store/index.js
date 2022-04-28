@@ -7,6 +7,8 @@ const store = createStore({
           productList: data,
           cart: [],
           productQuantity: 1,
+          grandTotal: 0,
+          vat: 20/100,
         }
     }, 
 
@@ -20,6 +22,14 @@ const store = createStore({
                 return total + (product.productPrice * product.quantity);
             }, 0);
         },
+
+        VAT(state, getters){
+            return parseInt(state.vat * getters.cartTotalAmount)
+        },
+
+        grandTotal(state, getters) {
+            return  state.grandTotal + getters.cartTotalAmount + getters.VAT + parseInt(50)
+        }
     },
 
     mutations: {

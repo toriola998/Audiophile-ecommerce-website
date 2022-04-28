@@ -120,17 +120,6 @@
                                     <span class="product-quantity">*1</span>
                                 </div>
                             </li>
-
-                           <!-- <li class="flex"> 
-                                <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
-                                <div class="flex ">
-                                    <p>
-                                        <span class="product-name">XX99 MK II </span><br>
-                                        <span class="product-price">$ 2,999</span>
-                                    </p>
-                                    <span class="product-quantity">*1</span>
-                                </div>
-                            </li>-->
                         </ul>
                         
                         <ul>
@@ -144,11 +133,11 @@
                             </li>
                             <li class="flex total-wrap">
                                 <span class="title">VAT (INCLUDED)</span>
-                                <span class="price">$ 2,999</span>
+                                <span class="price">$ {{ VAT }}</span>
                             </li>
                             <li class="flex total-wrap grand">
                                 <span class="title">GRAND TOTAL</span>
-                                <span class="price">$ 2,999</span>
+                                <span class="price">$ {{ grandTotal }}</span>
                             </li>
                         </ul>
                         <!--click="showCard = !showCard"-->
@@ -286,6 +275,14 @@ export default {
 
         cartTotalAmount() {
             return this.$store.getters.cartTotalAmount
+        },
+
+        VAT() {
+            return this.$store.getters.VAT
+        },
+
+        grandTotal() {
+            return this.$store.getters.grandTotal;
         }
     }
 }
