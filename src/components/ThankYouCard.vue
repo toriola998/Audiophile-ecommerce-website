@@ -13,23 +13,23 @@
                     <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
                     <div class="flex ">
                         <p>
-                            <span class="product-name">XX99 MK II </span><br>
-                            <span class="product-price">$ 2,999</span>
+                            <span class="product-name"> {{ cart[0].productName }} </span><br>
+                            <span class="product-price"> {{ cart[0].productPrice }} </span>
                         </p>
                         <span class="product-quantity">*1</span>
                     </div>
                 </li>
             </ul>
-            <p class="other-items">and 2 other item(s)</p>
+            <p class="other-items">and {{ cartSize - parseInt(1) }} other item(s)</p>
             </div>
             <div class="black-bg flex">
                 <div>
                     <p class="grand">GRAND TOTAL</p>
-                    <p class="total-price">$5, 446</p>
+                    <p class="total-price">$ {{ grandTotal }} </p>
                 </div>
             </div>
         </div>
-        <OrangeButton btnAction="BACK TO HOME" class="back-home"/>
+        <OrangeButton btnAction="BACK TO HOME" class="back-home" @click="backHome()"/>
     </div>
 </template>
 
@@ -38,6 +38,26 @@ import OrangeButton from './OrangeButton.vue'
 export default {
     components: {
         OrangeButton 
+    },
+
+    methods: {
+        backHome() {
+            this.$router.push({ path: '/', name: 'Home' })
+        },
+    },
+
+    computed: {
+        cart() {
+            return this.$store.state.cart;
+        },
+
+        cartSize() {
+            return this.$store.getters.cartSize;
+        },
+
+        grandTotal() {
+            return this.$store.getters.grandTotal;
+        }
     }
 }
 </script>
