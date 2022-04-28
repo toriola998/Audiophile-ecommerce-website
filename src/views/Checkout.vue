@@ -478,7 +478,9 @@ export default {
 
     .summary-container {
         margin-top: initial;
-        height: 34rem;
+        height: fit-content;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         width: 35%;
     }
 
