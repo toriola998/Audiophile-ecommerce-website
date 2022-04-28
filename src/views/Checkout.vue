@@ -1,6 +1,9 @@
 <template>
     <NavBar />
     <main class="checkout-container" role="main">
+        <button class="back" @click="$router.back()">
+                Go back
+        </button>
         <div>
             <div>
                 <div class="checkout-inner">
@@ -294,6 +297,13 @@ export default {
     .checkout-container {
         padding: 2rem 1.5rem;
         background-color: #f1f1f1;
+    }
+
+    .back {
+        color: #000;
+        font-size: 1rem;
+        opacity: 0.5;
+        margin-bottom: 2rem;
     }
 
     form,
