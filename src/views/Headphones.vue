@@ -20,7 +20,7 @@
                         <div >
                         <p class="new">NEW PRODUCT</p>
                         <h2>{{ item.name}}</h2>
-                        <p>{{item.description}}</p>
+                        <p class="desc">{{item.description}}</p>
                         <OrangeButton :to="{name: 'ProductDetail', params: { productId: item.id },}" btnAction="SEE PRODUCT" class="button"/>
                         </div>
                     </div>
