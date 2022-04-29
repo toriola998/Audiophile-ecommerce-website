@@ -7,7 +7,8 @@
                         <img src="./../assets/icons/hamburger.svg" alt="Hamburger menu"/>
                     </button>
                     <teleport to="body">
-                        <ProductsMenu v-show="showNav"
+                        <div class="nav-overlay" v-show="showNav" @click="showNav = !showNav"> </div>
+                            <ProductsMenu v-show="showNav"
                                 id="menu"
                                 class="mobile-navigation"/> 
                     </teleport>
@@ -71,6 +72,19 @@ export default {
         padding: 0 1.2rem;
     }
 
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0,0,0, 0.55);
+    }
+
     .nav-wrap > .flex {
         justify-content: space-between;
         height: 5rem;
@@ -89,6 +103,7 @@ export default {
         right: 0;
         left: 0;
         top: 5rem;
+        padding-bottom: 2rem;
     }
 
     .reverse-flex {

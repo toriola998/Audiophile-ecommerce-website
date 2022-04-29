@@ -7,34 +7,34 @@
             <p>HEADPHONES</p>
             <div class="flex shop">
                 <router-link to="/headphones">SHOP
-                      <img src="./../assets/shared/desktop/icon-arrow-right.svg" 
+                    <img src="./../assets/shared/desktop/icon-arrow-right.svg" 
                             alt="click here to visit headhones products"/>
                 </router-link>
             </div> 
         </div>
 
-         <div class="box">
+        <div class="box">
             <img src="./../assets/Products/product2.svg" 
-                 class="product" 
-                 alt="Image of a speaker"/>
+                class="product" 
+                alt="Image of a speaker"/>
             <p>SPEAKERS</p>
             <div class="flex shop">
                 <router-link to="/speakers">SHOP
                     <img src="./../assets/shared/desktop/icon-arrow-right.svg" 
-                         alt="click here to visit speakers products"/> 
+                        alt="click here to visit speakers products"/> 
                 </router-link> 
             </div> 
         </div>
 
-         <div class="box">
+        <div class="box">
             <img src="./../assets/Products/product3.svg" 
-                 class="product" 
-                 alt="Image of an earphone"/>
+                class="product" 
+                alt="Image of an earphone"/>
             <p>EARPHONES</p>
             <div class="flex shop">
                 <router-link to="/earphones">SHOP
                     <img src="./../assets/shared/desktop/icon-arrow-right.svg" 
-                         alt="click here to visit earphones products"/>
+                        alt="click here to visit earphones products"/>
                 </router-link>
             </div> 
         </div>
