@@ -86,7 +86,7 @@ export default {
     .head {
         background-image: url("./../assets/home/mobile/image-header.jpg"); /* The image used */
         background-color: #191919; /* Used if the image is unavailable */
-        height: 90vh;
+        min-height: 500px;
         justify-content: center;
     }
 
