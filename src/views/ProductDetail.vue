@@ -126,7 +126,6 @@ export default {
     data() {
         return {
             products: data,
-
         }
     },
 
@@ -164,9 +163,14 @@ export default {
             return this.$route.params.productId
         },
 
+        productSlug(){
+             return this.$route.params.productSlug
+        },
+
         product() {
             return this.products.find( (item) => {
-                    return item.id === parseInt(this.productId)
+                   // return item.id === parseInt(this.productId)
+                   return item.slug == this.productSlug
             })
         },
 

@@ -42,7 +42,7 @@ const router = createRouter({
      },
 
      {
-        path: '/product-detail/:productId',
+        path: '/product-detail/:productSlug',
         name: 'ProductDetail',
         component: ProductDetail
      },
