@@ -85,6 +85,18 @@ export default {
         background-color: rgba(0,0,0, 0.55);
     }
 
+     .mobile-navigation {
+        position: absolute;
+        z-index: 99999;
+        background-color: #fff;
+        right: 0;
+        left: 0;
+        top: 5rem;
+        padding-bottom: 2rem;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
     .nav-wrap > .flex {
         justify-content: space-between;
         height: 5rem;
@@ -94,16 +106,6 @@ export default {
     button {
         background-color: transparent;
         border: 0;
-    }
-
-    .mobile-navigation {
-        position: absolute;
-        z-index: 99999;
-        background-color: #fff;
-        right: 0;
-        left: 0;
-        top: 5rem;
-        padding-bottom: 2rem;
     }
 
     .reverse-flex {
