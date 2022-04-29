@@ -14,6 +14,7 @@
                                 :srcset="require(`@/assets/${product.image.tablet}`)">
                         <img :src="require(`@/assets/${product.image.mobile}`)"
                                 :alt="product.name"
+                                height="1000"
                                 class="hero-product">
                 </picture>
                 <div> 
