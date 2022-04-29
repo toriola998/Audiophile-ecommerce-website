@@ -93,7 +93,7 @@
                                 :alt="similarProduct.slug">
                         </picture>
                         <h3 class="similar-product-name"> {{similarProduct.name}}</h3>
-                        <OrangeButton btnAction="SEE PRODUCT"/>
+                        <OrangeButton btnAction="SEE PRODUCT" :to="{name: 'ProductDetail', params: { productSlug: similarProduct.slug },}"/>
                     </div>
                 </div>
             </section>
