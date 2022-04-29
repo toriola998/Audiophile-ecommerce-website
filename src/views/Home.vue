@@ -7,7 +7,7 @@
                 <h1>XX99 MARK II HEADPHONES</h1>
                 <p class="note">Experience natural, life like audio and exceptional build 
                 quality made for the passionate music enthusiast.</p>
-                <OrangeButton to="/product-detail/4" btnAction="SEE PRODUCT" class="hero-cta"/>
+                <OrangeButton to="/product-detail/xx99-mark-two-headphones" btnAction="SEE PRODUCT" class="hero-cta"/>
             </div>
         </div>
     </header>
@@ -23,7 +23,7 @@
                         SPEAKER</h2>
                     <p class="upgrade">Upgrade to premium speakers that are phenomenally built 
                     to deliver truly remarkable sound.</p>
-                    <router-link to="/product-detail/6" class="speaker1-cta link">SEE PRODUCT</router-link>
+                    <router-link to="/product-detail/zx9-speaker" class="speaker1-cta link">SEE PRODUCT</router-link>
                 </div>
             </div>
         </section>
@@ -32,7 +32,7 @@
             <div class="speaker2-wrap flex">
                 <div>
                     <h2 id="zx7-speaker">ZX7 SPEAKER</h2>
-                    <PlainButton to="/product-detail/5" action="SEE PRODUCT"/>
+                    <PlainButton to="/product-detail/zx7-speaker" action="SEE PRODUCT"/>
                 </div>
             </div>
         </section>
@@ -51,7 +51,7 @@
                 <div class="earphones-wrap flex">
                     <div>
                         <h2 id="yx1-earphones">YX1 EARPHONES</h2>
-                        <PlainButton to="/product-detail/1" action="SEE PRODUCT"/>
+                        <PlainButton to="/product-detail/yx1-earphones" action="SEE PRODUCT"/>
                     </div>
                 </div> 
             </div>
