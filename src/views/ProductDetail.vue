@@ -178,6 +178,16 @@ export default {
             return this.$store.getters.productQuantity
         },
     },
+
+    watch: {
+        '$route' () {
+            this.productSlug
+        }
+    },
+
+//     created() {
+//     this.$watch( () => this.productSlug() )
+//   },
 }
 </script>
 
