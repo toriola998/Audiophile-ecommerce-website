@@ -36,12 +36,12 @@ const store = createStore({
         addToCart: (state, payload) => {
             //1. find the product in the products list
             //2. find the product in the cart list
-            let cartProduct = state.cart.find((product) => product.id === payload.productId);
+            let cartProduct = state.cart.find((product) => product.slug === payload.productSlug);
 
             //CHECK IF ANY ITEM IN THE CART HAS AN id THAT MATCHES THAT OF THE ONE YOU'RE CURRENTLY ADDING  
             if (cartProduct) {
                 //product already present in the cart. so increase the quantity
-                cartProduct.payload.quantity++
+                cartProduct.quantity++
                 //cartProduct.qu++;
             } else {
                 state.cart.push(

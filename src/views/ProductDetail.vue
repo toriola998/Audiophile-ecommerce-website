@@ -145,7 +145,7 @@ export default {
 
         AddToCart() {
             const productDetail = {
-                productId: this.productId,
+                productSlug: this.productSlug,
                 productName: this.product.name,
                 productPrice: this.product.price,
                 productDescription: this.product.description,
