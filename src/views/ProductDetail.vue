@@ -7,7 +7,7 @@
                 Go back
             </button>
             <div class="flex-tab">
-                <picture>
+              <picture>
                     <source media="(min-width: 1000px)" 
                                 :srcset="require(`@/assets/${product.image.desktop}`)">
                         <source media="(min-width: 630px)" 
@@ -18,7 +18,7 @@
                                 class="hero-product">
                 </picture>
                 <div> 
-                    <p class="new1">NEW PRODUCT</p>
+                    <p class="new1" v-if="product.new == true">NEW PRODUCT</p>
                     <h1 class="name-product">{{ product.name}}</h1>
                     <p class="about-product"> {{product.description}} </p>
                     <p class="price">$ {{product.price}}</p>
