@@ -18,7 +18,7 @@
                                 class="hero-product">
                 </picture>
                 <div> 
-                    <p class="new">NEW PRODUCT</p>
+                    <p class="new1">NEW PRODUCT</p>
                     <h1 class="name-product">{{ product.name}}</h1>
                     <p class="about-product"> {{product.description}} </p>
                     <p class="price">$ {{product.price}}</p>
@@ -209,7 +209,7 @@ export default {
         border-radius: 7px ;
     }
 
-    .new {
+    .new1 {
         color: #D87D4A;
         letter-spacing: 5px;
         font-size: .9rem;
