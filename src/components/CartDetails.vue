@@ -19,7 +19,7 @@
                             <span class="product-name">{{ cartItem.productName.substring(0, 9) }}...</span><br>
                             <span class="product-price">{{ cartItem.productPrice }}</span>
                         </p>
-                        <AddToCartButton/>
+                        <AddToCartButton @click="deleteFromCart()" />
                     </div>
                 </li>
             </ul>
@@ -54,7 +54,8 @@ export default {
 
         emptyCart(){
             this.$store.state.cart = [] 
-        }
+        },
+
     },
 
     computed: {
@@ -68,7 +69,7 @@ export default {
 
         cartTotalAmount() {
             return this.$store.getters.cartTotalAmount
-        }
+        },
     },
 
 }

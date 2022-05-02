@@ -10,7 +10,7 @@
             <div class="grey-bg">
             <ul>
                 <li class="flex"> 
-                    <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
+                    <img :src="cart[0].productImage"  class="product-image" alt=""/>
                     <div class="flex ">
                         <p>
                             <span class="product-name"> {{ cart[0].productName }} </span><br>

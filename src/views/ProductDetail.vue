@@ -131,17 +131,17 @@ export default {
     },
 
     methods: {
-        increaseQuantity() {
-            this.productQuantity++;
-        },
+        // increaseQuantity() {
+        //     this.productQuantity++;
+        // },
 
-        decreaseQuantity() {
-          if(this.productQuantity == 0){
-               this.productQuantity = 0
-           }else {
-              this.productQuantity--;
-           }
-        },
+        // decreaseQuantity() {
+        //   if(this.productQuantity == 0){
+        //        this.productQuantity = 0
+        //    }else {
+        //       this.productQuantity--;
+        //    }
+        // },
 
         AddToCart() {
             const productDetail = {
@@ -149,7 +149,7 @@ export default {
                 productName: this.product.name,
                 productPrice: this.product.price,
                 productDescription: this.product.description,
-                productImage: this.product.image,
+                productImage: require(`@/assets/${this.product.image.mobile}`),
                 quantity: this.$store.state.productQuantity
             }
             
@@ -185,10 +185,6 @@ export default {
             this.productSlug
         }
     },
-
-//     created() {
-//     this.$watch( () => this.productSlug() )
-//   },
 }
 </script>
 

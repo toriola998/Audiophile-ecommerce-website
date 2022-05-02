@@ -189,7 +189,7 @@
                         <h2 id="summary">SUMMARY</h2>
                         <ul class="product-summary">
                             <li class="flex" v-for="item in cart" :key="item.id"> 
-                                <img src="./../assets/cart/image-zx9-speaker.jpg"  class="product-image" alt=""/>
+                                <img :src="item.productImage" class="product-image" alt=""/>
                                 <div class="flex ">
                                     <p>
                                         <span class="product-name"> {{ item.name }} </span><br>
