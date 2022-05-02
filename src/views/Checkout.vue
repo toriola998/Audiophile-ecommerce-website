@@ -133,18 +133,20 @@
                         <p class="orange">PAYMENT DETAILS</p>
                         <div class="tab-grid">
                             <p class="sub-heading">Payment Method</p>
-                            <div class="checkbox-container">
-                                <div class="flex checkbox-wrap">
+                            <div class="radio-container">
+                                <div class="flex radio-wrap e-money-wrap">
                                     <input type="radio"
-                                           id="e-money" 
-                                           value="e-money" 
+                                           id="e-money"
+                                           class="payment-method"   
+                                           value="e-money"
                                            v-model="payment" checked/>
                                     <label for="e-money">e-Money</label>
                                 </div>
 
-                                <div class="flex checkbox-wrap">
+                                <div class="flex radio-wrap">
                                     <input type="radio" 
-                                           id="cash-on-delivery" 
+                                           id="cash-on-delivery"
+                                           class="payment-method" 
                                            value="cash-on-delivery" 
                                            v-model="payment" />
                                     <label for="cash-on-delivery">Cash on delivery</label>
@@ -152,9 +154,12 @@
                             </div>
                         </div>
 
-                        <div class="tab-grid" v-if="payment == 'e-money'"> 
+                        <div class="tab-grid e-money-details" v-if="payment == 'e-money'"> 
                             <div>
                                 <label for="e-money-number">e-money Number</label><br>
+                                <span class="err" 
+                                      v-if="zipCodeError">Privide zip code
+                                </span>
                                 <input type="number" 
                                        :class="{ borderErrorColor: eMoneyNumberError }" 
                                        placeholder="238521993" 
@@ -170,7 +175,7 @@
                                        id="e-money-pin" 
                                        v-model="eMoneyPin" />
                             </div>
-                        </div>  
+                        </div> 
                         
                         <div class="tab-flex" v-if="payment == 'cash-on-delivery'">
                             <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
@@ -267,7 +272,8 @@ export default {
             cityError: false,
             countryError: false,
 
-            payment: null,
+            showPaymentOption: true,
+            payment: 'e-money',
             eMoneyPay: true,
             eMoneyPinError: false,
             eMoneyNumberError: false,
@@ -381,6 +387,19 @@ export default {
         grandTotal() {
             return this.$store.getters.grandTotal;
         }
+    },
+    mounted() {
+        // const paymentMethod = Array.from(document.querySelectorAll('.payment-method'));
+        
+        // paymentMethod.forEach ( (option) => {
+        //     if(option.checked) {
+        //         option.parentElement.style.border = '2px solid #D87D4A'
+        //         // console.log(option.parentElement)
+        //         //console.log(option)
+        //     }else {
+        //         return null
+        //     }
+        // })
     }
 }
 </script>
@@ -449,12 +468,12 @@ export default {
     }
 
     input:hover,
-    .checkbox-wrap:hover{
+    .radio-wrap:hover{
         border: 1px solid #D87D4A;
     }
 
     input,
-    .checkbox-wrap {
+    .radio-wrap {
         border: 1px solid #cfcfcf;
         border-radius: 5px;
         width: 100%;
@@ -462,17 +481,18 @@ export default {
         padding-left: 2rem;
     }
 
-    .checkbox-container {
+    .radio-container {
         margin-bottom: 1.5rem;
     }
 
-    .checkbox-wrap {
+    .radio-wrap {
         margin-top: 1rem;
     }
 
     .tab-grid input[type="radio"] {
         width: initial;
         margin: 0 1rem 0 0;
+        accent-color: #D87D4A;
     }
 
     .cash-delivery {
