@@ -363,7 +363,6 @@ export default {
                 this.eMoneyPinError = false //remove error message if input field isn't empty
             }
 
-
             if(!this.name && !this.email && !this.validEmail(this.email) && !this.phoneNumber && !this.address && !this.zipCode && !this.city && !this.country){
                 this.showCard = false;
             }else {

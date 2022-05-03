@@ -52,7 +52,7 @@
                 </div>
             </section>
         
-            <!--<div class="product-images">
+            <div class="product-images">
                 <div>
                     <picture>
                         <source media="(min-width: 1000px)" 
@@ -74,9 +74,9 @@
                             :srcset="require(`@/assets/${product.gallery.third.desktop}`)">
                     <source media="(min-width: 630px)" 
                             :srcset="require(`@/assets/${product.gallery.third.tablet}`)">
-                    <img :src="require(`@/assets/${product.gallery.third.mobile}`)">
+                    <img :src="require(`@/assets/${product.gallery.third.mobile}`)" class="grid-span-2">
                 </picture>
-            </div>-->
+            </div>
 
             <section aria-labelledby="products-you-may-also-like">
                 <h2 id="products-you-may-also-like" 
@@ -336,10 +336,17 @@ export default {
 
     .product-images {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 47% 47%;
+        gap: 2rem;
     }
 
-    .product-images img {
+    .grid-span-2 {
+        height: 97% !important;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .product-images > div > img {
         width: unset;
     }
 
@@ -368,6 +375,12 @@ export default {
     header,
     main > div{
         padding: 0 6rem;
+    }
+
+    .product-images {
+        display: grid;
+        grid-template-columns: 47% 50%;
+        gap: 2rem;
     }
 }
 
