@@ -19,7 +19,7 @@
                     <div class="about-products">
                         <div >
                         <p class="new" v-if="item.new == true">NEW PRODUCT</p>
-                        <h2>{{ item.name}}</h2>
+                        <h2 class="speaker-product-name">{{ item.name}}</h2>
                         <p class="desc">{{item.description}}</p>
                         <OrangeButton :to="{name: 'ProductDetail', params: { productSlug: item.slug },}" btnAction="SEE PRODUCT" class="button"/>
                         </div>
