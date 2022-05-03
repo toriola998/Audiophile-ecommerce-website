@@ -18,7 +18,7 @@
                 </picture>
                     <div class="about-products">
                         <div >
-                        <p class="new">NEW PRODUCT</p>
+                        <p class="new" v-if="item.new == true">NEW PRODUCT</p>
                         <h2>{{ item.name}}</h2>
                         <p class="desc">{{item.description}}</p>
                         <OrangeButton :to="{name: 'ProductDetail', params: { productSlug: item.slug },}" btnAction="SEE PRODUCT" class="button"/>

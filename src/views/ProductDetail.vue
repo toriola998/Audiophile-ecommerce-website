@@ -2,7 +2,6 @@
     <NavBar />
     <header role="banner">
         <div class="product-details">
-            
             <button class="back" @click="$router.back()">
                 Go back
             </button>
@@ -27,7 +26,9 @@
                         <AddToCartButton :productQuantity="productQuantity" 
                                          @increase-quantity="increaseQuantity()"
                                          @decrease-quantity="decreaseQuantity()"/>
-                        <OrangeButton btnAction="ADD TO CART" @click="AddToCart()"/>
+                        <OrangeButton btnAction="ADD TO CART"
+                                      @click="AddToCart()"
+                                      class="add-to-cart"/>
                     </div> 
                 </div>  
             </div>
@@ -96,7 +97,9 @@
                                 :alt="similarProduct.slug">
                         </picture>
                         <h3 class="similar-product-name"> {{similarProduct.name}}</h3>
-                        <OrangeButton btnAction="SEE PRODUCT" :to="{name: 'ProductDetail', params: { productSlug: similarProduct.slug },}"/>
+                        <OrangeButton btnAction="SEE PRODUCT" 
+                                :to="{name: 'ProductDetail', params: { productSlug: similarProduct.slug },}"
+                        />
                     </div>
                 </div>
             </section>
@@ -217,12 +220,17 @@ export default {
         font-size: .9rem;
     }
 
-    h1 {
+    .name-product {
         margin: 1rem 0;
+        width: 200px;
     }
 
     h1, h2, h3 {
         text-transform: uppercase;
+    }
+
+    .add-to-cart {
+        margin: 0 0 0 1rem;
     }
 
     #features {
