@@ -56,18 +56,6 @@
     .wrap1 h2 {
         font-size: 2rem;
     }
-
-    .headphone-product-name {
-        width: 250px;
-    }
-
-    .speaker-product-name {
-        width: 200px;
-    }
-
-    .earphone-product-name {
-        width: 300px;
-    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -91,6 +79,18 @@
     .wrap1 h2, 
     .button {
         margin: initial;
+    }
+
+    .headphone-product-name {
+        width: 250px;
+    }
+
+    .speaker-product-name {
+        width: 200px;
+    }
+
+    .earphone-product-name {
+        width: 300px;
     }
 
     .headphone {
