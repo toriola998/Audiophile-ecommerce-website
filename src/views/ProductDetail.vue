@@ -202,7 +202,7 @@ export default {
     .back {
         color: #000;
         font-size: 1rem;
-        opacity: 0.7;
+        opacity: 0.8;
         margin: 2rem 0;
     }
 
@@ -250,7 +250,7 @@ export default {
 
     .about-product {
         color: #000;
-        opacity: 0.6;
+        opacity: 0.8;
         line-height: 1.6;
         margin-bottom: 2rem;
     }
@@ -264,7 +264,7 @@ export default {
 
     .box-details li .details{
         color: #000;
-        opacity: 0.7;
+        opacity: 0.8;
     }
 
     .box-details li {

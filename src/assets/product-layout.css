@@ -104,7 +104,7 @@
 
 @media screen and (min-width: 1200px) {
     .products-container {
-        padding: 6rem 10rem;
+        padding: 6rem 10rem 0;
     }
 
     .wrap1 {
