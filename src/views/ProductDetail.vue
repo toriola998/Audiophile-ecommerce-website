@@ -59,14 +59,14 @@
                                 :srcset="require(`@/assets/${product.gallery.first.desktop}`)">
                         <source media="(min-width: 630px)" 
                                 :srcset="require(`@/assets/${product.gallery.first.tablet}`)">
-                        <img :src="require(`@/assets/${product.gallery.first.mobile}`)">        
+                        <img :src="require(`@/assets/${product.gallery.first.mobile}`)" alt="">        
                     </picture>
                     <picture>
                         <source media="(min-width: 1000px)" 
                                 :srcset="require(`@/assets/${product.gallery.second.desktop}`)">
                         <source media="(min-width: 630px)" 
                                 :srcset="require(`@/assets/${product.gallery.second.tablet}`)">
-                        <img :src="require(`@/assets/${product.gallery.second.mobile}`)">
+                        <img :src="require(`@/assets/${product.gallery.second.mobile}`)" alt="">
                     </picture>
                 </div>
                 <picture>
@@ -74,7 +74,9 @@
                             :srcset="require(`@/assets/${product.gallery.third.desktop}`)">
                     <source media="(min-width: 630px)" 
                             :srcset="require(`@/assets/${product.gallery.third.tablet}`)">
-                    <img :src="require(`@/assets/${product.gallery.third.mobile}`)" class="grid-span-2">
+                    <img :src="require(`@/assets/${product.gallery.third.mobile}`)" 
+                         class="grid-span-2"
+                         alt="">
                 </picture>
             </div>
 
