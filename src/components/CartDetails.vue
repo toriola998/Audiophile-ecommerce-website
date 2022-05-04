@@ -19,7 +19,7 @@
                             <span class="product-name">{{ cartItem.productName.substring(0, 9) }}...</span><br>
                             <span class="product-price">{{ cartItem.productPrice }}</span>
                         </p>
-                        <AddToCartButton @click="deleteFromCart()" />
+                        <AddToCartButton />
                     </div>
                 </li>
             </ul>

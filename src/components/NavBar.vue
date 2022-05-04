@@ -28,7 +28,7 @@
                 </router-link>
             </div>
             <button @click="showCart = !showCart">
-                <p class="cart flex">{{ cartSize }}</p>
+                <span class="cart flex">{{ cartSize }}</span>
                 <img src="./../assets/icons/cart.svg" alt="Cart for products"/>
             </button>
 
