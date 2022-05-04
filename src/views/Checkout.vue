@@ -1,232 +1,234 @@
 <template>
     <main class="checkout-container">
-        <button class="back" @click="$router.back()">
-                Go back
-        </button>
         <div>
+            <button class="back" @click="$router.back()">
+                    Go back
+            </button>
             <div>
-                <div class="checkout-inner">
-                    <form action="" method="post">
-                        <h1>CHECKOUT</h1> 
-                        <p class="orange">BILLING DETAILS</p>
-                        <div class="tab-grid">
-                            <div>
-                                <span class="flex">
-                                    <label for="name" 
-                                           :class="{ labelErrorColor: nameError }">Name
-                                    </label><br>
-                                    <span class="err" 
-                                          v-if="nameError">Name can't be empty
+                <div>
+                    <div class="checkout-inner">
+                        <form action="" method="post">
+                            <h1>CHECKOUT</h1> 
+                            <p class="orange">BILLING DETAILS</p>
+                            <div class="tab-grid">
+                                <div>
+                                    <span class="flex">
+                                        <label for="name" 
+                                            :class="{ labelErrorColor: nameError }">Name
+                                        </label><br>
+                                        <span class="err" 
+                                            v-if="nameError">Name can't be empty
+                                        </span>
                                     </span>
-                                </span>
-                                <input type="text" 
-                                       :class="{ borderErrorColor: nameError }" 
-                                       placeholder="Alexei Ward" 
-                                       id="name" 
-                                       v-model="name"/>
-                            </div>
-
-                            <div>
-                                <span class="flex">
-                                    <label for="email" 
-                                           :class="{ labelErrorColor: emailError }">Email
-                                    </label><br>
-                                    <span class="err" 
-                                          v-if="emailError">Email can't be empty
-                                    </span>
-                                    <span class="err" 
-                                          v-if="invalidEmailError">Wrong format
-                                    </span>
-                                </span>
-                                <input type="email" 
-                                       :class="{ borderErrorColor: emailError }" 
-                                       placeholder="alexei@gmail.com" 
-                                       id="email" 
-                                       v-model="email"/>
-                            </div>
-
-                            <div>
-                                <span class="flex">
-                                    <label for="number" 
-                                           :class="{ labelErrorColor: phoneError }" >Number
-                                    </label><br>
-                                    <span class="err" 
-                                          v-if="phoneError">Fill in your number
-                                    </span>
-                                    <!--<span class="err" v-if="invalidPhoneError">Incorrect Phone number</span>-->
-                                </span>
-                                <input type="tel"
-                                       :class="{ borderErrorColor: phoneError }"
-                                        placeholder="+1 202-555-0136" 
-                                        id="number" 
-                                        v-model="phoneNumber"/>
-                            </div>
-                        </div> 
-
-                        <p class="orange">SHIPPING INFO</p>
-                        <div>
-                            <span class="flex">
-                                <label for="address" 
-                                       :class="{ labelErrorColor: addressError }" >Address
-                                </label><br>
-                                <span class="err" 
-                                      v-if="addressError">Provide detailed address
-                                </span>
-                            </span>
-                            <input type="text" 
-                                  :class="{ borderErrorColor: addressError }"  
-                                  placeholder="1137 Williams Avenue" id="address" 
-                                  v-model="address"/>
-                        </div>
-
-                        <div class="tab-grid">
-                            <div>
-                                <span class="flex">
-                                    <label for="zip-code" 
-                                            :class="{ labelErrorColor: zipCodeError }" >Zip Code
-                                    </label><br>
-                                    <span class="err" 
-                                          v-if="zipCodeError">Privide zip code
-                                    </span>
-                                    <!--<span class="err" v-if="zipNanError">Must be a number</span>-->
-                                </span>
-                                <input type="number" 
-                                       :class="{ borderErrorColor: zipCodeError }" 
-                                       placeholder="10001" 
-                                       id="zip-code" 
-                                       v-model="zipCode"/>
-                            </div>
-
-                            <div>
-                                <span class="flex">
-                                    <label for="city" 
-                                           :class="{ labelErrorColor: cityError }">City
-                                    </label><br>
-                                    <span class="err" 
-                                          v-if="cityError">Provide City
-                                    </span>
-                                </span>
-                                <input type="text" 
-                                       :class="{ borderErrorColor: cityError }"  
-                                       placeholder="New York" 
-                                       id="city" 
-                                       v-model="city"/>
-                            </div>
-
-                            <div>
-                                <span class="flex">
-                                    <label for="country" 
-                                           :class="{ labelErrorColor: countryError }">Country
-                                    </label><br>
-                                    <span class="err" 
-                                          v-if="countryError">Provide country
-                                    </span>
-                                </span>
-                                <input type="text" 
-                                       :class="{ borderErrorColor: countryError }" 
-                                       placeholder="United States" 
-                                       id="country" 
-                                       v-model="country"/>
-                            </div>
-                        </div> 
-                        <p class="orange">PAYMENT DETAILS</p>
-                        <div class="tab-grid">
-                            <p class="sub-heading">Payment Method</p>
-                            <div class="radio-container">
-                                <div class="flex radio-wrap e-money-wrap">
-                                    <input type="radio"
-                                           id="e-money"
-                                           class="payment-method"   
-                                           value="e-money"
-                                           v-model="payment" checked/>
-                                    <label for="e-money">e-Money</label>
+                                    <input type="text" 
+                                        :class="{ borderErrorColor: nameError }" 
+                                        placeholder="Alexei Ward" 
+                                        id="name" 
+                                        v-model="name"/>
                                 </div>
 
-                                <div class="flex radio-wrap">
-                                    <input type="radio" 
-                                           id="cash-on-delivery"
-                                           class="payment-method" 
-                                           value="cash-on-delivery" 
-                                           v-model="payment" />
-                                    <label for="cash-on-delivery">Cash on delivery</label>
-                                </div>   
-                            </div>
-                        </div>
-
-                        <div class="tab-grid e-money-details" v-if="payment == 'e-money'"> 
-                            <div>
-                                <label for="e-money-number">e-money Number</label><br>
-                                <span class="err" 
-                                      v-if="zipCodeError">Privide zip code
-                                </span>
-                                <input type="number" 
-                                       :class="{ borderErrorColor: eMoneyNumberError }" 
-                                       placeholder="238521993" 
-                                       id="e-money-number" 
-                                       v-model="eMoneyNumber" />
-                            </div>
-
-                            <div>
-                                <label for="e-money-pin">e-money PIN</label><br>
-                                <input type="number"
-                                       :class="{ borderErrorColor: eMoneyPinError }" 
-                                       placeholder="6891" 
-                                       id="e-money-pin" 
-                                       v-model="eMoneyPin" />
-                            </div>
-                        </div> 
-                        
-                        <div class="tab-flex" v-if="payment == 'cash-on-delivery'">
-                            <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
-                            <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
-                            courier arrives at your residence. Just make sure your address is correct so 
-                            that your order will not be cancelled.</p>
-                        </div>
-                    </form>
-
-                    <section aria-labelledby="summary" class="summary-container">
-                        <h2 id="summary">SUMMARY</h2>
-                        <ul class="product-summary">
-                            <li class="flex" v-for="item in cart" :key="item.id"> 
-                                <img :src="item.productImage" class="product-image" alt=""/>
-                                <div class="flex ">
-                                    <p>
-                                        <span class="product-name"> {{ item.name }} </span><br>
-                                        <span class="product-price">{{ item.price}}</span>
-                                    </p>
-                                    <span class="product-quantity">*1</span>
+                                <div>
+                                    <span class="flex">
+                                        <label for="email" 
+                                            :class="{ labelErrorColor: emailError }">Email
+                                        </label><br>
+                                        <span class="err" 
+                                            v-if="emailError">Email can't be empty
+                                        </span>
+                                        <span class="err" 
+                                            v-if="invalidEmailError">Wrong format
+                                        </span>
+                                    </span>
+                                    <input type="email" 
+                                        :class="{ borderErrorColor: emailError }" 
+                                        placeholder="alexei@gmail.com" 
+                                        id="email" 
+                                        v-model="email"/>
                                 </div>
-                            </li>
-                        </ul>
-                        
-                        <ul>
-                            <li class="flex total-wrap">
-                                <span class="title">TOTAL</span>
-                                <span class="price"> $ {{cartTotalAmount}}</span>
-                            </li>
-                            <li class="flex total-wrap">
-                                <span class="title">SHIPPING</span>
-                                <span class="price">$ 50 </span>
-                            </li>
-                            <li class="flex total-wrap">
-                                <span class="title">VAT (INCLUDED)</span>
-                                <span class="price">$ {{ VAT }}</span>
-                            </li>
-                            <li class="flex total-wrap grand">
-                                <span class="title">GRAND TOTAL</span>
-                                <span class="price">$ {{ grandTotal }}</span>
-                            </li>
-                        </ul>
-                        <!--click="showCard = !showCard"-->
-                        <OrangeButton @click="payForProducts()" btnAction="CONTINUE" type="submit" class="continue"/>
-                        <teleport to="body">
-                            <div v-show="showCard"
-                                @click.self.stop.prevent ="showCard = !showCard"
-                                class="modal-overlay">
-                                <ThankYouCard v-show="showCard"/>
+
+                                <div>
+                                    <span class="flex">
+                                        <label for="number" 
+                                            :class="{ labelErrorColor: phoneError }" >Number
+                                        </label><br>
+                                        <span class="err" 
+                                            v-if="phoneError">Fill in your number
+                                        </span>
+                                        <!--<span class="err" v-if="invalidPhoneError">Incorrect Phone number</span>-->
+                                    </span>
+                                    <input type="tel"
+                                        :class="{ borderErrorColor: phoneError }"
+                                            placeholder="+1 202-555-0136" 
+                                            id="number" 
+                                            v-model="phoneNumber"/>
+                                </div>
+                            </div> 
+
+                            <p class="orange">SHIPPING INFO</p>
+                            <div>
+                                <span class="flex">
+                                    <label for="address" 
+                                        :class="{ labelErrorColor: addressError }" >Address
+                                    </label><br>
+                                    <span class="err" 
+                                        v-if="addressError">Provide detailed address
+                                    </span>
+                                </span>
+                                <input type="text" 
+                                    :class="{ borderErrorColor: addressError }"  
+                                    placeholder="1137 Williams Avenue" id="address" 
+                                    v-model="address"/>
                             </div>
-                        </teleport>
-                    </section>
+
+                            <div class="tab-grid">
+                                <div>
+                                    <span class="flex">
+                                        <label for="zip-code" 
+                                                :class="{ labelErrorColor: zipCodeError }" >Zip Code
+                                        </label><br>
+                                        <span class="err" 
+                                            v-if="zipCodeError">Privide zip code
+                                        </span>
+                                        <!--<span class="err" v-if="zipNanError">Must be a number</span>-->
+                                    </span>
+                                    <input type="number" 
+                                        :class="{ borderErrorColor: zipCodeError }" 
+                                        placeholder="10001" 
+                                        id="zip-code" 
+                                        v-model="zipCode"/>
+                                </div>
+
+                                <div>
+                                    <span class="flex">
+                                        <label for="city" 
+                                            :class="{ labelErrorColor: cityError }">City
+                                        </label><br>
+                                        <span class="err" 
+                                            v-if="cityError">Provide City
+                                        </span>
+                                    </span>
+                                    <input type="text" 
+                                        :class="{ borderErrorColor: cityError }"  
+                                        placeholder="New York" 
+                                        id="city" 
+                                        v-model="city"/>
+                                </div>
+
+                                <div>
+                                    <span class="flex">
+                                        <label for="country" 
+                                            :class="{ labelErrorColor: countryError }">Country
+                                        </label><br>
+                                        <span class="err" 
+                                            v-if="countryError">Provide country
+                                        </span>
+                                    </span>
+                                    <input type="text" 
+                                        :class="{ borderErrorColor: countryError }" 
+                                        placeholder="United States" 
+                                        id="country" 
+                                        v-model="country"/>
+                                </div>
+                            </div> 
+                            <p class="orange">PAYMENT DETAILS</p>
+                            <div class="tab-grid">
+                                <p class="sub-heading">Payment Method</p>
+                                <div class="radio-container">
+                                    <div class="flex radio-wrap e-money-wrap">
+                                        <input type="radio"
+                                            id="e-money"
+                                            class="payment-method"   
+                                            value="e-money"
+                                            v-model="payment" checked/>
+                                        <label for="e-money">e-Money</label>
+                                    </div>
+
+                                    <div class="flex radio-wrap">
+                                        <input type="radio" 
+                                            id="cash-on-delivery"
+                                            class="payment-method" 
+                                            value="cash-on-delivery" 
+                                            v-model="payment" />
+                                        <label for="cash-on-delivery">Cash on delivery</label>
+                                    </div>   
+                                </div>
+                            </div>
+
+                            <div class="tab-grid e-money-details" v-if="payment == 'e-money'"> 
+                                <div>
+                                    <label for="e-money-number">e-money Number</label><br>
+                                    <span class="err" 
+                                        v-if="zipCodeError">Privide zip code
+                                    </span>
+                                    <input type="number" 
+                                        :class="{ borderErrorColor: eMoneyNumberError }" 
+                                        placeholder="238521993" 
+                                        id="e-money-number" 
+                                        v-model="eMoneyNumber" />
+                                </div>
+
+                                <div>
+                                    <label for="e-money-pin">e-money PIN</label><br>
+                                    <input type="number"
+                                        :class="{ borderErrorColor: eMoneyPinError }" 
+                                        placeholder="6891" 
+                                        id="e-money-pin" 
+                                        v-model="eMoneyPin" />
+                                </div>
+                            </div> 
+                            
+                            <div class="tab-flex" v-if="payment == 'cash-on-delivery'">
+                                <img src="./../assets/Shape.png" alt="Two hands exchanging cash" />
+                                <p class="cash-delivery">The 'Cash on Delivery' option enables you to pay in cash when our delivery
+                                courier arrives at your residence. Just make sure your address is correct so 
+                                that your order will not be cancelled.</p>
+                            </div>
+                        </form>
+
+                        <section aria-labelledby="summary" class="summary-container">
+                            <h2 id="summary">SUMMARY</h2>
+                            <ul class="product-summary">
+                                <li class="flex" v-for="item in cart" :key="item.id"> 
+                                    <img :src="item.productImage" class="product-image" alt=""/>
+                                    <div class="flex ">
+                                        <p>
+                                            <span class="product-name"> {{ item.name }} </span><br>
+                                            <span class="product-price">{{ item.price}}</span>
+                                        </p>
+                                        <span class="product-quantity">*1</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul>
+                                <li class="flex total-wrap">
+                                    <span class="title">TOTAL</span>
+                                    <span class="price"> $ {{cartTotalAmount}}</span>
+                                </li>
+                                <li class="flex total-wrap">
+                                    <span class="title">SHIPPING</span>
+                                    <span class="price">$ 50 </span>
+                                </li>
+                                <li class="flex total-wrap">
+                                    <span class="title">VAT (INCLUDED)</span>
+                                    <span class="price">$ {{ VAT }}</span>
+                                </li>
+                                <li class="flex total-wrap grand">
+                                    <span class="title">GRAND TOTAL</span>
+                                    <span class="price">$ {{ grandTotal }}</span>
+                                </li>
+                            </ul>
+                            <!--click="showCard = !showCard"-->
+                            <OrangeButton @click="payForProducts()" btnAction="CONTINUE" type="submit" class="continue"/>
+                            <teleport to="body">
+                                <div v-show="showCard"
+                                    @click.self.stop.prevent ="showCard = !showCard"
+                                    class="modal-overlay">
+                                    <ThankYouCard v-show="showCard"/>
+                                </div>
+                            </teleport>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

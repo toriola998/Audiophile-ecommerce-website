@@ -93,6 +93,7 @@ export default {
         .nav-wrap > div,
         .head,
         .product-header > div,
+        .product-details,
         main,
         footer > div > div{
             max-width: 1300px;
