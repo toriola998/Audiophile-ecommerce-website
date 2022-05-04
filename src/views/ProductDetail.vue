@@ -1,6 +1,6 @@
 <template>
     <NavBar />
-    <header role="banner">
+    <header>
         <div class="product-details">
             <button class="back" @click="$router.back()">
                 Go back
@@ -34,7 +34,7 @@
             </div>
         </div>
     </header> 
-    <main role="main"> 
+    <main> 
         <div>   
             <section aria-labelledby="features" class="features-wrap">  
                 <div class="product-features">

@@ -1,6 +1,6 @@
 <template>
     <NavBar />
-    <main class="checkout-container" role="main">
+    <main class="checkout-container">
         <button class="back" @click="$router.back()">
                 Go back
         </button>

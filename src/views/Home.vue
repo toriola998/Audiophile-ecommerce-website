@@ -1,6 +1,6 @@
 <template>
     <NavBar />
-    <header role="banner">
+    <header>
         <div class="head flex">
             <div>
                 <p class="new">NEW PRODUCT</p>
@@ -11,7 +11,7 @@
             </div>
         </div>
     </header>
-    <main role="main">
+    <main>
         <ProductsMenu />
         <section aria-labelledby="zx9-speaker">
             <div class="speaker1-wrap">

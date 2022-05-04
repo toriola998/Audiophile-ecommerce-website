@@ -1,5 +1,5 @@
 <template>
-    <footer role="contentinfo">
+    <footer>
         <div class="footer">
             <div>
                 <div class="line"></div>
