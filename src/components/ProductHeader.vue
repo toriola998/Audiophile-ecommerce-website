@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <h1 class="flex">{{ product}}</h1>
+    <div class="product-header flex">
+        <div>
+            <h1>{{ product}}</h1>
+        </div>
     </div>
 </template>
 
@@ -12,18 +14,20 @@ export default {
 </script>
 
 <style scoped>
-     h1 {
+    .product-header {
         background-color: #191919;
-        justify-content: center;
         height: 5rem;
+        justify-content: center;
+    }
+
+     h1 {
         color: #fff;
         letter-spacing: 3px;
         font-size: 1.4rem;
-        margin-bottom: 3rem;
     }
 
     @media screen and (min-width: 520px) {
-       h1 {
+       .product-header {
            height: 10rem;
        }
     }
@@ -36,9 +40,12 @@ export default {
 
     
     @media screen and (min-width: 1000px) {
+        .product-header {
+             height: 13rem;
+        }
+
         h1 {
            font-size: 2.2rem;
-           height: 13rem;
        }
     }
 </style>

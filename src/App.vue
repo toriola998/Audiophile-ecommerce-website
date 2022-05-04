@@ -90,10 +90,11 @@ export default {
     }
 
     @media screen and (min-width: 1400px) {
-        .nav-wrap,
-        header,
+        .nav-wrap > div,
+        .head,
+        .product-header > div,
         main,
-        footer{
+        footer > div > div{
             max-width: 1300px;
             margin: auto;
         }

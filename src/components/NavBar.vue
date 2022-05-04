@@ -27,7 +27,7 @@
                     <img src="./../assets/icons/logo.svg" alt="Audiophile - Home"/>
                 </router-link>
             </div>
-            <button @click="showCart = !showCart">
+            <button @click="showCart = !showCart" class="cart-btn">
                 <span class="cart flex">{{ cartSize }}</span>
                 <img src="./../assets/icons/cart.svg" alt="Cart for products"/>
             </button>
@@ -125,9 +125,13 @@ export default {
         height: 1.5rem;
         border-radius: 20px;
         position: absolute;
-        top: 0.3rem;
-        right: 0.3rem;
+        top: -1.4rem;
+        right: -0.7rem;
         width: 1.5rem;
+    }
+
+    .cart-btn {
+        position: relative;
     }
 
     @media screen and (min-width: 700px) {
@@ -172,7 +176,7 @@ export default {
         }
 
         .cart {
-            right: 3rem;
+            right: -1rem;
         }
     }
 
@@ -187,11 +191,6 @@ export default {
 
         .nav-wrap > .flex {
             height: 7rem;
-        }
-
-         .cart {
-            right: 9rem;
-            top: 1.3rem;
         }
     }
 </style>

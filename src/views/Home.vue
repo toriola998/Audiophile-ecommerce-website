@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header id="header">
         <div class="head flex">
             <div>
                 <p class="new">NEW PRODUCT</p>
@@ -77,6 +77,10 @@ export default {
 </script>
 
 <style scoped>
+    #header {
+        background-color: #191919;
+    }
+
     .head {
         background-image: url("./../assets/home/mobile/image-header.jpg"); /* The image used */
         background-color: #191919; /* Used if the image is unavailable */
@@ -222,10 +226,6 @@ export default {
 }
 
 @media screen and (min-width: 760px) {
-    .head {
-        height: 100vh;
-    }
-
     .head > div {
         width: 45%;
     }
@@ -280,7 +280,7 @@ export default {
 @media screen and (min-width: 1000px) {
     .head {
       background-image: url("./../assets/home/desktop/image-hero.jpg"); 
-      justify-content: initial;
+      justify-content: flex-start;
       padding: 4rem;
     }
 
