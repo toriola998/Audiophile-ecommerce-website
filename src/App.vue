@@ -1,13 +1,20 @@
 <template>
     <div>
+        <NavBar />
         <router-view />
+        <TheFooter />
     </div>
 </template>
 
 <script>
-
+import NavBar from './components/NavBar.vue'
+import TheFooter from './components/TheFooter.vue'
 export default {
   name: 'App',
+  components: {
+      NavBar,
+      TheFooter,
+  }
 }
 </script>
 
@@ -79,6 +86,16 @@ export default {
     @media screen and (min-width: 1000px) {
         .reverse-flex {
             flex-direction: row-reverse;
+        }
+    }
+
+    @media screen and (min-width: 1400px) {
+        .nav-wrap,
+        header,
+        main,
+        footer{
+            max-width: 1300px;
+            margin: auto;
         }
     }
 </style>

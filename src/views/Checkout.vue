@@ -1,5 +1,4 @@
 <template>
-    <NavBar />
     <main class="checkout-container">
         <button class="back" @click="$router.back()">
                 Go back
@@ -232,21 +231,17 @@
             </div>
         </div>
     </main>
-    <TheFooter />
 </template>
 
 <script>
-import NavBar from './../components/NavBar.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import ThankYouCard from './../components/ThankYouCard.vue'
-import TheFooter from './../components/TheFooter.vue'
+
 export default {
     name: 'Checkout',
     components: {
-        NavBar,
         OrangeButton,
         ThankYouCard,
-        TheFooter
     },
     data () {
         return {

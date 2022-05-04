@@ -1,5 +1,4 @@
 <template>
-    <NavBar />
     <header>
         <div class="head flex">
             <div>
@@ -58,26 +57,21 @@
         </section>
         <AboutUs />
     </main>
-    <TheFooter />
 </template>
 
 <script>
-import NavBar from '../components/NavBar.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import PlainButton from './../components/PlainButton.vue'
 import AboutUs from '../components/AboutUs.vue'
-import TheFooter from '../components/TheFooter.vue'
 
 export default {
     name: 'Home',
     components: { 
-        NavBar,
         OrangeButton,
         ProductsMenu,
         PlainButton,
         AboutUs,
-        TheFooter
     }
 }
 </script>

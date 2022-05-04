@@ -1,5 +1,4 @@
 <template>
-    <NavBar />
     <header>
         <ProductHeader product="SPEAKERS" />
     </header>
@@ -30,27 +29,22 @@
         <ProductsMenu /> 
         <AboutUs />
     </main>
-    <TheFooter />
 </template>
 
 <script>
 import data from './../data'
-import NavBar from '../components/NavBar.vue'
 import ProductHeader from './../components/ProductHeader.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import ProductsMenu from '../components/ProductsMenu.vue'
 import AboutUs from '../components/AboutUs.vue'
-import TheFooter from '../components/TheFooter.vue'
 
 export default {
     name: 'Headphones',
     components:  {
-        NavBar,
         ProductHeader,
         OrangeButton,
         ProductsMenu,
         AboutUs,
-        TheFooter
     },
 
     data() {

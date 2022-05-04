@@ -1,5 +1,4 @@
 <template>
-    <NavBar />
     <header>
         <div class="product-details">
             <button class="back" @click="$router.back()">
@@ -107,26 +106,22 @@
         <ProductsMenu />
         <AboutUs />
     </main>
-    <TheFooter />
 </template>
 
 <script>
 import data from './../data'
-import NavBar from '../components/NavBar.vue'
 import AddToCartButton from './../components/AddToCartButton.vue'
 import OrangeButton from './../components/OrangeButton.vue'
 import ProductsMenu from './../components/ProductsMenu.vue'
 import AboutUs from '../components/AboutUs.vue'
-import TheFooter from '../components/TheFooter.vue'
+
 export default {
     name: 'ProductDetail',
     components: {
-        NavBar,
         OrangeButton,
         AddToCartButton,
         ProductsMenu,
         AboutUs,
-        TheFooter
     },
 
     data() {
