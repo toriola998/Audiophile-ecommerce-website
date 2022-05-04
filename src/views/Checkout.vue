@@ -615,4 +615,15 @@ export default {
         padding: 2rem 10rem;
     }
 }
+
+  @media screen and (min-width: 1400px) {
+        .checkout-container > div{
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        main {
+            max-width: initial;
+        }
+    }
 </style>
