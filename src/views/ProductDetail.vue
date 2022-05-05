@@ -217,7 +217,7 @@ export default {
 
     .name-product {
         margin: 1rem 0;
-        width: 200px;
+        width: 250px;
     }
 
     h1, h2, h3 {
