@@ -49,6 +49,7 @@ export default {
         checkout() {
             if(this.cartSize > 0){
                 this.$router.push({ path: '/checkout' })
+                document.querySelector('.cart-container').parentElement.style.display = 'none'
             }
         },
 
