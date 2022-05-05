@@ -1,5 +1,6 @@
 <template>
-    <div class="wrap">
+    <div class="outer-wrap">
+        <div class="wrap">
         <div class="box">
             <img src="./../assets/Products/product1.svg" 
                 class="product" 
@@ -39,6 +40,7 @@
             </div> 
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -48,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-    .wrap {
+    .outer-wrap {
         padding: 0 1.5rem;
     }
     
@@ -94,22 +96,32 @@ export default {
             width: 30%;
         }
 
+        .outer-wrap {
+            padding: 0 1.5rem;
+        }
+
         .wrap {
             display: flex;
-            padding: 0 1.5rem;
             gap: 15px; 
         }
     }
 
     @media screen and (min-width: 1000px) {
-        .wrap {
+        .outer-wrap {
             padding: 0 6rem;
         }
     }
 
     @media screen and (min-width: 1200px) {
-        .wrap {
+        .outer-wrap {
             padding: 0 10rem;
         }
     }
+
+    @media screen and (min-width: 1400px) {
+        .wrap{ 
+            max-width: 1300px;
+            margin: auto;
+        }
+   }
 </style>

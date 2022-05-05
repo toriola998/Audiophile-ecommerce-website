@@ -12,7 +12,7 @@
     </header>
     <main>
         <ProductsMenu />
-        <section aria-labelledby="zx9-speaker">
+        <section aria-labelledby="zx9-speaker" class="section">
             <div class="speaker1-wrap">
                 <img src="./../assets/home/mobile/image-speaker-zx9.png" 
                     alt="Image of the ZX9 speaker" 
@@ -27,7 +27,7 @@
             </div>
         </section>
 
-        <section aria-labelledby="zx7-speaker"> 
+        <section aria-labelledby="zx7-speaker" class="section"> 
             <div class="speaker2-wrap flex">
                 <div>
                     <h2 id="zx7-speaker">ZX7 SPEAKER</h2>
@@ -36,7 +36,7 @@
             </div>
         </section>
 
-        <section aria-labelledby="yx1-earphones">
+        <section aria-labelledby="yx1-earphones" class="section">
             <div class="image-flex">
                 <picture>
                     <source media="(min-width: 1000px)" 
@@ -128,7 +128,7 @@ export default {
         font-size: .9rem;
     }
 
-    section{
+    .section{
         padding: 0 1.5rem;
     }
 
@@ -278,10 +278,13 @@ export default {
 }
 
 @media screen and (min-width: 1000px) {
+    #header {
+         padding: 4rem;
+    }
+
     .head {
       background-image: url("./../assets/home/desktop/image-hero.jpg"); 
       justify-content: flex-start;
-      padding: 4rem;
     }
 
     .head > div {
@@ -334,7 +337,7 @@ export default {
         margin: initial;
     }
 
-    section {
+    .section {
         padding: 0 6rem;
     }
 }
@@ -344,12 +347,24 @@ export default {
         width: 40%;
     }
 
-    .head {
+    #header {
         padding: 10rem;
     }
 
-    section {
+    .section {
         padding: 0 10rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .head,
+    .section > div{
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    .speaker1-wrap {
+        margin: 6rem auto 2rem !important;
     }
 }
 </style>

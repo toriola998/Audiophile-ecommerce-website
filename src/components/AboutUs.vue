@@ -1,6 +1,7 @@
 <template>
-    <section class="best-audio-gear" aria-labelledby="about-us">
-        <picture>
+    <section class="best-audio-wrap" aria-labelledby="about-us">
+        <div class="best-audio-gear">
+            <picture>
             <source media="(min-width: 1000px)" 
                     srcset="./../assets/shared/desktop/image-best-gear.jpg">
             <source media="(min-width: 760px)" 
@@ -17,6 +18,7 @@
             store to meet some of the fantastic people who make Audiophile the best place to buy your portable
             audio equipment.</p>
         </div>
+        </div>
     </section>
 </template>
 
@@ -27,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-    .best-audio-gear {
+    .best-audio-wrap {
         padding: 6rem 1.5rem;
     }
 
@@ -75,11 +77,14 @@ export default {
     }
 
     @media screen and (min-width: 1000px) {
+        .best-audio-wrap {
+             padding: 6rem;
+        }
+        
         .best-audio-gear {
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
-            padding: 6rem;
         }
 
         h2, p {
@@ -107,7 +112,7 @@ export default {
     }
 
     @media screen and (min-width: 1200px) {
-        .best-audio-gear {
+        .best-audio-wrap {
             padding: 6rem 10rem;
         }
 
@@ -116,4 +121,11 @@ export default {
         }
         
     }
+
+    @media screen and (min-width: 1400px) {
+        .best-audio-gear{ 
+            max-width: 1300px;
+            margin: auto;
+        }
+   }
 </style>

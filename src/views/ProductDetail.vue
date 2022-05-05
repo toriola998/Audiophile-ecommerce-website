@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="product-details">
+        <div class="product-details wrapper">
             <button class="back" @click="$router.back()">
                 Go back
             </button>
@@ -35,7 +35,7 @@
     </header> 
     <main> 
         <div>   
-            <section aria-labelledby="features" class="features-wrap">  
+            <section aria-labelledby="features" class="features-wrap wrapper">  
                 <div class="product-features">
                     <h2 id="features">FEATURES</h2>
                     <p class="about-product">{{ product.features}}</p> 
@@ -52,7 +52,7 @@
                 </div>
             </section>
         
-            <div class="product-images">
+            <div class="product-images wrapper">
                 <div>
                     <picture>
                         <source media="(min-width: 1000px)" 
@@ -85,7 +85,7 @@
                     class="you-may-also-like">
                     YOU MAY ALSO LIKE
                 </h2>
-                <div class="similar-products-wrap">
+                <div class="similar-products-wrap wrapper">
                     <div class="similar-products" v-for="similarProduct in product.others" :key="similarProduct.slug">
                         <picture>
                             <source media="(min-width: 1000px)" 
@@ -419,6 +419,13 @@ export default {
         grid-template-columns: 55% auto;
         align-items: baseline;
         column-gap: 10rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .wrapper{ 
+        max-width: 1300px;
+        margin: auto;
     }
 }
 </style>
