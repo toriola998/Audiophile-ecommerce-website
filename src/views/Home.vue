@@ -354,7 +354,13 @@ export default {
 }
 
 @media screen and (min-width: 1400px) {
+    .head {
+        padding: initial;
+    }
 
+    #header {
+        padding: 4rem 10rem;
+    }
     
     .head,
     .section > div{
