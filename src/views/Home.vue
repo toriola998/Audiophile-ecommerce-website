@@ -278,13 +278,10 @@ export default {
 }
 
 @media screen and (min-width: 1000px) {
-    #header {
-         padding: 4rem;
-    }
-
     .head {
       background-image: url("./../assets/home/desktop/image-hero.jpg"); 
       justify-content: flex-start;
+      padding: 4rem;
     }
 
     .head > div {
@@ -347,7 +344,7 @@ export default {
         width: 40%;
     }
 
-    #header {
+    .head {
         padding: 10rem;
     }
 
@@ -357,6 +354,8 @@ export default {
 }
 
 @media screen and (min-width: 1400px) {
+
+    
     .head,
     .section > div{
         max-width: 1300px;
