@@ -18,7 +18,7 @@ Users are be able to:
 ![](./src/assets/screenshot.png)
 
 ## Links
-- Live Site URL: [](https://audiophile11.netlify.app/)
+- Live Site URL: [https://audiophile11.netlify.app/](https://audiophile11.netlify.app/)
 
 ## Built with
 - CSS custom properties
